@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping package="">
+
+  <class name="openEHR-EHR-ADMIN_ENTRY.admission-zju.v1" table="">
+
+    <id name="/uid/value">
+      <column name="id" />
+    </id>
+
+    <property name="/data[at0001]/items[at0002]/value" column="patientType"/>
+    <property name="/data[at0001]/items[at0094]/items[at0074]/value" column="department"/>
+    <property name="/data[at0001]/items[at0094]/items[at0077]/value" column="ward"/>
+    <property name="/data[at0001]/items[at0071]/value" column="admissionDateTime"/>
+    <property name="/data[at0001]/items[at0.2]/value" column="admissionStatus"/>
+    <property name="/data[at0001]/items[at0.3]/value" column="patient"/>
+    <property name="/data[at0001]/items[at0094]/items[at0078]/value" column="room"/>
+    <property name="/data[at0001]/items[at0094]/items[at0079]/value" column="bed"/>
+    <property name="/data[at0001]/items[at0.4]/value" column="mainDiagnosis"/>
+    <property name="/data[at0001]/items[at0.5]/value" column="patientCondition"/>
+    <property name="/data[at0001]/items[at0.6]/value" column="nursingClass"/>
+    <property name="/data[at0001]/items[at0.7]/value" column="directorId"/>
+    <property name="/data[at0001]/items[at0.8]/value" column="deputyDirectorId"/>
+    <property name="/data[at0001]/items[at0.9]/value" column="attendingDoctorId"/>
+    <property name="/data[at0001]/items[at0.10]/value" column="residentDoctorId"/>
+    <property name="/data[at0001]/items[at0.11]/value" column="primaryNurseId"/>
+    <property name="/data[at0001]/items[at0.12]/value" column="continuingDoctorId"/>
+    <property name="/data[at0001]/items[at0.13]/value" column="internsDoctorId"/>
+    <property name="/data[at0001]/items[at0.14]/value" column="doctorGroupId"/>
+    <property name="/data[at0001]/items[at0.15]/value" column="nurseGroupId"/>
+    <property name="/data[at0001]/items[at0.16]/value" column="recorderId"/>
+    <property name="/data[at0001]/items[at0.17]/value" column="isCharged"/>
+    <property name="/data[at0001]/items[at0.18]/value" column="hisChargeCount"/>
+    <property name="/data[at0001]/items[at0.19]/value" column="lastChargeDateTime"/>
+    <property name="/data[at0001]/items[at0.20]/value" column="firstAdmissionIndicator"/>
+    <property name="/data[at0001]/items[at0.21]/value" column="specialDepartmentId"/>
+    <property name="/data[at0001]/items[at0.22]/value" column="outpatientDoctorId"/>
+
+  </class>
+
+</hibernate-mapping>
