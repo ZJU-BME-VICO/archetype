@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping package="">
+
+  <class name="openEHR-EHR-OBSERVATION.lab_test-zju.v1" table="">
+
+    <id name="/uid/value">
+      <column name="id" />
+    </id>
+
+    <many-to-one name="/protocol[at0004]/items[at0.2]/value" column="patient" class="openEHR-DEMOGRAPHIC-PERSON.person-patient-zju"/>
+    <many-to-one name="/links[at0.3]/target/value" column="admission" class="openEHR-EHR-ADMIN_ENTRY.admission-zju"/>
+    <many-to-one name="/links[at0.4]/target/value" column="testRequest" class="openEHR-EHR-INSTRUCTION.request-lab_test-zju"/>
+    <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0005]/value" column="testItemName"/>
+    <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0078.1]/value" column="testResult"/>
+    <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0.5]/value" column="testResultUnit"/>
+    <one-to-many name="/data[at0001]/events[at0002]/data[at0003]/items[at0089]" class="openEHR-EHR-CLUSTER.lab_result_annotation-zju"/>
+    <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0.6]/value" column="testDevice"/>
+    <property name="/protocol[at0004]/items[at0075]/value" column="testDateTime"/>
+
+  </class>
+
+</hibernate-mapping>

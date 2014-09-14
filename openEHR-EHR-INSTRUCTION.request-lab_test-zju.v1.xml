@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping package="">
+
+  <class name="openEHR-EHR-INSTRUCTION.request-lab_test-zju.v1" table="">
+
+    <id name="/uid/value">
+      <column name="id" />
+    </id>
+
+    <many-to-one name="/protocol[at0008]/items[at0.1.2]/value" column="patient" class="openEHR-DEMOGRAPHIC-PERSON.person-patient-zju"/>
+    <many-to-one name="/links[at0.1.3]/target/value" column="admission" class="openEHR-EHR-ADMIN_ENTRY.admission-zju"/>
+    <property name="/protocol[at0008]/items[at0.1.4]/value" column="requestDateTime"/>
+    <many-to-one name="/protocol[at0008]/items[at0010]/value" column="requestor" class="openEHR-EHR-CLUSTER.staff_dict-zju"/>
+    <many-to-one name="/activities[at0001]/description[at0009]/items[at0121]/value" column="requestSubject" class="openEHR-EHR-CLUSTER.lab_test_subject_dict-zju"/>
+    <property name="/activities[at0001]/description[at0009]/items[at0062]/value" column="requestReason"/>
+    <property name="/protocol[at0008]/items[at0011]/value" column="receiver"/>
+    <property name="/activities[at0001]/description[at0009]/items[at0068]/value" column="urgency"/>
+    <many-to-one name="/protocol[at0008]/items[at0127]/value" column="requestStatus" class="openEHR-EHR-CLUSTER.action_status_dict-zju"/>
+
+  </class>
+
+</hibernate-mapping>
