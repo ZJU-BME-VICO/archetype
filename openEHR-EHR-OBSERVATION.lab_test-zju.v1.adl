@@ -88,12 +88,12 @@ definition
                                         exclude
                                             archetype_id/value matches {/.*/}
                                     }
-                                    ELEMENT[at0078.1] occurrences matches {0..*} matches {
+                                    ELEMENT[at0078.1] occurrences matches {0..1} matches {
                                         value matches {
                                             DV_TEXT matches {*}
                                         }
                                     }
-                                    allow_archetype CLUSTER[at0089] occurrences matches {0..*} matches {
+                                    allow_archetype CLUSTER[at0089.1] occurrences matches {0..1} matches {
                                         include
                                             archetype_id/value matches {/openEHR-EHR-CLUSTER\.lab_result_annotation(-[a-zA-Z0-9_]+)*\.v1/}
                                         exclude
@@ -167,7 +167,7 @@ definition
             }
         }
         links cardinality matches {0..*; unordered} matches {
-            LINK[at0.3] occurrences matches {1..*} matches {
+            LINK[at0.3] occurrences matches {0..1} matches {
                 meaning matches {
                     DV_TEXT matches {
                         value matches {"related to"}
@@ -316,6 +316,11 @@ This archetype also acts as the parent for specialisations appropriate for more 
 
                 >
                 ["at0089"] = <
+                    text = <"Per-result annotation">
+                    description = <"Slot to allow an annotation to be added to a particular test result at run-time.">
+
+                >
+                ["at0089.1"] = <
                     text = <"Per-result annotation">
                     description = <"Slot to allow an annotation to be added to a particular test result at run-time.">
 

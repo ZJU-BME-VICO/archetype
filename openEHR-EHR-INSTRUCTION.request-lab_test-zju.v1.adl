@@ -168,7 +168,7 @@ definition
             }
         }
         links cardinality matches {0..*; unordered} matches {
-            LINK[at0.1.3] occurrences matches {1..*} matches {
+            LINK[at0.1.3] occurrences matches {0..1} matches {
                 meaning matches {
                     DV_TEXT matches {
                         value matches {"related to"}
@@ -181,10 +181,9 @@ definition
                     DV_EHR_URI matches {*}
                 }
             }
-        }
-		
+        }		
         otherParticipations cardinality matches {0..*; unordered} matches {
-            PARTICIPATION[at0.1.8] occurrences matches {1..*} matches {
+            PARTICIPATION[at0.1.8] occurrences matches {0..1} matches {
                 function matches {
                     DV_TEXT matches {
                         value matches {"Request doctor"}
@@ -202,7 +201,7 @@ definition
                     }
                 }
             }
-            PARTICIPATION[at0.1.12] occurrences matches {1..*} matches {
+            PARTICIPATION[at0.1.12] occurrences matches {0..1} matches {
                 function matches {
                     DV_TEXT matches {
                         value matches {"Receive department"}

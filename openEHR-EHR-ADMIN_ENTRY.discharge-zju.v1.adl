@@ -203,7 +203,7 @@ definition
             }
         }
         links cardinality matches {0..*; unordered} matches {
-            LINK[at0.7] occurrences matches {1..*} matches {
+            LINK[at0.7] occurrences matches {0..1} matches {
                 meaning matches {
                     DV_TEXT matches {
                         value matches {"in response to"}

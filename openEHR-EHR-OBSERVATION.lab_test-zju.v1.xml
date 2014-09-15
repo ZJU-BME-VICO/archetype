@@ -14,7 +14,7 @@
     <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0005]/value/value" column="testItemName"/>
     <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0078.1]/value/value" column="testResult"/>
     <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0.5]/value/value" column="testResultUnit"/>
-    <one-to-many name="/data[at0001]/events[at0002]/data[at0003]/items[at0089]" class="openEHR-EHR-CLUSTER.lab_result_annotation-zju"/>
+    <one-to-many name="/data[at0001]/events[at0002]/data[at0003]/items[at0089.1]" class="openEHR-EHR-CLUSTER.lab_result_annotation-zju"/>
     <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0.6]/value/value" column="testDevice"/>
     <property name="/protocol[at0004]/items[at0075]/value/value" column="testDateTime"/>
 

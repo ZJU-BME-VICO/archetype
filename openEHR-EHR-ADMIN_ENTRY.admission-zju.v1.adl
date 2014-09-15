@@ -373,7 +373,7 @@ definition
             }
         }
         otherParticipations cardinality matches {0..*; unordered} matches {
-            PARTICIPATION[at0.26] occurrences matches {1..*} matches {
+            PARTICIPATION[at0.26] occurrences matches {0..1} matches {
                 function matches {
                     DV_TEXT matches {
                         value matches {"Director"}
@@ -391,7 +391,7 @@ definition
                     }
                 }
             }
-            PARTICIPATION[at0.30] occurrences matches {1..*} matches {
+            PARTICIPATION[at0.30] occurrences matches {0..1} matches {
                 function matches {
                     DV_TEXT matches {
                         value matches {"Deputy doctor"}
@@ -409,7 +409,7 @@ definition
                     }
                 }
             }
-            PARTICIPATION[at0.34] occurrences matches {1..*} matches {
+            PARTICIPATION[at0.34] occurrences matches {0..1} matches {
                 function matches {
                     DV_TEXT matches {
                         value matches {"Attending doctor"}
@@ -427,7 +427,7 @@ definition
                     }
                 }
             }
-            PARTICIPATION[at0.38] occurrences matches {1..*} matches {
+            PARTICIPATION[at0.38] occurrences matches {0..1} matches {
                 function matches {
                     DV_TEXT matches {
                         value matches {"Resident doctor"}
@@ -445,7 +445,7 @@ definition
                     }
                 }
             }
-            PARTICIPATION[at0.42] occurrences matches {1..*} matches {
+            PARTICIPATION[at0.42] occurrences matches {0..1} matches {
                 function matches {
                     DV_TEXT matches {
                         value matches {"Primary nurse"}
@@ -463,7 +463,7 @@ definition
                     }
                 }
             }
-            PARTICIPATION[at0.46] occurrences matches {1..*} matches {
+            PARTICIPATION[at0.46] occurrences matches {0..1} matches {
                 function matches {
                     DV_TEXT matches {
                         value matches {"Continuing doctor"}
@@ -481,7 +481,7 @@ definition
                     }
                 }
             }
-            PARTICIPATION[at0.50] occurrences matches {1..*} matches {
+            PARTICIPATION[at0.50] occurrences matches {0..1} matches {
                 function matches {
                     DV_TEXT matches {
                         value matches {"Interns doctor"}
@@ -499,7 +499,7 @@ definition
                     }
                 }
             }
-            PARTICIPATION[at0.54] occurrences matches {1..*} matches {
+            PARTICIPATION[at0.54] occurrences matches {0..1} matches {
                 function matches {
                     DV_TEXT matches {
                         value matches {"Recorder"}
@@ -517,7 +517,7 @@ definition
                     }
                 }
             }
-            PARTICIPATION[at0.58] occurrences matches {1..*} matches {
+            PARTICIPATION[at0.58] occurrences matches {0..1} matches {
                 function matches {
                     DV_TEXT matches {
                         value matches {"Outpatient doctor"}
