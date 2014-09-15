@@ -14,7 +14,7 @@
     <property name="/data[at0003]/items[at0.4]/value" column="dischargeMemo"/>
     <property name="/data[at0003]/items[at0.5]/value" column="readmission"/>
     <property name="/data[at0003]/items[at0.6]/value" column="readmissionPurpose"/>
-    <property name="/data[at0003]/items[at0.7]/value" column="admission"/>
+    <many-to-one name="/links[at0.7]/target/value" column="admission" class="openEHR-EHR-ADMIN_ENTRY.admission-zju"/>
 
   </class>
 

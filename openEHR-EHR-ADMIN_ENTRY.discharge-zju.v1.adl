@@ -195,11 +195,21 @@ definition
 									DV_TEXT matches {*}
 								}
 							}
-							ELEMENT[at0.7] occurrences matches {0..1} matches {	-- Further Action
-								value matches {
-									DV_TEXT matches {*}
-								}
-							}
+				}
+			}
+		}
+		links cardinality matches {0..*; unordered} matches {
+			LINK[at0.7] occurrences matches {1..*} matches {
+				meaning matches {
+					DV_TEXT matches {
+						value matches {"in response to"}
+					}
+				}
+				type matches {
+					DV_TEXT matches {*}
+				}
+				target matches {
+					DV_EHR_URI matches {*}
 				}
 			}
 		}
