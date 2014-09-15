@@ -51,9 +51,9 @@ definition
         items cardinality matches {1..*; ordered} matches {
             CLUSTER[at0001] matches {
                 items matches {
-                    ELEMENT[at0010] matches {
+                    ELEMENT[at0010.1] matches {
                         value matches {
-                            DV_DATE matches {*}
+                            DV_DATE_TIME matches {*}
                         }
                     }
                     ELEMENT[at0011] occurrences matches {0..*} matches {
@@ -351,6 +351,11 @@ ontology
 
                 >
                 ["at0010"] = <
+                    text = <"Data do nascimento">
+                    description = <"A data do nascimento da pessoa">
+
+                >
+                ["at0010.1"] = <
                     text = <"Data do nascimento">
                     description = <"A data do nascimento da pessoa">
 
@@ -655,6 +660,11 @@ ontology
 
                 >
                 ["at0010"] = <
+                    text = <"Birth date">
+                    description = <"The date of birth of a person">
+
+                >
+                ["at0010.1"] = <
                     text = <"Birth date">
                     description = <"The date of birth of a person">
 

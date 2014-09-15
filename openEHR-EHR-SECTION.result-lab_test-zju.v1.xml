@@ -2,7 +2,7 @@
 
 <hibernate-mapping package="">
 
-  <class name="openEHR-EHR-SECTION.result-lab_test-zju.v1" table="">
+  <class name="openEHR-EHR-SECTION.result-lab_test-zju.v1">
 
     <id name="/uid/value">
       <column name="id" />

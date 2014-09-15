@@ -2,14 +2,14 @@
 
 <hibernate-mapping package="">
 
-  <class name="openEHR-EHR-CLUSTER.lab_result_annotation-zju.v1" table="">
+  <class name="openEHR-EHR-CLUSTER.lab_result_annotation-zju.v1">
 
     <id name="/uid/value">
       <column name="id" />
     </id>
 
-    <property name="/items[at0002]/value" column="resultComment"/>
-    <property name="/items[at0005]/value" column="referenceRange"/>
+    <property name="/items[at0002]/value/value" column="resultComment"/>
+    <property name="/items[at0005]/value/value" column="referenceRange"/>
 
   </class>
 
