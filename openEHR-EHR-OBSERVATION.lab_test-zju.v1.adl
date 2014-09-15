@@ -180,19 +180,6 @@ definition
                     DV_EHR_URI matches {*}
                 }
             }
-            LINK[at0.4] occurrences matches {1..*} matches {
-                meaning matches {
-                    DV_TEXT matches {
-                        value matches {"in response to"}
-                    }
-                }
-                type matches {
-                    DV_TEXT matches {*}
-                }
-                target matches {
-                    DV_EHR_URI matches {*}
-                }
-            }
         }
     }
 
@@ -340,11 +327,6 @@ This archetype also acts as the parent for specialisations appropriate for more 
                 >
                 ["at0.3"] = <
                     text = <"Addmission">
-                    description = <"">
-
-                >
-                ["at0.4"] = <
-                    text = <"Lab test item">
                     description = <"">
 
                 >

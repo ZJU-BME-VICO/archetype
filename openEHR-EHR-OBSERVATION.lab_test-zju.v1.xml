@@ -2,7 +2,7 @@
 
 <hibernate-mapping package="">
 
-  <class name="openEHR-EHR-OBSERVATION.lab_test-zju.v1" table="">
+  <class name="openEHR-EHR-OBSERVATION.lab_test-zju.v1">
 
     <id name="/uid/value">
       <column name="id" />
@@ -10,7 +10,7 @@
 
     <many-to-one name="/subject[at0.7]/externalRef[at0.8]/id[at0.9]/value" column="patient" class="openEHR-DEMOGRAPHIC-PERSON.person-patient-zju"/>
     <many-to-one name="/links[at0.3]/target/value" column="admission" class="openEHR-EHR-ADMIN_ENTRY.admission-zju"/>
-    <many-to-one name="/links[at0.4]/target/value" column="testRequest" class="openEHR-EHR-INSTRUCTION.request-lab_test-zju"/>
+    <many-to-one name="/protocol[at0004]/items[at0062]/value" column="testRequest" class="openEHR-EHR-INSTRUCTION.request-lab_test-zju"/>
     <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0005]/value" column="testItemName"/>
     <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0078.1]/value" column="testResult"/>
     <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0.5]/value" column="testResultUnit"/>

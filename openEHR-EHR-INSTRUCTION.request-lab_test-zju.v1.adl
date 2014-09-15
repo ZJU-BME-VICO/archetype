@@ -182,6 +182,45 @@ definition
                 }
             }
         }
+		
+        otherParticipations cardinality matches {0..*; unordered} matches {
+            PARTICIPATION[at0.1.8] occurrences matches {1..*} matches {
+                function matches {
+                    DV_TEXT matches {
+                        value matches {"Request doctor"}
+                    }
+                }
+                performer matches {
+                    PartyProxy[at0.1.9] matches {
+                        externalRef matches {
+                            PartyRef[at0.1.10] matches {
+                                id matches {
+                                    GENERIC_ID[at0.1.11] matches {*}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            PARTICIPATION[at0.1.12] occurrences matches {1..*} matches {
+                function matches {
+                    DV_TEXT matches {
+                        value matches {"Receive department"}
+                    }
+                }
+                performer matches {
+                    PartyProxy[at0.1.13] matches {
+                        externalRef matches {
+                            PartyRef[at0.1.14] matches {
+                                id matches {
+                                    GENERIC_ID[at0.1.15] matches {*}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+		}
     }
 
 ontology
@@ -365,6 +404,46 @@ ontology
                 >
                 ["at0.1.7"] = <
                     text = <"Patient id">
+                    description = <"*">
+
+                >
+                ["at0.1.8"] = <
+                    text = <"Request doctor">
+                    description = <"*">
+
+                >
+                ["at0.1.9"] = <
+                    text = <"Request doctor">
+                    description = <"*">
+
+                >
+                ["at0.1.10"] = <
+                    text = <"Request doctor reference">
+                    description = <"*">
+
+                >
+                ["at0.1.11"] = <
+                    text = <"Request doctor id">
+                    description = <"*">
+
+                >
+                ["at0.1.12"] = <
+                    text = <"Receive department">
+                    description = <"*">
+
+                >
+                ["at0.1.13"] = <
+                    text = <"Receive department">
+                    description = <"*">
+
+                >
+                ["at0.1.14"] = <
+                    text = <"Receive department reference">
+                    description = <"*">
+
+                >
+                ["at0.1.15"] = <
+                    text = <"Receive department id">
                     description = <"*">
 
                 >
