@@ -333,52 +333,12 @@ definition
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0.7] matches {	-- Patient identifier
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0.8] matches {	-- Patient identifier
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0.9] matches {	-- Patient identifier
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0.10] matches {	-- Patient identifier
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0.11] matches {	-- Patient identifier
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0.12] matches {	-- Patient identifier
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0.13] matches {	-- Patient identifier
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
 					ELEMENT[at0.14] matches {	-- Patient identifier
 						value matches {
 							DV_TEXT matches {*}
 						}
 					}
 					ELEMENT[at0.15] matches {	-- Patient identifier
-						value matches {
-							DV_TEXT matches {*}
-						}
-					}
-					ELEMENT[at0.16] matches {	-- Patient identifier
 						value matches {
 							DV_TEXT matches {*}
 						}
@@ -408,9 +368,168 @@ definition
 							DV_TEXT matches {*}
 						}
 					}
-					ELEMENT[at0.22] matches {	-- Patient identifier
-						value matches {
-							DV_TEXT matches {*}
+				}
+			}
+		}
+		otherParticipations cardinality matches {0..*; unordered} matches {
+			PARTICIPATION[at0.26]  occurrences matches {1..*} matches {
+				function matches {
+					DV_TEXT matches {
+						value matches {"Director"}
+					}
+				}
+				performer matches {
+					PartyProxy[at0.27] matches {
+						externalRef matches {
+							PartyRef[at0.28] matches {
+								id matches {
+									GENERIC_ID[at0.29] matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+			PARTICIPATION[at0.30]  occurrences matches {1..*} matches {
+				function matches {
+					DV_TEXT matches {
+						value matches {"Deputy doctor"}
+					}
+				}
+				performer matches {
+					PartyProxy[at0.31] matches {
+						externalRef matches {
+							PartyRef[at0.32] matches {
+								id matches {
+									GENERIC_ID[at0.33] matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+			PARTICIPATION[at0.34]  occurrences matches {1..*} matches {
+				function matches {
+					DV_TEXT matches {
+						value matches {"Attending doctor"}
+					}
+				}
+				performer matches {
+					PartyProxy[at0.35] matches {
+						externalRef matches {
+							PartyRef[at0.36] matches {
+								id matches {
+									GENERIC_ID[at0.37] matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+			PARTICIPATION[at0.38]  occurrences matches {1..*} matches {
+				function matches {
+					DV_TEXT matches {
+						value matches {"Resident doctor"}
+					}
+				}
+				performer matches {
+					PartyProxy[at0.39] matches {
+						externalRef matches {
+							PartyRef[at0.40] matches {
+								id matches {
+									GENERIC_ID[at0.41] matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+			PARTICIPATION[at0.42]  occurrences matches {1..*} matches {
+				function matches {
+					DV_TEXT matches {
+						value matches {"Primary nurse"}
+					}
+				}
+				performer matches {
+					PartyProxy[at0.43] matches {
+						externalRef matches {
+							PartyRef[at0.44] matches {
+								id matches {
+									GENERIC_ID[at0.45] matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+			PARTICIPATION[at0.46]  occurrences matches {1..*} matches {
+				function matches {
+					DV_TEXT matches {
+						value matches {"Continuing doctor"}
+					}
+				}
+				performer matches {
+					PartyProxy[at0.47] matches {
+						externalRef matches {
+							PartyRef[at0.48] matches {
+								id matches {
+									GENERIC_ID[at0.49] matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+			PARTICIPATION[at0.50]  occurrences matches {1..*} matches {
+				function matches {
+					DV_TEXT matches {
+						value matches {"Interns doctor"}
+					}
+				}
+				performer matches {
+					PartyProxy[at0.51] matches {
+						externalRef matches {
+							PartyRef[at0.52] matches {
+								id matches {
+									GENERIC_ID[at0.53] matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+			PARTICIPATION[at0.54]  occurrences matches {1..*} matches {
+				function matches {
+					DV_TEXT matches {
+						value matches {"Recorder"}
+					}
+				}
+				performer matches {
+					PartyProxy[at0.55] matches {
+						externalRef matches {
+							PartyRef[at0.56] matches {
+								id matches {
+									GENERIC_ID[at0.57] matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+			PARTICIPATION[at0.58]  occurrences matches {1..*} matches {
+				function matches {
+					DV_TEXT matches {
+						value matches {"Outpatient doctor"}
+					}
+				}
+				performer matches {
+					PartyProxy[at0.59] matches {
+						externalRef matches {
+							PartyRef[at0.60] matches {
+								id matches {
+									GENERIC_ID[at0.61] matches {*}
+								}
+							}
 						}
 					}
 				}
@@ -785,41 +904,6 @@ patient">
 					text = <"Nursing class">
 					description = <"*">
 				>
-                ["at0.7"] = <
-                    text = <"Director id">
-                    description = <"*">
-
-                >
-                ["at0.8"] = <
-                    text = <"Deputy doctor id">
-                    description = <"*">
-
-                >
-                ["at0.9"] = <
-                    text = <"Attending doctor id">
-                    description = <"*">
-
-                >
-                ["at0.10"] = <
-                    text = <"Resident doctor id">
-                    description = <"*">
-
-                >
-                ["at0.11"] = <
-                    text = <"Primary nurse id">
-                    description = <"*">
-
-                >
-                ["at0.12"] = <
-                    text = <"Continuing doctor id">
-                    description = <"*">
-
-                >
-                ["at0.13"] = <
-                    text = <"Interns doctor id">
-                    description = <"*">
-
-                >
                 ["at0.14"] = <
                     text = <"Doctor group id">
                     description = <"*">
@@ -827,11 +911,6 @@ patient">
                 >
                 ["at0.15"] = <
                     text = <"Nursing group id">
-                    description = <"*">
-
-                >
-                ["at0.16"] = <
-                    text = <"Recorder id">
                     description = <"*">
 
                 >
@@ -860,11 +939,6 @@ patient">
                     description = <"*">
 
                 >
-                ["at0.22"] = <
-                    text = <"Outpatient doctor id">
-                    description = <"*">
-
-                >
                 ["at0.23"] = <
                     text = <"Patient">
                     description = <"*">
@@ -877,6 +951,186 @@ patient">
                 >
                 ["at0.25"] = <
                     text = <"Patient id">
+                    description = <"*">
+
+                >
+                ["at0.26"] = <
+                    text = <"Director">
+                    description = <"*">
+
+                >
+                ["at0.27"] = <
+                    text = <"Director">
+                    description = <"*">
+
+                >
+                ["at0.28"] = <
+                    text = <"Director reference">
+                    description = <"*">
+
+                >
+                ["at0.29"] = <
+                    text = <"Director id">
+                    description = <"*">
+
+                >
+                ["at0.30"] = <
+                    text = <"Deputy doctor">
+                    description = <"*">
+
+                >
+                ["at0.31"] = <
+                    text = <"Deputy doctor">
+                    description = <"*">
+
+                >
+                ["at0.32"] = <
+                    text = <"Deputy doctor reference">
+                    description = <"*">
+
+                >
+                ["at0.33"] = <
+                    text = <"Deputy doctor id">
+                    description = <"*">
+
+                >
+                ["at0.34"] = <
+                    text = <"Attending doctor">
+                    description = <"*">
+
+                >
+                ["at0.35"] = <
+                    text = <"Attending doctor">
+                    description = <"*">
+
+                >
+                ["at0.36"] = <
+                    text = <"Attending doctor reference">
+                    description = <"*">
+
+                >
+                ["at0.37"] = <
+                    text = <"Attending doctor id">
+                    description = <"*">
+
+                >				
+                ["at0.38"] = <
+                    text = <"Resident doctor">
+                    description = <"*">
+
+                >
+                ["at0.39"] = <
+                    text = <"Resident doctor">
+                    description = <"*">
+
+                >
+                ["at0.40"] = <
+                    text = <"Resident doctor reference">
+                    description = <"*">
+
+                >
+                ["at0.41"] = <
+                    text = <"Resident doctor id">
+                    description = <"*">
+
+                >								
+                ["at0.42"] = <
+                    text = <"Primary nurse">
+                    description = <"*">
+
+                >
+                ["at0.43"] = <
+                    text = <"Primary nurse">
+                    description = <"*">
+
+                >
+                ["at0.44"] = <
+                    text = <"Primary nurse reference">
+                    description = <"*">
+
+                >
+                ["at0.45"] = <
+                    text = <"Primary nurse id">
+                    description = <"*">
+
+                >						
+                ["at0.46"] = <
+                    text = <"Continuing doctor">
+                    description = <"*">
+
+                >
+                ["at0.47"] = <
+                    text = <"Continuing doctor">
+                    description = <"*">
+
+                >
+                ["at0.48"] = <
+                    text = <"Continuing doctor reference">
+                    description = <"*">
+
+                >
+                ["at0.49"] = <
+                    text = <"Continuing doctor id">
+                    description = <"*">
+
+                >				
+                ["at0.50"] = <
+                    text = <"Interns doctor">
+                    description = <"*">
+
+                >
+                ["at0.51"] = <
+                    text = <"Interns doctor">
+                    description = <"*">
+
+                >
+                ["at0.52"] = <
+                    text = <"Interns doctor reference">
+                    description = <"*">
+
+                >
+                ["at0.53"] = <
+                    text = <"Interns doctor id">
+                    description = <"*">
+
+                >		
+                ["at0.54"] = <
+                    text = <"Recorder">
+                    description = <"*">
+
+                >
+                ["at0.55"] = <
+                    text = <"Recorder">
+                    description = <"*">
+
+                >
+                ["at0.56"] = <
+                    text = <"Recorder reference">
+                    description = <"*">
+
+                >
+                ["at0.57"] = <
+                    text = <"Recorder id">
+                    description = <"*">
+
+                >
+                ["at0.58"] = <
+                    text = <"Outpatient doctor">
+                    description = <"*">
+
+                >
+                ["at0.59"] = <
+                    text = <"Outpatient doctor">
+                    description = <"*">
+
+                >
+                ["at0.60"] = <
+                    text = <"Outpatient doctor reference">
+                    description = <"*">
+
+                >
+                ["at0.61"] = <
+                    text = <"Outpatient doctor id">
                     description = <"*">
 
                 >
