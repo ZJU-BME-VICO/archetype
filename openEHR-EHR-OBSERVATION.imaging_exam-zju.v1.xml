@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping package="">
+
+  <class name="openEHR-EHR-OBSERVATION.imaging_exam-zju" table="">
+
+    <id name="/uid/value">
+      <column name="id" />
+    </id>
+
+    <many-to-one name="/protocol[at0025]/items[at0.2]/value" column="patient" class="openEHR-DEMOGRAPHIC-PERSON.person-patient-zju"/>
+    <many-to-one name="/links[at0.3]/target/value" column="admission" class="openEHR-EHR-ADMIN_ENTRY.admission-zju"/>
+    <property name="/links[at0.4]/target/value" column="examItem"/>
+    <property name="/protocol[at0025]/items[at0027]/items[at0028]/value" column="requestID"/>
+    <property name="/protocol[at0025]/items[at0027]/items[at0029]/value" column="examItemName"/>
+    <property name="/protocol[at0025]/items[at0027]/items[at0031]/value" column="receiverIdentifier"/>
+    <many-to-one name="/protocol[at0025]/items[at0026]" column="examPeformer" class="openEHR-EHR-CLUSTER.imaging_exam_peformer_dict-zju"/>
+    <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0008]/value" column="examFindings"/>
+    <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0021]/value" column="examConclusion"/>
+    <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0023]/value" column="examComment"/>
+    <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0024]/value" column="reportDatetime"/>
+    <property name="/protocol[at0025]/items[at0041]" column="examParameter"/>
+    <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/value" column="reportURL"/>
+
+
+  </class>
+
+</hibernate-mapping>
