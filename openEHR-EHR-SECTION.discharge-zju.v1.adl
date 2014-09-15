@@ -1,0 +1,55 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-SECTION.discharge-zju.v1
+
+concept
+	[at0000]	-- SOAP
+language
+	original_language = <[ISO_639-1::en]>
+description
+	original_author = <
+		["name"] = <"Li Wang">
+		["organisation"] = <"Zhejiang University">
+		["email"] = <"daowangli@icloud.com">
+		["date"] = <"15/09/2014">
+	>
+	details = <
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"Discharge">
+			use = <"Discharge">
+			keywords = <"discharge">
+			misuse = <"">
+			copyright = <"copyright (c) 2014 Zhejiang University">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <"">
+	other_details = <
+	>
+
+definition
+	SECTION[at0000] matches {	-- SOAP
+		items cardinality matches {0..*; unordered} matches {
+					allow_archetype ADMIN_ENTRY[at0001] occurrences matches {0..1} matches {	-- Story and reports from the person and others 
+						include
+							archetype_id/value matches {/openEHR-EHR-ADMIN_ENTRY\.discharge-zju\.v1/}
+					}
+		}
+	}
+
+
+ontology
+	term_definitions = <
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Discharge">
+					description = <"">
+				>
+				["at0001"] = <
+					text = <"Discharge">
+					description = <"">
+				>
+			>
+		>
+	>
