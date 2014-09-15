@@ -31,6 +31,17 @@ description
 
 definition
 	ADMIN_ENTRY[at0000.1] matches {	-- Discharge administrative information
+		subject matches {
+			PartyProxy[at0.8] matches {
+				externalRef matches {
+					PartyRef[at0.9] matches {
+						id matches {
+							GENERIC_ID[at0.10] matches {*}
+						}
+					}
+				}
+			}
+		}
 		data matches {
 			ITEM_TREE[at0003] matches {	-- Tree
 				items cardinality matches {0..*; unordered} matches {
@@ -170,11 +181,6 @@ definition
 							}
 						}
 					}
-							ELEMENT[at0.2] occurrences matches {0..1} matches {	-- Further Action
-								value matches {
-									DV_TEXT matches {*}
-								}
-							}
 							ELEMENT[at0.3] occurrences matches {0..1} matches {	-- Further Action
 								value matches {
 									DV_TEXT matches {*}
@@ -372,10 +378,6 @@ ontology
 					text = <"Further Action">
 					description = <"*">
 				>
-				["at0.2"] = <
-					text = <"Patient">
-					description = <"*">
-				>
 				["at0.3"] = <
 					text = <"Discharge type">
 					description = <"*">
@@ -396,6 +398,21 @@ ontology
 					text = <"Admission">
 					description = <"*">
 				>
+                ["at0.8"] = <
+                    text = <"Patient">
+                    description = <"*">
+
+                >
+                ["at0.9"] = <
+                    text = <"Patient reference">
+                    description = <"*">
+
+                >
+                ["at0.10"] = <
+                    text = <"Patient id">
+                    description = <"*">
+
+                >
 			>
 		>
 	>

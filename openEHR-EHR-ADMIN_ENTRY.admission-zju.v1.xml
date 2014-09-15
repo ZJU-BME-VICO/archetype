@@ -13,7 +13,7 @@
     <property name="/data[at0001]/items[at0094]/items[at0077]/value" column="ward"/>
     <property name="/data[at0001]/items[at0071]/value" column="admissionDateTime"/>
     <property name="/data[at0001]/items[at0.2]/value" column="admissionStatus"/>
-    <property name="/data[at0001]/items[at0.3]/value" column="patient"/>
+    <property name="/subject[at0.23]/externalRef[at0.24]/id[at0.25]/value" column="patient"/>
     <property name="/data[at0001]/items[at0094]/items[at0078]/value" column="room"/>
     <property name="/data[at0001]/items[at0094]/items[at0079]/value" column="bed"/>
     <property name="/data[at0001]/items[at0.4]/value" column="mainDiagnosis"/>

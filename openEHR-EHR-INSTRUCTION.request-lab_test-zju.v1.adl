@@ -33,6 +33,17 @@ If there are more specific details about the test and/or specimen include this i
 
 definition
 	INSTRUCTION[at0000.1.1] matches {	-- Laboratory Test request
+		subject matches {
+			PartyProxy[at0.1.5] matches {
+				externalRef matches {
+					PartyRef[at0.1.6] matches {
+						id matches {
+							GENERIC_ID[at0.1.7] matches {*}
+						}
+					}
+				}
+			}
+		}
 		activities cardinality matches {0..*; unordered} matches {
 			ACTIVITY[at0001] occurrences matches {1..*} matches {	-- Request
 				description matches {
@@ -147,11 +158,6 @@ definition
 					allow_archetype CLUSTER[at0112] occurrences matches {0..*} matches {	-- Localisation
 						include
 							archetype_id/value matches {/.*/}
-					}
-					ELEMENT[at0.1.2] occurrences matches {0..1} matches {	-- Patient identifier
-						value matches {
-							DV_TEXT matches {*}
-						}
 					}
 					ELEMENT[at0.1.4] occurrences matches {0..1} matches {	-- Request DateTime
 						value matches {
@@ -307,10 +313,6 @@ ontology
 					text = <"Latest DateTime test required">
 					description = <"The latest date that is acceptable for the service to be completed.">
 				>
-				["at0.1.2"] = <
-					text = <"Patient identifier">
-					description = <"The ID assigned to the patient by the healthcare provider or organisation.">
-				>
 				["at0.1.3"] = <
 					text = <"Addmission">
 					description = <"">
@@ -319,6 +321,21 @@ ontology
 					text = <"DateTime test requirement ordered">
 					description = <"The date that the request is ordered.">
 				>
+                ["at0.1.5"] = <
+                    text = <"Patient">
+                    description = <"*">
+
+                >
+                ["at0.1.6"] = <
+                    text = <"Patient reference">
+                    description = <"*">
+
+                >
+                ["at0.1.7"] = <
+                    text = <"Patient id">
+                    description = <"*">
+
+                >
 			>
 		>
 	>

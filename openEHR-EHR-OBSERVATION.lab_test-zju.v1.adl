@@ -38,6 +38,17 @@ IHE. IHE, Laboratory Technical Framework, Volume 3 Content [Internet]. 2008;Avai
 
 definition
 	OBSERVATION[at0000.1] matches {	-- Laboratory test
+		subject matches {
+			PartyProxy[at0.7] matches {
+				externalRef matches {
+					PartyRef[at0.8] matches {
+						id matches {
+							GENERIC_ID[at0.9] matches {*}
+						}
+					}
+				}
+			}
+		}
 		data matches {
 			HISTORY[at0001] matches {	-- Event Series
 				events cardinality matches {1..*; unordered} matches {
@@ -147,11 +158,6 @@ definition
 					ELEMENT[at0075] occurrences matches {0..1} matches {	-- Datetime result issued
 						value matches {
 							DV_DATE_TIME matches {*}
-						}
-					}
-					ELEMENT[at0.2] occurrences matches {0..1} matches {	-- Patient identifier
-						value matches {
-							DV_TEXT matches {*}
 						}
 					}
 				}
@@ -303,10 +309,6 @@ This archetype also acts as the parent for specialisations appropriate for more 
 					text = <"Requestor">
 					description = <"Details of the clinician or organisation requesting the laboratory test.">
 				>
-				["at0.2"] = <
-					text = <"Patient identifier">
-					description = <"The ID assigned to the patient by the healthcare provider or organisation.">
-				>
 				["at0.3"] = <
 					text = <"Addmission">
 					description = <"">
@@ -323,6 +325,21 @@ This archetype also acts as the parent for specialisations appropriate for more 
 					text = <"Lab test device identifier">
 					description = <"">
 				>
+                ["at0.7"] = <
+                    text = <"Patient">
+                    description = <"*">
+
+                >
+                ["at0.8"] = <
+                    text = <"Patient reference">
+                    description = <"*">
+
+                >
+                ["at0.9"] = <
+                    text = <"Patient id">
+                    description = <"*">
+
+                >
 			>
 		>
 	>
