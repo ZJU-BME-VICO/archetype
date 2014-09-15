@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping package="">
+
+  <class name="openEHR-DEMOGRAPHIC-PARTY_IDENTITY.person_name-zju.v1" table="">
+
+    <id name="/uid/value">
+      <column name="id" />
+    </id>
+
+    <property name="/details[at0001]/items[at0002]/value" column="givenName"/>
+    <property name="/details[at0001]/items[at0003]/value" column="familyName"/>
+    <property name="/details[at0001]/items[at0008]/value" column="preferredName"/>
+    <property name="/details[at0001]/items[at0010]/value" column="fullName"/>
+    <property name="/details[at0001]/items[at0.2]/value" column="phoneticName"/>
+
+  </class>
+
+</hibernate-mapping>
