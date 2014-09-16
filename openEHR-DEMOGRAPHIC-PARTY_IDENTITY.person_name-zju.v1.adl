@@ -48,95 +48,95 @@ description
     >
 
 definition
-    PARTY_IDENTITY[at0000.1] matches {
+    PARTY_IDENTITY[at0000.1] matches {	--	Person name
         name matches {
             DV_TEXT matches {*}
             DV_CODED_TEXT matches {
                 defining_code matches {
                     [local::
-                    at0023,
-                    at0024,
-                    at0025,
-                    at0026,
-                    at0027,
-                    at0028]
+                    at0023,	--	Reporting name
+                    at0024,	--	Newborn name
+                    at0025,	--	Professional or business name
+                    at0026,	--	Maiden name
+                    at0027,	--	Legal name
+                    at0028]	--	Other name
                 }
             }
         }
         details matches {
-            ITEM_TREE[at0001] occurrences matches {0..1} matches {
+            ITEM_TREE[at0001] occurrences matches {0..1} matches {	--	Name
                 items cardinality matches {1..*; ordered} matches {
-                    ELEMENT[at0002] occurrences matches {0..*} matches {
+                    ELEMENT[at0002] occurrences matches {0..*} matches {	--	Given name
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0003] occurrences matches {0..*} matches {
+                    ELEMENT[at0003] occurrences matches {0..*} matches {	--	Family name
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0004] occurrences matches {0..*} matches {
+                    ELEMENT[at0004] occurrences matches {0..*} matches {	--	Title
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0005] occurrences matches {0..*} matches {
+                    ELEMENT[at0005] occurrences matches {0..*} matches {	--	Suffix
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0019] occurrences matches {0..1} matches {
+                    ELEMENT[at0019] occurrences matches {0..1} matches {	--	Usage interval
                         value matches {
                             DV_INTERVAL<DV_DATE> matches {*}
                         }
                     }
-                    ELEMENT[at0020] occurrences matches {0..1} matches {
+                    ELEMENT[at0020] occurrences matches {0..1} matches {	--	Usage identifier
                         value matches {
                             DV_IDENTIFIER matches {*}
                         }
                     }
-                    CLUSTER[at0007] occurrences matches {0..1} matches {
+                    CLUSTER[at0007] occurrences matches {0..1} matches {	--	Alternative name representations
                         items cardinality matches {1..*; ordered} matches {
-                            ELEMENT[at0021] matches {
+                            ELEMENT[at0021] matches {	--	Representation usage
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0022] matches {
+                            ELEMENT[at0022] matches {	--	Alternative representation
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
                         }
                     }
-                    ELEMENT[at0008] matches {
+                    ELEMENT[at0008] matches {	--	Preferred name
                         value matches {
                             DV_BOOLEAN matches {*}
                         }
                     }
-                    ELEMENT[at0009] occurrences matches {0..1} matches {
+                    ELEMENT[at0009] occurrences matches {0..1} matches {	--	Issues of accuracy and privacy
                         value matches {
                             DV_TEXT matches {*}
                             DV_CODED_TEXT matches {
                                 defining_code matches {
                                     [local::
-                                    at0031,
-                                    at0032,
-                                    at0033,
-                                    at0034,
-                                    at0035,
-                                    at0036]
+                                    at0031,	--	Unreliable information
+                                    at0032,	--	Known misspelling
+                                    at0033,	--	Name not to be used
+                                    at0034,	--	Name linkage forbidden by law
+                                    at0035,	--	Special privacy/security requirements
+                                    at0036]	--	Temporary name
                                 }
                             }
                         }
                     }
-                    ELEMENT[at0010] occurrences matches {0..1} matches {
+                    ELEMENT[at0010] occurrences matches {0..1} matches {	--	Full Name
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0.2] occurrences matches {0..1} matches {
+                    ELEMENT[at0.2] occurrences matches {0..1} matches {	--	Phonetic name
                         value matches {
                             DV_TEXT matches {*}
                         }

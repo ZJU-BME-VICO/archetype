@@ -8,33 +8,33 @@
       <column name="id" />
     </id>
 
-    <property name="/data[at0001]/items[at0002]/value/value" column="patientType"/>
+    <property name="/data[at0001]/items[at0002]/value/definingCode/codeString" column="patientType"/>
     <property name="/data[at0001]/items[at0094]/items[at0074]/value/value" column="department"/>
     <property name="/data[at0001]/items[at0094]/items[at0077]/value/value" column="ward"/>
     <property name="/data[at0001]/items[at0071]/value/value" column="admissionDateTime"/>
     <property name="/data[at0001]/items[at0.2]/value/value" column="admissionStatus"/>
-    <property name="/subject[at0.23]/externalRef[at0.24]/id[at0.25]/value" column="patient"/>
+    <property name="/subject/externalRef/id/value" column="patient"/>
     <property name="/data[at0001]/items[at0094]/items[at0078]/value/value" column="room"/>
     <property name="/data[at0001]/items[at0094]/items[at0079]/value/value" column="bed"/>
     <property name="/data[at0001]/items[at0.4]/value/value" column="mainDiagnosis"/>
     <property name="/data[at0001]/items[at0.5]/value/value" column="patientCondition"/>
     <property name="/data[at0001]/items[at0.6]/value/value" column="nursingClass"/>
-    <property name="/otherParticipations[at0.26]/performer[at0.27]/externalRef[at0.28]/id[at0.29]/value" column="directorId"/>
-    <property name="/otherParticipations[at0.30]/performer[at0.31]/externalRef[at0.32]/id[at0.33]/value" column="deputyDirectorId"/>
-    <property name="/otherParticipations[at0.34]/performer[at0.35]/externalRef[at0.36]/id[at0.37]/value" column="attendingDoctorId"/>
-    <property name="/otherParticipations[at0.38]/performer[at0.39]/externalRef[at0.40]/id[at0.41]/value" column="residentDoctorId"/>
-    <property name="/otherParticipations[at0.42]/performer[at0.43]/externalRef[at0.44]/id[at0.45]/value" column="primaryNurseId"/>
-    <property name="/otherParticipations[at0.46]/performer[at0.47]/externalRef[at0.48]/id[at0.49]/value" column="continuingDoctorId"/>
-    <property name="/otherParticipations[at0.50]/performer[at0.51]/externalRef[at0.52]/id[at0.53]/value" column="internsDoctorId"/>
+    <property name="/otherParticipations[at0.26]/performer/externalRef/id/value" column="directorId"/>
+    <property name="/otherParticipations[at0.30]/performer/externalRef/id/value" column="deputyDirectorId"/>
+    <property name="/otherParticipations[at0.34]/performer/externalRef/id/value" column="attendingDoctorId"/>
+    <property name="/otherParticipations[at0.38]/performer/externalRef/id/value" column="residentDoctorId"/>
+    <property name="/otherParticipations[at0.42]/performer/externalRef/id/value" column="primaryNurseId"/>
+    <property name="/otherParticipations[at0.46]/performer/externalRef/id/value" column="continuingDoctorId"/>
+    <property name="/otherParticipations[at0.50]/performer/externalRef/id/value" column="internsDoctorId"/>
     <property name="/data[at0001]/items[at0.14]/value/value" column="doctorGroupId"/>
     <property name="/data[at0001]/items[at0.15]/value/value" column="nurseGroupId"/>
-    <property name="/otherParticipations[at0.54]/performer[at0.55]/externalRef[at0.56]/id[at0.57]/value" column="recorderId"/>
+    <property name="/otherParticipations[at0.54]/performer/externalRef/id/value" column="recorderId"/>
     <property name="/data[at0001]/items[at0.17]/value/value" column="isCharged"/>
     <property name="/data[at0001]/items[at0.18]/value/value" column="hisChargeCount"/>
     <property name="/data[at0001]/items[at0.19]/value/value" column="lastChargeDateTime"/>
     <property name="/data[at0001]/items[at0.20]/value/value" column="firstAdmissionIndicator"/>
     <property name="/data[at0001]/items[at0.21]/value/value" column="specialDepartmentId"/>
-    <property name="/otherParticipations[at0.58]/performer[at0.59]/externalRef[at0.60]/id[at0.61]/value" column="outpatientDoctorId"/>
+    <property name="/otherParticipations[at0.58]/performer/externalRef/id/value" column="outpatientDoctorId"/>
 
   </class>
 

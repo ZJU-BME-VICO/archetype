@@ -30,187 +30,187 @@ description
     >
 
 definition
-    ADMIN_ENTRY[at0000.1] matches {
+    ADMIN_ENTRY[at0000.1] matches {	--	Patient admission
         subject matches {
-            PartyProxy[at0.23] matches {
+            PARTY_SELF matches {
                 externalRef matches {
-                    PartyRef[at0.24] matches {
+                    PARTY_REF matches {
                         id matches {
-                            GENERIC_ID[at0.25] matches {*}
+                            GENERIC_ID matches {*}
                         }
                     }
                 }
             }
         }
         data matches {
-            ITEM_TREE[at0001] matches {
+            ITEM_TREE[at0001] matches {	--	Tree
                 items cardinality matches {2..*; unordered} matches {
-                    ELEMENT[at0002] matches {
+                    ELEMENT[at0002] matches {	--	Patient class
                         value matches {
                             DV_CODED_TEXT matches {
                                 defining_code matches {
                                     [local::
-                                    at0003,
-                                    at0004,
-                                    at0005,
-                                    at0006,
-                                    at0007,
-                                    at0008,
-                                    at0009,
-                                    at0010,
-                                    at0011]
+                                    at0003,	--	Inpatient/overnight patient
+                                    at0004,	--	Same day patient
+                                    at0005,	--	Outpatient
+                                    at0006,	--	Emergency patient
+                                    at0007,	--	Community client
+                                    at0008,	--	Pre-admit
+                                    at0009,	--	Commercial account
+                                    at0010,	--	Not-applicable
+                                    at0011]	--	Unknown
                                 }
                             }
                         }
                     }
-                    CLUSTER[at0073] occurrences matches {0..1} matches {
+                    CLUSTER[at0073] occurrences matches {0..1} matches {	--	Assigned patient location
                         items cardinality matches {1..*; unordered} matches {
-                            ELEMENT[at0074] occurrences matches {0..1} matches {
+                            ELEMENT[at0074] occurrences matches {0..1} matches {	--	Point of care/Unit
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0077] occurrences matches {0..1} matches {
+                            ELEMENT[at0077] occurrences matches {0..1} matches {	--	Ward
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0078] occurrences matches {0..1} matches {
+                            ELEMENT[at0078] occurrences matches {0..1} matches {	--	Room
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0079] occurrences matches {0..1} matches {
+                            ELEMENT[at0079] occurrences matches {0..1} matches {	--	Bed
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            CLUSTER[at0104] occurrences matches {0..1} matches {
+                            CLUSTER[at0104] occurrences matches {0..1} matches {	--	Facility
                                 items cardinality matches {1..*; unordered} matches {
-                                    ELEMENT[at0105] occurrences matches {0..1} matches {
+                                    ELEMENT[at0105] occurrences matches {0..1} matches {	--	Namespace ID
                                         value matches {
                                             DV_TEXT matches {*}
                                         }
                                     }
-                                    ELEMENT[at0106] occurrences matches {0..1} matches {
+                                    ELEMENT[at0106] occurrences matches {0..1} matches {	--	Universal ID
                                         value matches {
                                             DV_TEXT matches {*}
                                         }
                                     }
-                                    ELEMENT[at0107] occurrences matches {0..1} matches {
+                                    ELEMENT[at0107] occurrences matches {0..1} matches {	--	Universal ID type
                                         value matches {
                                             DV_CODED_TEXT matches {
                                                 defining_code matches {
                                                     [local::
-                                                    at0108,
-                                                    at0109,
-                                                    at0110,
-                                                    at0111,
-                                                    at0112,
-                                                    at0113,
-                                                    at0114,
-                                                    at0115,
-                                                    at0116,
-                                                    at0118]
+                                                    at0108,	--	DNS
+                                                    at0109,	--	GUID
+                                                    at0110,	--	HCD
+                                                    at0111,	--	HL7
+                                                    at0112,	--	ISO
+                                                    at0113,	--	L, M, N
+                                                    at0114,	--	Random
+                                                    at0115,	--	UUID
+                                                    at0116,	--	x400
+                                                    at0118]	--	x500
                                                 }
                                             }
                                         }
                                     }
                                 }
                             }
-                            ELEMENT[at0101] occurrences matches {0..1} matches {
+                            ELEMENT[at0101] occurrences matches {0..1} matches {	--	Building
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0102] occurrences matches {0..1} matches {
+                            ELEMENT[at0102] occurrences matches {0..1} matches {	--	Floor
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0103] occurrences matches {0..1} matches {
+                            ELEMENT[at0103] occurrences matches {0..1} matches {	--	Location description
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            CLUSTER[at0084] occurrences matches {0..1} matches {
+                            CLUSTER[at0084] occurrences matches {0..1} matches {	--	Address
                                 items cardinality matches {1..*; unordered} matches {
-                                    ELEMENT[at0085] occurrences matches {0..1} matches {
+                                    ELEMENT[at0085] occurrences matches {0..1} matches {	--	Street
                                         value matches {
                                             DV_TEXT matches {*}
                                         }
                                     }
-                                    ELEMENT[at0086] occurrences matches {0..1} matches {
+                                    ELEMENT[at0086] occurrences matches {0..1} matches {	--	City
                                         value matches {
                                             DV_TEXT matches {*}
                                         }
                                     }
-                                    ELEMENT[at0087] occurrences matches {0..1} matches {
+                                    ELEMENT[at0087] occurrences matches {0..1} matches {	--	State/province
                                         value matches {
                                             DV_TEXT matches {*}
                                         }
                                     }
-                                    ELEMENT[at0088] occurrences matches {0..1} matches {
+                                    ELEMENT[at0088] occurrences matches {0..1} matches {	--	Post code
                                         value matches {
                                             DV_TEXT matches {*}
                                         }
                                     }
-                                    ELEMENT[at0089] occurrences matches {0..1} matches {
+                                    ELEMENT[at0089] occurrences matches {0..1} matches {	--	Country
                                         value matches {
                                             DV_TEXT matches {*}
                                         }
                                     }
                                 }
                             }
-                            ELEMENT[at0081] occurrences matches {0..1} matches {
+                            ELEMENT[at0081] occurrences matches {0..1} matches {	--	Location type
                                 value matches {
                                     DV_CODED_TEXT matches {
                                         defining_code matches {
                                             [local::
-                                            at0082,
-                                            at0090,
-                                            at0091,
-                                            at0092,
-                                            at0093]
+                                            at0082,	--	Clinic
+                                            at0090,	--	Home
+                                            at0091,	--	Department
+                                            at0092,	--	Nursing unit
+                                            at0093]	--	Provider's office
                                         }
                                     }
                                 }
                             }
                         }
                     }
-                    ELEMENT[at0013] occurrences matches {0..1} matches {
+                    ELEMENT[at0013] occurrences matches {0..1} matches {	--	Admission type
                         value matches {
                             DV_CODED_TEXT matches {
                                 defining_code matches {
                                     [local::
-                                    at0014,
-                                    at0015,
-                                    at0016,
-                                    at0017,
-                                    at0018,
-                                    at0019,
-                                    at0020,
-                                    at0021,
-                                    at0022]
+                                    at0014,	--	Accident
+                                    at0015,	--	Emergency
+                                    at0016,	--	Labour & Delivery
+                                    at0017,	--	Routine
+                                    at0018,	--	Newborn
+                                    at0019,	--	Urgent
+                                    at0020,	--	Elective
+                                    at0021,	--	Geriatric respite admission
+                                    at0022]	--	Statistical admission
                                 }
                             }
                         }
                     }
-                    ELEMENT[at0023] occurrences matches {0..1} matches {
+                    ELEMENT[at0023] occurrences matches {0..1} matches {	--	Pre-admit number
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    CLUSTER[at0094] occurrences matches {0..1} matches {
+                    CLUSTER[at0094] occurrences matches {0..1} matches {	--	Prior patient location
                         items cardinality matches {1..*; unordered} matches {
-                            CLUSTER[at0119] occurrences matches {0..1} matches {
+                            CLUSTER[at0119] occurrences matches {0..1} matches {	--	Facility
                                 items cardinality matches {1..*; unordered} matches {
                                     use_node ELEMENT /data[at0001]/items[at0073]/items[at0104]/items[at0105]
                                     use_node ELEMENT /data[at0001]/items[at0073]/items[at0104]/items[at0106]
                                     use_node ELEMENT /data[at0001]/items[at0073]/items[at0104]/items[at0107]
                                 }
                             }
-                            CLUSTER[at0095] occurrences matches {0..1} matches {
+                            CLUSTER[at0095] occurrences matches {0..1} matches {	--	Adress
                                 items cardinality matches {1..*; unordered} matches {
                                     use_node ELEMENT /data[at0001]/items[at0073]/items[at0084]/items[at0085]
                                     use_node ELEMENT /data[at0001]/items[at0073]/items[at0084]/items[at0086]
@@ -228,143 +228,134 @@ definition
                             use_node ELEMENT /data[at0001]/items[at0073]/items[at0103]
                         }
                     }
-                    CLUSTER[at0098] occurrences matches {0..*} matches {
+                    CLUSTER[at0098] occurrences matches {0..*} matches {	--	Attending doctor
                         items cardinality matches {1..*; unordered} matches {
-                            ELEMENT[at0099] occurrences matches {0..1} matches {
+                            ELEMENT[at0099] occurrences matches {0..1} matches {	--	ID
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0100] occurrences matches {0..1} matches {
+                            ELEMENT[at0100] occurrences matches {0..1} matches {	--	Family name
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0120] occurrences matches {0..1} matches {
+                            ELEMENT[at0120] occurrences matches {0..1} matches {	--	Last name
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
                         }
                     }
-                    CLUSTER[at0025] occurrences matches {0..1} matches {
-                        items cardinality matches {1..*; unordered} matches {
-                            use_node ELEMENT /data[at0001]/items[at0098]/items[at0099]
-                            use_node ELEMENT /data[at0001]/items[at0098]/items[at0100]
-                            use_node ELEMENT /data[at0001]/items[at0098]/items[at0120]
-                        }
-                    }
-                    CLUSTER[at0121] occurrences matches {0..*} matches {
+                    CLUSTER[at0025] occurrences matches {0..1} matches {	--	Referring doctor
                         items cardinality matches {1..*; unordered} matches {
                             use_node ELEMENT /data[at0001]/items[at0098]/items[at0099]
                             use_node ELEMENT /data[at0001]/items[at0098]/items[at0100]
                             use_node ELEMENT /data[at0001]/items[at0098]/items[at0120]
                         }
                     }
-                    ELEMENT[at0041] occurrences matches {0..1} matches {
+                    CLUSTER[at0121] occurrences matches {0..*} matches {	--	Consulting doctor
+                        items cardinality matches {1..*; unordered} matches {
+                            use_node ELEMENT /data[at0001]/items[at0098]/items[at0099]
+                            use_node ELEMENT /data[at0001]/items[at0098]/items[at0100]
+                            use_node ELEMENT /data[at0001]/items[at0098]/items[at0120]
+                        }
+                    }
+                    ELEMENT[at0041] occurrences matches {0..1} matches {	--	Hospital service
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0049] occurrences matches {0..1} matches {
+                    ELEMENT[at0049] occurrences matches {0..1} matches {	--	Admit source
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    CLUSTER[at0051] occurrences matches {0..1} matches {
+                    CLUSTER[at0051] occurrences matches {0..1} matches {	--	Admitting doctor
                         items cardinality matches {1..*; unordered} matches {
                             use_node ELEMENT /data[at0001]/items[at0098]/items[at0099]
                             use_node ELEMENT /data[at0001]/items[at0098]/items[at0100]
                             use_node ELEMENT /data[at0001]/items[at0098]/items[at0120]
                         }
                     }
-                    ELEMENT[at0061] occurrences matches {0..1} matches {
+                    ELEMENT[at0061] occurrences matches {0..1} matches {	--	Financial class
                         value matches {
                             DV_CODED_TEXT matches {
                                 defining_code matches {
                                     [local::
-                                    at0062,
-                                    at0063,
-                                    at0064,
-                                    at0065,
-                                    at0122,
-                                    at0123,
-                                    at0124,
-                                    at0125,
-                                    at0126,
-                                    at0127,
-                                    at0128,
-                                    at0129,
-                                    at0130]
+                                    at0062,	--	Australian Health Care Agreements
+                                    at0063,	--	Private health insurance
+                                    at0064,	--	Self-funded
+                                    at0065,	--	Worker's compensation
+                                    at0122,	--	Motor vehicle third party personal claim
+                                    at0123,	--	Other compensation (e.g. public liability, common law, medical negligence)
+                                    at0124,	--	Department of Veterans' Affairs
+                                    at0125,	--	Department of Defence
+                                    at0126,	--	Correctional facility
+                                    at0127,	--	Other hospital or public authority (contracted care)
+                                    at0128,	--	Reciprocal health care agreements (with other countries)
+                                    at0129,	--	Other
+                                    at0130]	--	Not known
                                 }
                             }
                         }
                     }
-                    ELEMENT[at0066] occurrences matches {0..1} matches {
-                        value matches {
-                            DV_CODED_TEXT matches {
-                                defining_code matches {
-                                    [ac0001]
-                                }
-                            }
-                        }
-                    }
-                    ELEMENT[at0071] matches {
+                    ELEMENT[at0071] matches {	--	Admit date/time
                         value matches {
                             DV_DATE_TIME matches {*}
                         }
                     }
-                    ELEMENT[at0.2] matches {
+                    ELEMENT[at0.2] matches {	--	Admit status
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0.4] matches {
+                    ELEMENT[at0.4] matches {	--	Main diagnosis
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0.5] matches {
+                    ELEMENT[at0.5] matches {	--	Patient condition
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0.6] matches {
+                    ELEMENT[at0.6] matches {	--	Nursing class
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0.14] matches {
+                    ELEMENT[at0.14] matches {	--	Doctor group id
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0.15] matches {
+                    ELEMENT[at0.15] matches {	--	Nursing group id
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0.17] matches {
+                    ELEMENT[at0.17] matches {	--	Charge indicator
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0.18] matches {
+                    ELEMENT[at0.18] matches {	--	HIS charge count
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0.19] matches {
+                    ELEMENT[at0.19] matches {	--	Last charge date and time
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0.20] matches {
+                    ELEMENT[at0.20] matches {	--	First admission indicator
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0.21] matches {
+                    ELEMENT[at0.21] matches {	--	Special department
                         value matches {
                             DV_TEXT matches {*}
                         }
@@ -373,162 +364,180 @@ definition
             }
         }
         otherParticipations cardinality matches {0..*; unordered} matches {
-            PARTICIPATION[at0.26] occurrences matches {0..1} matches {
-                function matches {
-                    DV_TEXT matches {
-                        value matches {"Director"}
-                    }
-                }
+            PARTICIPATION[at0.26] occurrences matches {0..1} matches {	--	Director
                 performer matches {
-                    PartyProxy[at0.27] matches {
+                    PARTY_RELATED matches {
                         externalRef matches {
-                            PartyRef[at0.28] matches {
+                            PARTY_REF matches {
                                 id matches {
-                                    GENERIC_ID[at0.29] matches {*}
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::at0.62]
                                 }
                             }
                         }
                     }
                 }
             }
-            PARTICIPATION[at0.30] occurrences matches {0..1} matches {
-                function matches {
-                    DV_TEXT matches {
-                        value matches {"Deputy doctor"}
-                    }
-                }
+            PARTICIPATION[at0.30] occurrences matches {0..1} matches {	--	Deputy doctor
                 performer matches {
-                    PartyProxy[at0.31] matches {
+                    PARTY_RELATED matches {
                         externalRef matches {
-                            PartyRef[at0.32] matches {
+                            PARTY_REF matches {
                                 id matches {
-                                    GENERIC_ID[at0.33] matches {*}
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::at0.63]
                                 }
                             }
                         }
                     }
                 }
             }
-            PARTICIPATION[at0.34] occurrences matches {0..1} matches {
-                function matches {
-                    DV_TEXT matches {
-                        value matches {"Attending doctor"}
-                    }
-                }
+            PARTICIPATION[at0.34] occurrences matches {0..1} matches {	--	Attending doctor
                 performer matches {
-                    PartyProxy[at0.35] matches {
+                    PARTY_RELATED matches {
                         externalRef matches {
-                            PartyRef[at0.36] matches {
+                            PARTY_REF matches {
                                 id matches {
-                                    GENERIC_ID[at0.37] matches {*}
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::at0.64]
                                 }
                             }
                         }
                     }
                 }
             }
-            PARTICIPATION[at0.38] occurrences matches {0..1} matches {
-                function matches {
-                    DV_TEXT matches {
-                        value matches {"Resident doctor"}
-                    }
-                }
+            PARTICIPATION[at0.38] occurrences matches {0..1} matches {	--	Resident doctor
                 performer matches {
-                    PartyProxy[at0.39] matches {
+                    PARTY_RELATED matches {
                         externalRef matches {
-                            PartyRef[at0.40] matches {
+                            PARTY_REF matches {
                                 id matches {
-                                    GENERIC_ID[at0.41] matches {*}
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::at0.65]
                                 }
                             }
                         }
                     }
                 }
             }
-            PARTICIPATION[at0.42] occurrences matches {0..1} matches {
-                function matches {
-                    DV_TEXT matches {
-                        value matches {"Primary nurse"}
-                    }
-                }
+            PARTICIPATION[at0.42] occurrences matches {0..1} matches {	--	Primary nurse
                 performer matches {
-                    PartyProxy[at0.43] matches {
+                    PARTY_RELATED matches {
                         externalRef matches {
-                            PartyRef[at0.44] matches {
+                            PARTY_REF matches {
                                 id matches {
-                                    GENERIC_ID[at0.45] matches {*}
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::at0.66]
                                 }
                             }
                         }
                     }
                 }
             }
-            PARTICIPATION[at0.46] occurrences matches {0..1} matches {
-                function matches {
-                    DV_TEXT matches {
-                        value matches {"Continuing doctor"}
-                    }
-                }
+            PARTICIPATION[at0.46] occurrences matches {0..1} matches {	--	Continuing doctor
                 performer matches {
-                    PartyProxy[at0.47] matches {
+                    PARTY_RELATED matches {
                         externalRef matches {
-                            PartyRef[at0.48] matches {
+                            PARTY_REF matches {
                                 id matches {
-                                    GENERIC_ID[at0.49] matches {*}
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::at0.67]
                                 }
                             }
                         }
                     }
                 }
             }
-            PARTICIPATION[at0.50] occurrences matches {0..1} matches {
-                function matches {
-                    DV_TEXT matches {
-                        value matches {"Interns doctor"}
-                    }
-                }
+            PARTICIPATION[at0.50] occurrences matches {0..1} matches {	--	Interns doctor
                 performer matches {
-                    PartyProxy[at0.51] matches {
+                    PARTY_RELATED matches {
                         externalRef matches {
-                            PartyRef[at0.52] matches {
+                            PARTY_REF matches {
                                 id matches {
-                                    GENERIC_ID[at0.53] matches {*}
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::at0.68]
                                 }
                             }
                         }
                     }
                 }
             }
-            PARTICIPATION[at0.54] occurrences matches {0..1} matches {
-                function matches {
-                    DV_TEXT matches {
-                        value matches {"Recorder"}
-                    }
-                }
+            PARTICIPATION[at0.54] occurrences matches {0..1} matches {	--	Recorder
                 performer matches {
-                    PartyProxy[at0.55] matches {
+                    PARTY_RELATED matches {
                         externalRef matches {
-                            PartyRef[at0.56] matches {
+                            PARTY_REF matches {
                                 id matches {
-                                    GENERIC_ID[at0.57] matches {*}
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::at0.69]
                                 }
                             }
                         }
                     }
                 }
             }
-            PARTICIPATION[at0.58] occurrences matches {0..1} matches {
-                function matches {
-                    DV_TEXT matches {
-                        value matches {"Outpatient doctor"}
-                    }
-                }
+            PARTICIPATION[at0.58] occurrences matches {0..1} matches {	--	Outpatient doctor
                 performer matches {
-                    PartyProxy[at0.59] matches {
+                    PARTY_RELATED matches {
                         externalRef matches {
-                            PartyRef[at0.60] matches {
+                            PARTY_REF matches {
                                 id matches {
-                                    GENERIC_ID[at0.61] matches {*}
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::at0.70]
                                 }
                             }
                         }
@@ -1029,38 +1038,8 @@ patient">
                     description = <"*">
 
                 >
-                ["at0.23"] = <
-                    text = <"Patient">
-                    description = <"*">
-
-                >
-                ["at0.24"] = <
-                    text = <"Patient reference">
-                    description = <"*">
-
-                >
-                ["at0.25"] = <
-                    text = <"Patient id">
-                    description = <"*">
-
-                >
                 ["at0.26"] = <
                     text = <"Director">
-                    description = <"*">
-
-                >
-                ["at0.27"] = <
-                    text = <"Director">
-                    description = <"*">
-
-                >
-                ["at0.28"] = <
-                    text = <"Director reference">
-                    description = <"*">
-
-                >
-                ["at0.29"] = <
-                    text = <"Director id">
                     description = <"*">
 
                 >
@@ -1069,38 +1048,8 @@ patient">
                     description = <"*">
 
                 >
-                ["at0.31"] = <
-                    text = <"Deputy doctor">
-                    description = <"*">
-
-                >
-                ["at0.32"] = <
-                    text = <"Deputy doctor reference">
-                    description = <"*">
-
-                >
-                ["at0.33"] = <
-                    text = <"Deputy doctor id">
-                    description = <"*">
-
-                >
                 ["at0.34"] = <
                     text = <"Attending doctor">
-                    description = <"*">
-
-                >
-                ["at0.35"] = <
-                    text = <"Attending doctor">
-                    description = <"*">
-
-                >
-                ["at0.36"] = <
-                    text = <"Attending doctor reference">
-                    description = <"*">
-
-                >
-                ["at0.37"] = <
-                    text = <"Attending doctor id">
                     description = <"*">
 
                 >
@@ -1109,38 +1058,8 @@ patient">
                     description = <"*">
 
                 >
-                ["at0.39"] = <
-                    text = <"Resident doctor">
-                    description = <"*">
-
-                >
-                ["at0.40"] = <
-                    text = <"Resident doctor reference">
-                    description = <"*">
-
-                >
-                ["at0.41"] = <
-                    text = <"Resident doctor id">
-                    description = <"*">
-
-                >
                 ["at0.42"] = <
                     text = <"Primary nurse">
-                    description = <"*">
-
-                >
-                ["at0.43"] = <
-                    text = <"Primary nurse">
-                    description = <"*">
-
-                >
-                ["at0.44"] = <
-                    text = <"Primary nurse reference">
-                    description = <"*">
-
-                >
-                ["at0.45"] = <
-                    text = <"Primary nurse id">
                     description = <"*">
 
                 >
@@ -1149,38 +1068,8 @@ patient">
                     description = <"*">
 
                 >
-                ["at0.47"] = <
-                    text = <"Continuing doctor">
-                    description = <"*">
-
-                >
-                ["at0.48"] = <
-                    text = <"Continuing doctor reference">
-                    description = <"*">
-
-                >
-                ["at0.49"] = <
-                    text = <"Continuing doctor id">
-                    description = <"*">
-
-                >
                 ["at0.50"] = <
                     text = <"Interns doctor">
-                    description = <"*">
-
-                >
-                ["at0.51"] = <
-                    text = <"Interns doctor">
-                    description = <"*">
-
-                >
-                ["at0.52"] = <
-                    text = <"Interns doctor reference">
-                    description = <"*">
-
-                >
-                ["at0.53"] = <
-                    text = <"Interns doctor id">
                     description = <"*">
 
                 >
@@ -1189,38 +1078,53 @@ patient">
                     description = <"*">
 
                 >
-                ["at0.55"] = <
-                    text = <"Recorder">
-                    description = <"*">
-
-                >
-                ["at0.56"] = <
-                    text = <"Recorder reference">
-                    description = <"*">
-
-                >
-                ["at0.57"] = <
-                    text = <"Recorder id">
-                    description = <"*">
-
-                >
                 ["at0.58"] = <
                     text = <"Outpatient doctor">
                     description = <"*">
 
                 >
-                ["at0.59"] = <
+                ["at0.62"] = <
+                    text = <"Director">
+                    description = <"*">
+
+                >
+                ["at0.63"] = <
+                    text = <"Deputy doctor">
+                    description = <"*">
+
+                >
+                ["at0.64"] = <
+                    text = <"Attending doctor">
+                    description = <"*">
+
+                >
+                ["at0.65"] = <
+                    text = <"Resident doctor">
+                    description = <"*">
+
+                >
+                ["at0.66"] = <
+                    text = <"Primary nurse">
+                    description = <"*">
+
+                >
+                ["at0.67"] = <
+                    text = <"Continuing doctor">
+                    description = <"*">
+
+                >
+                ["at0.68"] = <
+                    text = <"Interns doctor">
+                    description = <"*">
+
+                >
+                ["at0.69"] = <
+                    text = <"Recorder">
+                    description = <"*">
+
+                >
+                ["at0.70"] = <
                     text = <"Outpatient doctor">
-                    description = <"*">
-
-                >
-                ["at0.60"] = <
-                    text = <"Outpatient doctor reference">
-                    description = <"*">
-
-                >
-                ["at0.61"] = <
-                    text = <"Outpatient doctor id">
                     description = <"*">
 
                 >

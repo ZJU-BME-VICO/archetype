@@ -32,91 +32,91 @@ If there are more specific details about the test and/or specimen include this i
     >
 
 definition
-    INSTRUCTION[at0000.1.1] matches {
+    INSTRUCTION[at0000.1.1] matches {	--	Laboratory Test request
         subject matches {
-            PartyProxy[at0.1.5] matches {
+            PARTY_SELF matches {
                 externalRef matches {
-                    PartyRef[at0.1.6] matches {
+                    PARTY_REF matches {
                         id matches {
-                            GENERIC_ID[at0.1.7] matches {*}
+                            GENERIC_ID matches {*}
                         }
                     }
                 }
             }
         }
         activities cardinality matches {0..*; unordered} matches {
-            ACTIVITY[at0001] occurrences matches {1..*} matches {
+            ACTIVITY[at0001] occurrences matches {1..*} matches {	--	Request
                 description matches {
-                    ITEM_TREE[at0009] matches {
+                    ITEM_TREE[at0009] matches {	--	Tree
                         items cardinality matches {1..*; unordered} matches {
-                            ELEMENT[at0121] matches {
+                            ELEMENT[at0121] matches {	--	Service requested
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0135] occurrences matches {0..1} matches {
+                            ELEMENT[at0135] occurrences matches {0..1} matches {	--	Description of service
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            allow_archetype CLUSTER[at0132] occurrences matches {0..*} matches {
+                            allow_archetype CLUSTER[at0132] occurrences matches {0..*} matches {	--	Specific details
                                 include
                                     archetype_id/value matches {/.*/}
                             }
-                            allow_archetype CLUSTER[at0.145] occurrences matches {0..*} matches {
+                            allow_archetype CLUSTER[at0.145] occurrences matches {0..*} matches {	--	Specimen details
                                 include
                                     archetype_id/value matches {/.*/}
                             }
-                            ELEMENT[at0062] occurrences matches {0..1} matches {
+                            ELEMENT[at0062] occurrences matches {0..1} matches {	--	Reason for request
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0064] occurrences matches {0..1} matches {
+                            ELEMENT[at0064] occurrences matches {0..1} matches {	--	Reason description
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0065] occurrences matches {0..1} matches {
+                            ELEMENT[at0065] occurrences matches {0..1} matches {	--	Intent
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0068] occurrences matches {0..1} matches {
+                            ELEMENT[at0068] occurrences matches {0..1} matches {	--	Urgency
                                 value matches {
                                     DV_CODED_TEXT matches {
                                         defining_code matches {
                                             [local::
-                                            at0136,
-                                            at0137,
-                                            at0138]
+                                            at0136,	--	Emergency
+                                            at0137,	--	Urgent
+                                            at0138]	--	Routine
                                         }
                                     }
                                 }
                             }
-                            ELEMENT[at0040.1] occurrences matches {0..1} matches {
+                            ELEMENT[at0040.1] occurrences matches {0..1} matches {	--	DateTime test preferred
                                 value matches {
                                     DV_DATE_TIME matches {*}
                                 }
                             }
-                            ELEMENT[at0144.1] occurrences matches {0..1} matches {
+                            ELEMENT[at0144.1] occurrences matches {0..1} matches {	--	Latest DateTime test required
                                 value matches {
                                     DV_DATE_TIME matches {*}
                                 }
                             }
-                            ELEMENT[at0076] occurrences matches {0..1} matches {
+                            ELEMENT[at0076] occurrences matches {0..1} matches {	--	Supplementary information to follow
                                 value matches {
                                     DV_BOOLEAN matches {
                                         value matches {true}
                                     }
                                 }
                             }
-                            ELEMENT[at0078] occurrences matches {0..1} matches {
+                            ELEMENT[at0078] occurrences matches {0..1} matches {	--	Supplementary information expected
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            allow_archetype CLUSTER[at0116] occurrences matches {0..*} matches {
+                            allow_archetype CLUSTER[at0116] occurrences matches {0..*} matches {	--	Patient requirements
                                 include
                                     archetype_id/value matches {/.*/}
                             }
@@ -126,40 +126,40 @@ definition
             }
         }
         protocol matches {
-            ITEM_TREE[at0008] matches {
+            ITEM_TREE[at0008] matches {	--	Tree
                 items cardinality matches {1..*; unordered} matches {
-                    ELEMENT[at0010] occurrences matches {0..1} matches {
+                    ELEMENT[at0010] occurrences matches {0..1} matches {	--	Requestor Identifier
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    allow_archetype CLUSTER[at0141] occurrences matches {0..*} matches {
+                    allow_archetype CLUSTER[at0141] occurrences matches {0..*} matches {	--	Requestor
                         include
                             archetype_id/value matches {/.*/}
                     }
-                    ELEMENT[at0011] occurrences matches {0..1} matches {
+                    ELEMENT[at0011] occurrences matches {0..1} matches {	--	Receiver identifier
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    allow_archetype CLUSTER[at0142] occurrences matches {0..*} matches {
+                    allow_archetype CLUSTER[at0142] occurrences matches {0..*} matches {	--	Receiver
                         include
                             archetype_id/value matches {/.*/}
                     }
-                    ELEMENT[at0127] occurrences matches {0..1} matches {
+                    ELEMENT[at0127] occurrences matches {0..1} matches {	--	Request status
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    allow_archetype CLUSTER[at0128] occurrences matches {0..*} matches {
+                    allow_archetype CLUSTER[at0128] occurrences matches {0..*} matches {	--	Distribution list for response
                         include
                             archetype_id/value matches {/openEHR-EHR-CLUSTER\.distribution\.v1/}
                     }
-                    allow_archetype CLUSTER[at0112] occurrences matches {0..*} matches {
+                    allow_archetype CLUSTER[at0112] occurrences matches {0..*} matches {	--	Localisation
                         include
                             archetype_id/value matches {/.*/}
                     }
-                    ELEMENT[at0.1.4] occurrences matches {0..1} matches {
+                    ELEMENT[at0.1.4] occurrences matches {0..1} matches {	--	DateTime test requirement ordered
                         value matches {
                             DV_DATE_TIME matches {*}
                         }
@@ -168,7 +168,7 @@ definition
             }
         }
         links cardinality matches {0..*; unordered} matches {
-            LINK[at0.1.3] occurrences matches {0..1} matches {
+            LINK[at0.1.3] occurrences matches {0..1} matches {	--	Addmission
                 meaning matches {
                     DV_TEXT matches {
                         value matches {"related to"}
@@ -181,45 +181,49 @@ definition
                     DV_EHR_URI matches {*}
                 }
             }
-        }		
+        }
         otherParticipations cardinality matches {0..*; unordered} matches {
-            PARTICIPATION[at0.1.8] occurrences matches {0..1} matches {
-                function matches {
-                    DV_TEXT matches {
-                        value matches {"Request doctor"}
-                    }
-                }
+            PARTICIPATION[at0.1.8] occurrences matches {0..1} matches {	--	Request doctor
                 performer matches {
-                    PartyProxy[at0.1.9] matches {
+                    PARTY_RELATED matches {
                         externalRef matches {
-                            PartyRef[at0.1.10] matches {
+                            PARTY_REF matches {
                                 id matches {
-                                    GENERIC_ID[at0.1.11] matches {*}
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::at0.1.16]
                                 }
                             }
                         }
                     }
                 }
             }
-            PARTICIPATION[at0.1.12] occurrences matches {0..1} matches {
-                function matches {
-                    DV_TEXT matches {
-                        value matches {"Receive department"}
-                    }
-                }
+            PARTICIPATION[at0.1.12] occurrences matches {0..1} matches {	--	Receive department
                 performer matches {
-                    PartyProxy[at0.1.13] matches {
+                    PARTY_RELATED matches {
                         externalRef matches {
-                            PartyRef[at0.1.14] matches {
+                            PARTY_REF matches {
                                 id matches {
-                                    GENERIC_ID[at0.1.15] matches {*}
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::at0.1.17]
                                 }
                             }
                         }
                     }
                 }
             }
-		}
+        }
     }
 
 ontology
@@ -391,38 +395,8 @@ ontology
                     description = <"The date that the request is ordered.">
 
                 >
-                ["at0.1.5"] = <
-                    text = <"Patient">
-                    description = <"*">
-
-                >
-                ["at0.1.6"] = <
-                    text = <"Patient reference">
-                    description = <"*">
-
-                >
-                ["at0.1.7"] = <
-                    text = <"Patient id">
-                    description = <"*">
-
-                >
                 ["at0.1.8"] = <
                     text = <"Request doctor">
-                    description = <"*">
-
-                >
-                ["at0.1.9"] = <
-                    text = <"Request doctor">
-                    description = <"*">
-
-                >
-                ["at0.1.10"] = <
-                    text = <"Request doctor reference">
-                    description = <"*">
-
-                >
-                ["at0.1.11"] = <
-                    text = <"Request doctor id">
                     description = <"*">
 
                 >
@@ -431,18 +405,13 @@ ontology
                     description = <"*">
 
                 >
-                ["at0.1.13"] = <
+                ["at0.1.16"] = <
+                    text = <"Request doctor">
+                    description = <"*">
+
+                >
+                ["at0.1.17"] = <
                     text = <"Receive department">
-                    description = <"*">
-
-                >
-                ["at0.1.14"] = <
-                    text = <"Receive department reference">
-                    description = <"*">
-
-                >
-                ["at0.1.15"] = <
-                    text = <"Receive department id">
                     description = <"*">
 
                 >

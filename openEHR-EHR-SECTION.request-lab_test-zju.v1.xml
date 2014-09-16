@@ -4,12 +4,8 @@
 
   <class name="openEHR-EHR-SECTION.request-lab_test-zju.v1">
 
-    <id name="/uid/value">
-      <column name="id" />
+    <id name="/content[at0001]">
     </id>
-
-    <one-to-many name="/content[at0001]" class="openEHR-EHR-INSTRUCTION.request-lab_test-zju"/>
-    <one-to-many name="/content[at0001]" class="openEHR-EHR-SECTION.result-lab_test-zju"/>
 
   </class>
 

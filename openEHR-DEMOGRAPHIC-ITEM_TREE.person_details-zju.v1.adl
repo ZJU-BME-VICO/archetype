@@ -47,21 +47,21 @@ description
     >
 
 definition
-    ITEM_TREE[at0000.1] occurrences matches {0..1} matches {
+    ITEM_TREE[at0000.1] occurrences matches {0..1} matches {	--	Person data
         items cardinality matches {1..*; ordered} matches {
-            CLUSTER[at0001] matches {
+            CLUSTER[at0001] matches {	--	Birth data
                 items matches {
-                    ELEMENT[at0010.1] matches {
+                    ELEMENT[at0010.1] matches {	--	Birth date
                         value matches {
                             DV_DATE_TIME matches {*}
                         }
                     }
-                    ELEMENT[at0011] occurrences matches {0..*} matches {
+                    ELEMENT[at0011] occurrences matches {0..*} matches {	--	Date of birth follow-up indicator
                         value matches {
                             DV_BOOLEAN matches {*}
                         }
                     }
-                    ELEMENT[at0012] occurrences matches {0..1} matches {
+                    ELEMENT[at0012] occurrences matches {0..1} matches {	--	Country of birth
                         value matches {
                             DV_CODED_TEXT matches {
                                 defining_code matches {
@@ -70,7 +70,7 @@ definition
                             }
                         }
                     }
-                    ELEMENT[at0013] occurrences matches {0..1} matches {
+                    ELEMENT[at0013] occurrences matches {0..1} matches {	--	State/territory/province
                         value matches {
                             DV_CODED_TEXT matches {
                                 defining_code matches {
@@ -79,7 +79,7 @@ definition
                             }
                         }
                     }
-                    ELEMENT[at0014] occurrences matches {0..1} matches {
+                    ELEMENT[at0014] occurrences matches {0..1} matches {	--	City/town/locality
                         value matches {
                             DV_CODED_TEXT matches {
                                 defining_code matches {
@@ -88,7 +88,7 @@ definition
                             }
                         }
                     }
-                    ELEMENT[at0015] occurrences matches {0..1} matches {
+                    ELEMENT[at0015] occurrences matches {0..1} matches {	--	Birth plurality
                         value matches {
                             DV_TEXT matches {*}
                             DV_CODED_TEXT matches {
@@ -98,7 +98,7 @@ definition
                             }
                         }
                     }
-                    ELEMENT[at0016] occurrences matches {0..1} matches {
+                    ELEMENT[at0016] occurrences matches {0..1} matches {	--	Birth order
                         value matches {
                             DV_TEXT matches {*}
                             DV_CODED_TEXT matches {
@@ -108,54 +108,54 @@ definition
                             }
                         }
                     }
-                    ELEMENT[at0017] occurrences matches {0..*} matches {
+                    ELEMENT[at0017] occurrences matches {0..*} matches {	--	Sex
                         value matches {
                             DV_TEXT matches {*}
                             DV_CODED_TEXT matches {
                                 defining_code matches {
                                     [local::
-                                    at0310,
-                                    at0311,
-                                    at0312,
-                                    at0313]
+                                    at0310,	--	Male
+                                    at0311,	--	Female
+                                    at0312,	--	Intersex or indeterminate
+                                    at0313]	--	Not declared/inadequately described
                                 }
                             }
                         }
                     }
-                    ELEMENT[at0018] matches {
+                    ELEMENT[at0018] matches {	--	Registry
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    allow_archetype CLUSTER[at0006] occurrences matches {0..1} matches {
+                    allow_archetype CLUSTER[at0006] occurrences matches {0..1} matches {	--	Country specific birth data
                         include
                             archetype_id/value matches {/(birth_data_additional_detail)[a-zA-Z0-9_-]*\.v1/}
                     }
                 }
             }
-            CLUSTER[at0002] matches {
+            CLUSTER[at0002] matches {	--	Death data
                 items matches {
-                    ELEMENT[at0021] matches {
+                    ELEMENT[at0021] matches {	--	Death date
                         value matches {
                             DV_DATE matches {*}
                         }
                     }
-                    ELEMENT[at0022] occurrences matches {0..1} matches {
+                    ELEMENT[at0022] occurrences matches {0..1} matches {	--	Source of notification
                         value matches {
                             DV_TEXT matches {*}
                             DV_CODED_TEXT matches {
                                 defining_code matches {
                                     [local::
-                                    at0220,
-                                    at0221,
-                                    at0222,
-                                    at0223,
-                                    at0224]
+                                    at0220,	--	Registry
+                                    at0221,	--	Healthcare provider
+                                    at0222,	--	Relative
+                                    at0223,	--	Other
+                                    at0224]	--	Unknown
                                 }
                             }
                         }
                     }
-                    ELEMENT[at0023] occurrences matches {0..1} matches {
+                    ELEMENT[at0023] occurrences matches {0..1} matches {	--	Country
                         value matches {
                             DV_CODED_TEXT matches {
                                 defining_code matches {
@@ -164,7 +164,7 @@ definition
                             }
                         }
                     }
-                    ELEMENT[at0024] occurrences matches {0..1} matches {
+                    ELEMENT[at0024] occurrences matches {0..1} matches {	--	State/territory/province
                         value matches {
                             DV_CODED_TEXT matches {
                                 defining_code matches {
@@ -173,7 +173,7 @@ definition
                             }
                         }
                     }
-                    ELEMENT[at0025] occurrences matches {0..1} matches {
+                    ELEMENT[at0025] occurrences matches {0..1} matches {	--	City/town/locality
                         value matches {
                             DV_TEXT matches {*}
                             DV_CODED_TEXT matches {
@@ -183,57 +183,57 @@ definition
                             }
                         }
                     }
-                    ELEMENT[at0026] occurrences matches {0..1} matches {
+                    ELEMENT[at0026] occurrences matches {0..1} matches {	--	Death certificate number
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
                 }
             }
-            CLUSTER[at0004] matches {
+            CLUSTER[at0004] matches {	--	Biometric identifier
                 items matches {
-                    ELEMENT[at0041] matches {
+                    ELEMENT[at0041] matches {	--	Type of biometric
                         value matches {
                             DV_TEXT matches {*}
                             DV_CODED_TEXT matches {
                                 defining_code matches {
                                     [local::
-                                    at0410,
-                                    at0411,
-                                    at0412,
-                                    at0413,
-                                    at0414,
-                                    at0415,
-                                    at0416,
-                                    at0417,
-                                    at0418,
-                                    at0419,
-                                    at0420,
-                                    at0421,
-                                    at0422,
-                                    at0423,
-                                    at0424,
-                                    at0425]
+                                    at0410,	--	Finger print—rolled
+                                    at0411,	--	Finger print—flat
+                                    at0412,	--	Facial features
+                                    at0413,	--	Voice
+                                    at0414,	--	Iris
+                                    at0415,	--	Retina
+                                    at0416,	--	Hand geometry
+                                    at0417,	--	Signature dynamics
+                                    at0418,	--	Keystroke dynamics
+                                    at0419,	--	Lip movement
+                                    at0420,	--	Thermal face image
+                                    at0421,	--	Thermal hand image
+                                    at0422,	--	Gait
+                                    at0423,	--	Blood type (including rh factor)
+                                    at0424,	--	DNA
+                                    at0425]	--	Unknown
                                 }
                             }
                         }
                     }
-                    ELEMENT[at0042] occurrences matches {0..1} matches {
+                    ELEMENT[at0042] occurrences matches {0..1} matches {	--	Biometric data template
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0043] occurrences matches {0..1} matches {
+                    ELEMENT[at0043] occurrences matches {0..1} matches {	--	Biometric enrolment quality
                         value matches {
                             DV_PROPORTION matches {*}
                         }
                     }
-                    ELEMENT[at0044] occurrences matches {0..1} matches {
+                    ELEMENT[at0044] occurrences matches {0..1} matches {	--	Biometric creating authority
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0045] occurrences matches {0..*} matches {
+                    ELEMENT[at0045] occurrences matches {0..*} matches {	--	Location of biometric identifier
                         value matches {
                             DV_TEXT matches {*}
                             DV_CODED_TEXT matches {
@@ -243,43 +243,43 @@ definition
                             }
                         }
                     }
-                    ELEMENT[at0046] occurrences matches {0..1} matches {
+                    ELEMENT[at0046] occurrences matches {0..1} matches {	--	Biometric device identification
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0047] occurrences matches {0..1} matches {
+                    ELEMENT[at0047] occurrences matches {0..1} matches {	--	Biometric version
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0048] occurrences matches {0..1} matches {
+                    ELEMENT[at0048] occurrences matches {0..1} matches {	--	Biometric date of creation
                         value matches {
                             DV_DATE matches {*}
                         }
                     }
                 }
             }
-            ELEMENT[at0031] occurrences matches {0..*} matches {
+            ELEMENT[at0031] occurrences matches {0..*} matches {	--	Gender
                 value matches {
                     DV_TEXT matches {*}
                     DV_CODED_TEXT matches {
                         defining_code matches {
                             [local::
-                            at0310,
-                            at0311,
-                            at0312,
-                            at0313]
+                            at0310,	--	Male
+                            at0311,	--	Female
+                            at0312,	--	Intersex or indeterminate
+                            at0313]	--	Not declared/inadequately described
                         }
                     }
                 }
             }
-            ELEMENT[at0032] occurrences matches {0..*} matches {
+            ELEMENT[at0032] occurrences matches {0..*} matches {	--	Mother's family name
                 value matches {
                     DV_TEXT matches {*}
                 }
             }
-            ELEMENT[at0033] occurrences matches {0..*} matches {
+            ELEMENT[at0033] occurrences matches {0..*} matches {	--	Marital status
                 value matches {
                     DV_TEXT matches {*}
                     DV_CODED_TEXT matches {
@@ -289,7 +289,7 @@ definition
                     }
                 }
             }
-            ELEMENT[at0034] occurrences matches {0..*} matches {
+            ELEMENT[at0034] occurrences matches {0..*} matches {	--	Ethnic background
                 value matches {
                     DV_TEXT matches {*}
                     DV_CODED_TEXT matches {
@@ -299,12 +299,12 @@ definition
                     }
                 }
             }
-            ELEMENT[at0035] occurrences matches {0..*} matches {
+            ELEMENT[at0035] occurrences matches {0..*} matches {	--	Identification comment
                 value matches {
                     DV_TEXT matches {*}
                 }
             }
-            allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {
+            allow_archetype CLUSTER[at0005] occurrences matches {0..*} matches {	--	Other person identifiers
                 include
                     archetype_id/value matches {/(person_identifier)[a-zA-Z0-9_-]*\.v1/}
             }

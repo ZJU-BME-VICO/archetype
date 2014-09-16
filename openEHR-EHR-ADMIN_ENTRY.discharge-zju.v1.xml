@@ -9,7 +9,7 @@
     </id>
 
     <property name="/data[at0003]/items[at0004]/value/value" column="dischargeDateTime"/>
-    <property name="/subject[at0.8]/externalRef[at0.9]/id[at0.10]/value" column="patient"/>
+    <property name="/subject/externalRef/id/value" column="patient"/>
     <property name="/data[at0003]/items[at0.3]/value/value" column="dischargeType"/>
     <property name="/data[at0003]/items[at0.4]/value/value" column="dischargeMemo"/>
     <property name="/data[at0003]/items[at0.5]/value/value" column="readmission"/>

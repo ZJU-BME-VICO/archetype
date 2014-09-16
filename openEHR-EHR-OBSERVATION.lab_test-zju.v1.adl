@@ -38,73 +38,73 @@ IHE. IHE, Laboratory Technical Framework, Volume 3 Content [Internet]. 2008;Avai
     >
 
 definition
-    OBSERVATION[at0000.1] matches {
+    OBSERVATION[at0000.1] matches {	--	Laboratory test
         subject matches {
-            PartyProxy[at0.7] matches {
+            PARTY_SELF matches {
                 externalRef matches {
-                    PartyRef[at0.8] matches {
+                    PARTY_REF matches {
                         id matches {
-                            GENERIC_ID[at0.9] matches {*}
+                            GENERIC_ID matches {*}
                         }
                     }
                 }
             }
         }
         data matches {
-            HISTORY[at0001] matches {
+            HISTORY[at0001] matches {	--	Event Series
                 events cardinality matches {1..*; unordered} matches {
-                    EVENT[at0002] occurrences matches {0..*} matches {
+                    EVENT[at0002] occurrences matches {0..*} matches {	--	Any event
                         data matches {
-                            ITEM_TREE[at0003] matches {
+                            ITEM_TREE[at0003] matches {	--	Tree
                                 items cardinality matches {0..*; unordered} matches {
-                                    ELEMENT[at0005] occurrences matches {0..1} matches {
+                                    ELEMENT[at0005] occurrences matches {0..1} matches {	--	Test name
                                         value matches {
                                             DV_TEXT matches {*}
                                         }
                                     }
-                                    ELEMENT[at0077] occurrences matches {0..1} matches {
+                                    ELEMENT[at0077] occurrences matches {0..1} matches {	--	Diagnostic service
                                         value matches {
                                             DV_TEXT matches {*}
                                         }
                                     }
-                                    ELEMENT[at0073] occurrences matches {0..1} matches {
+                                    ELEMENT[at0073] occurrences matches {0..1} matches {	--	Test status
                                         value matches {
                                             DV_CODED_TEXT matches {
                                                 defining_code matches {
                                                     [local::
-                                                    at0037,
-                                                    at0038,
-                                                    at0039,
-                                                    at0040,
-                                                    at0074,
-                                                    at0079]
+                                                    at0037,	--	Interim
+                                                    at0038,	--	Final
+                                                    at0039,	--	Supplementary
+                                                    at0040,	--	Corrected (amended)
+                                                    at0074,	--	Aborted
+                                                    at0079]	--	Never performed
                                                 }
                                             }
                                         }
                                     }
-                                    allow_archetype CLUSTER[at0065] occurrences matches {0..*} matches {
+                                    allow_archetype CLUSTER[at0065] occurrences matches {0..*} matches {	--	Specimen detail
                                         include
                                             archetype_id/value matches {/openEHR-EHR-CLUSTER\.specimen\.v1/}
                                         exclude
                                             archetype_id/value matches {/.*/}
                                     }
-                                    ELEMENT[at0078.1] occurrences matches {0..1} matches {
+                                    ELEMENT[at0078.1] occurrences matches {0..1} matches {	--	Result
                                         value matches {
                                             DV_TEXT matches {*}
                                         }
                                     }
-                                    allow_archetype CLUSTER[at0089.1] occurrences matches {0..1} matches {
+                                    allow_archetype CLUSTER[at0089.1] occurrences matches {0..1} matches {	--	Per-result annotation
                                         include
                                             archetype_id/value matches {/openEHR-EHR-CLUSTER\.lab_result_annotation(-[a-zA-Z0-9_]+)*\.v1/}
                                         exclude
                                             archetype_id/value matches {/.*/}
                                     }
-                                    ELEMENT[at0057] occurrences matches {0..1} matches {
+                                    ELEMENT[at0057] occurrences matches {0..1} matches {	--	Overall interpretation
                                         value matches {
                                             DV_TEXT matches {*}
                                         }
                                     }
-                                    ELEMENT[at0010] occurrences matches {0..*} matches {
+                                    ELEMENT[at0010] occurrences matches {0..*} matches {	--	Multimedia representation
                                         value matches {
                                             DV_MULTIMEDIA matches {
                                                 media_type matches {
@@ -113,12 +113,12 @@ definition
                                             }
                                         }
                                     }
-                                    ELEMENT[at0.5] occurrences matches {0..1} matches {
+                                    ELEMENT[at0.5] occurrences matches {0..1} matches {	--	Lab test result unit
                                         value matches {
                                             DV_TEXT matches {*}
                                         }
                                     }
-                                    ELEMENT[at0.6] occurrences matches {0..1} matches {
+                                    ELEMENT[at0.6] occurrences matches {0..1} matches {	--	Lab test device identifier
                                         value matches {
                                             DV_TEXT matches {*}
                                         }
@@ -131,34 +131,34 @@ definition
             }
         }
         protocol matches {
-            ITEM_TREE[at0004] matches {
+            ITEM_TREE[at0004] matches {	--	Tree
                 items cardinality matches {0..*; unordered} matches {
-                    ELEMENT[at0062] occurrences matches {0..1} matches {
+                    ELEMENT[at0062] occurrences matches {0..1} matches {	--	Requestor order identifier
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    allow_archetype CLUSTER[at0090] occurrences matches {0..*} matches {
+                    allow_archetype CLUSTER[at0090] occurrences matches {0..*} matches {	--	Requestor
                         include
                             archetype_id/value matches {/.*/}
                     }
-                    ELEMENT[at0063] occurrences matches {0..1} matches {
+                    ELEMENT[at0063] occurrences matches {0..1} matches {	--	Receiver order Identifier
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    allow_archetype CLUSTER[at0017] occurrences matches {0..*} matches {
+                    allow_archetype CLUSTER[at0017] occurrences matches {0..*} matches {	--	Receiving laboratory
                         include
                             archetype_id/value matches {/openEHR-EHR-CLUSTER\.organisation\.v1/}
                         exclude
                             archetype_id/value matches {/.*/}
                     }
-                    ELEMENT[at0068] occurrences matches {0..1} matches {
+                    ELEMENT[at0068] occurrences matches {0..1} matches {	--	Laboratory test result identifier
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0075] occurrences matches {0..1} matches {
+                    ELEMENT[at0075] occurrences matches {0..1} matches {	--	Datetime result issued
                         value matches {
                             DV_DATE_TIME matches {*}
                         }
@@ -167,7 +167,7 @@ definition
             }
         }
         links cardinality matches {0..*; unordered} matches {
-            LINK[at0.3] occurrences matches {0..1} matches {
+            LINK[at0.3] occurrences matches {0..1} matches {	--	Addmission
                 meaning matches {
                     DV_TEXT matches {
                         value matches {"related to"}
@@ -343,21 +343,6 @@ This archetype also acts as the parent for specialisations appropriate for more 
                 ["at0.6"] = <
                     text = <"Lab test device identifier">
                     description = <"">
-
-                >
-                ["at0.7"] = <
-                    text = <"Patient">
-                    description = <"*">
-
-                >
-                ["at0.8"] = <
-                    text = <"Patient reference">
-                    description = <"*">
-
-                >
-                ["at0.9"] = <
-                    text = <"Patient id">
-                    description = <"*">
 
                 >
             >

@@ -4,13 +4,8 @@
 
   <class name="openEHR-EHR-COMPOSITION.encounter-zju.v1">
 
-    <id name="/uid/value">
-      <column name="id" />
+    <id name="/content[at0.2]">
     </id>
-
-    <one-to-many name="/content[at0.2]" class="openEHR-EHR-ADMIN_ENTRY.admission-zju"/>
-    <one-to-many name="/content[at0.3]" class="openEHR-EHR-SECTION.discharge-zju"/>
-    <one-to-many name="/content[at0.4]" class="openEHR-EHR-SECTION.request-lab_test-zju"/>
 
   </class>
 

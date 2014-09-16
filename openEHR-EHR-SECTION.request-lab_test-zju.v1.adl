@@ -28,15 +28,15 @@ description
     >
 
 definition
-    SECTION[at0000] matches {
+    SECTION[at0000] matches {	--	Order
         items cardinality matches {0..*; unordered} matches {
-            allow_archetype INSTRUCTION[at0001] occurrences matches {0..1} matches {
+            allow_archetype INSTRUCTION[at0001] occurrences matches {0..1} matches {	--	Lab test request
                 include
                     archetype_id/value matches {/openEHR-EHR-INSTRUCTION\.request-lab_test-zju\.v1/}
             }
-            allow_archetype SECTION[at0002] occurrences matches {0..*} matches {
+            allow_archetype OBSERVATION[at0002] occurrences matches {0..*} matches {	--	Lab test result
                 include
-                    archetype_id/value matches {/openEHR-EHR-SECTION\.result-lab_test-zju\.v1/}
+                    archetype_id/value matches {/openEHR-EHR-OBSERVATION\.result-lab_test-zju\.v1/}
             }
         }
     }

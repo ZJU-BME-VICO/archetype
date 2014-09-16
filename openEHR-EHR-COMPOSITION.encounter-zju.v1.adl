@@ -29,7 +29,7 @@ description
     >
 
 definition
-    COMPOSITION[at0000.1] matches {
+    COMPOSITION[at0000.1] matches {	--	Encounter
         category matches {
             DV_CODED_TEXT matches {
                 defining_code matches {
@@ -38,25 +38,25 @@ definition
             }
         }
         content cardinality matches {1..*; unordered} matches {
-            allow_archetype ADMIN_ENTRY[at0.2] occurrences matches {0..1} matches {
+            allow_archetype ADMIN_ENTRY[at0.2] occurrences matches {0..1} matches {	--	Admission
                 include
                     archetype_id/value matches {/openEHR-EHR-ADMIN_ENTRY\.admission-zju\.v1/}
             }
-            allow_archetype SECTION[at0.3] occurrences matches {0..1} matches {
+            allow_archetype ADMIN_ENTRY[at0.3] occurrences matches {0..1} matches {	--	Discharge
                 include
-                    archetype_id/value matches {/openEHR-EHR-SECTION\.discharge-zju\.v1/}
+                    archetype_id/value matches {/openEHR-EHR-ADMIN_ENTRY\.discharge-zju\.v1/}
             }
-            allow_archetype SECTION[at0.4] occurrences matches {0..1} matches {
+            allow_archetype INSTRUCTION[at0.4] occurrences matches {0..1} matches {
                 include
-                    archetype_id/value matches {/openEHR-EHR-SECTION\.request-lab_test-zju\.v1/}
+                    archetype_id/value matches {/openEHR-EHR-INSTRUCTION\.request-lab_test-zju\.v1/}
             }
         }
         context matches {
             EVENT_CONTEXT matches {
                 other_context matches {
-                    ITEM_TREE[at0001] matches {
+                    ITEM_TREE[at0001] matches {	--	Tree
                         items cardinality matches {0..*; unordered} matches {
-                            allow_archetype CLUSTER[at0002] occurrences matches {0..*} matches {
+                            allow_archetype CLUSTER[at0002] occurrences matches {0..*} matches {	--	Local context
                                 include
                                     archetype_id/value matches {/.*/}
                             }

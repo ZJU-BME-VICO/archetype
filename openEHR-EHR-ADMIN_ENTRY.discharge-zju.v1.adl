@@ -28,31 +28,31 @@ description
     >
 
 definition
-    ADMIN_ENTRY[at0000.1] matches {
+    ADMIN_ENTRY[at0000.1] matches {	--	Discharge administrative information
         subject matches {
-            PartyProxy[at0.8] matches {
+            PARTY_SELF matches {
                 externalRef matches {
-                    PartyRef[at0.9] matches {
+                    PARTY_REF matches {
                         id matches {
-                            GENERIC_ID[at0.10] matches {*}
+                            GENERIC_ID matches {*}
                         }
                     }
                 }
             }
         }
         data matches {
-            ITEM_TREE[at0003] matches {
+            ITEM_TREE[at0003] matches {	--	Tree
                 items cardinality matches {0..*; unordered} matches {
-                    ELEMENT[at0004] occurrences matches {0..1} matches {
+                    ELEMENT[at0004] occurrences matches {0..1} matches {	--	Date of discharge
                         value matches {
                             DV_DATE_TIME matches {
                                 value matches {yyyy-??-??T??:??:??}
                             }
                         }
                     }
-                    CLUSTER[at0057] occurrences matches {0..1} matches {
+                    CLUSTER[at0057] occurrences matches {0..1} matches {	--	Discharge details
                         items cardinality matches {0..*; unordered} matches {
-                            CLUSTER[at0072] occurrences matches {0..1} matches {
+                            CLUSTER[at0072] occurrences matches {0..1} matches {	--	Discharge procedure discussed and agreed with Parent/Carer
                                 items cardinality matches {0..*; unordered} matches {
                                     allow_archetype CLUSTER occurrences matches {0..1} matches {
                                         include
@@ -62,7 +62,7 @@ definition
                                     }
                                 }
                             }
-                            CLUSTER[at0065] occurrences matches {0..1} matches {
+                            CLUSTER[at0065] occurrences matches {0..1} matches {	--	Discharging Consultant
                                 items cardinality matches {0..*; unordered} matches {
                                     allow_archetype CLUSTER occurrences matches {0..1} matches {
                                         include
@@ -72,7 +72,7 @@ definition
                                     }
                                 }
                             }
-                            CLUSTER[at0068] occurrences matches {0..1} matches {
+                            CLUSTER[at0068] occurrences matches {0..1} matches {	--	Discharging Organisation
                                 items cardinality matches {0..*; unordered} matches {
                                     allow_archetype CLUSTER occurrences matches {0..1} matches {
                                         include
@@ -82,54 +82,54 @@ definition
                                     }
                                 }
                             }
-                            ELEMENT[at0066] occurrences matches {0..1} matches {
+                            ELEMENT[at0066] occurrences matches {0..1} matches {	--	Discharging ward
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0060] occurrences matches {0..1} matches {
+                            ELEMENT[at0060] occurrences matches {0..1} matches {	--	Discharging Specialty/Department
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0084] occurrences matches {0..1} matches {
+                            ELEMENT[at0084] occurrences matches {0..1} matches {	--	Further Action
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
                         }
                     }
-                    CLUSTER[at0069] occurrences matches {0..1} matches {
+                    CLUSTER[at0069] occurrences matches {0..1} matches {	--	Discharge Destination
                         items cardinality matches {0..*; unordered} matches {
-                            ELEMENT[at0030] occurrences matches {0..1} matches {
+                            ELEMENT[at0030] occurrences matches {0..1} matches {	--	Discharge destination type
                                 value matches {
                                     DV_CODED_TEXT matches {
                                         defining_code matches {
                                             [local::
-                                            at0031,
-                                            at0032,
-                                            at0033,
-                                            at0034,
-                                            at0035,
-                                            at0036,
-                                            at0037,
-                                            at0038,
-                                            at0039,
-                                            at0040,
-                                            at0041,
-                                            at0042,
-                                            at0043,
-                                            at0044,
-                                            at0045,
-                                            at0046,
-                                            at0047,
-                                            at0048,
-                                            at0049]
+                                            at0031,	--	Usual place of residence, includes patients with no fixed abode
+                                            at0032,	--	Temporary place of residence
+                                            at0033,	--	Repatriation from high security psychiatric accommodation
+                                            at0034,	--	Court
+                                            at0035,	--	Penal establishment or police station
+                                            at0036,	--	High security psychiatric hospital, Scotland
+                                            at0037,	--	NHS other - high security psychiatric accommodation
+                                            at0038,	--	NHS other - medium secure unit
+                                            at0039,	--	NHS other - general ward/younger physically disabled ward
+                                            at0040,	--	NHS other - maternity patients or neonates
+                                            at0041,	--	NHS other - mentally ill/learning disabilities
+                                            at0042,	--	NHS-run care home
+                                            at0043,	--	Local authority residential accommodation, care provided
+                                            at0044,	--	Local authority foster care
+                                            at0045,	--	Not applicable - patient died or still birth
+                                            at0046,	--	Non-NHS medium secure unit
+                                            at0047,	--	Non-NHS care home
+                                            at0048,	--	Non-NHS hospital
+                                            at0049]	--	Non-NHS hospice
                                         }
                                     }
                                 }
                             }
-                            CLUSTER[at0070] occurrences matches {0..1} matches {
+                            CLUSTER[at0070] occurrences matches {0..1} matches {	--	Discharge destination
                                 items cardinality matches {0..*; unordered} matches {
                                     allow_archetype CLUSTER occurrences matches {0..1} matches {
                                         include
@@ -139,9 +139,9 @@ definition
                                     }
                                 }
                             }
-                            CLUSTER[at0062] occurrences matches {0..1} matches {
+                            CLUSTER[at0062] occurrences matches {0..1} matches {	--	Reason for Discharge
                                 items cardinality matches {0..*; unordered} matches {
-                                    CLUSTER[at0083] occurrences matches {0..1} matches {
+                                    CLUSTER[at0083] occurrences matches {0..1} matches {	--	Discharge Method
                                         items cardinality matches {0..*; unordered} matches {
                                             allow_archetype CLUSTER occurrences matches {0..*} matches {
                                                 include
@@ -153,12 +153,12 @@ definition
                                             }
                                         }
                                     }
-                                    ELEMENT[at0056] occurrences matches {0..1} matches {
+                                    ELEMENT[at0056] occurrences matches {0..1} matches {	--	Outline of decision to discharge
                                         value matches {
                                             DV_TEXT matches {*}
                                         }
                                     }
-                                    CLUSTER[at0071] occurrences matches {0..1} matches {
+                                    CLUSTER[at0071] occurrences matches {0..1} matches {	--	Discharge delayed
                                         items cardinality matches {0..*; unordered} matches {
                                             allow_archetype CLUSTER occurrences matches {0..1} matches {
                                                 include
@@ -166,7 +166,7 @@ definition
                                                 exclude
                                                     archetype_id/value matches {/.*/}
                                             }
-                                            ELEMENT[at0081] occurrences matches {0..1} matches {
+                                            ELEMENT[at0081] occurrences matches {0..1} matches {	--	Date patient/carer informed of Planned Discharge
                                                 value matches {
                                                     DV_DATE_TIME matches {
                                                         value matches {yyyy-??-??T??:??:??}
@@ -179,22 +179,22 @@ definition
                             }
                         }
                     }
-                    ELEMENT[at0.3] occurrences matches {0..1} matches {
+                    ELEMENT[at0.3] occurrences matches {0..1} matches {	--	Discharge type
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0.4] occurrences matches {0..1} matches {
+                    ELEMENT[at0.4] occurrences matches {0..1} matches {	--	Discharge memo
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0.5] occurrences matches {0..1} matches {
+                    ELEMENT[at0.5] occurrences matches {0..1} matches {	--	Readmission
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0.6] occurrences matches {0..1} matches {
+                    ELEMENT[at0.6] occurrences matches {0..1} matches {	--	Readmission purpose
                         value matches {
                             DV_TEXT matches {*}
                         }
@@ -203,7 +203,7 @@ definition
             }
         }
         links cardinality matches {0..*; unordered} matches {
-            LINK[at0.7] occurrences matches {0..1} matches {
+            LINK[at0.7] occurrences matches {0..1} matches {	--	Admission
                 meaning matches {
                     DV_TEXT matches {
                         value matches {"in response to"}
@@ -435,21 +435,6 @@ ontology
                 >
                 ["at0.7"] = <
                     text = <"Admission">
-                    description = <"*">
-
-                >
-                ["at0.8"] = <
-                    text = <"Patient">
-                    description = <"*">
-
-                >
-                ["at0.9"] = <
-                    text = <"Patient reference">
-                    description = <"*">
-
-                >
-                ["at0.10"] = <
-                    text = <"Patient id">
                     description = <"*">
 
                 >
