@@ -46,7 +46,7 @@ definition
                 include
                     archetype_id/value matches {/openEHR-EHR-ADMIN_ENTRY\.discharge-zju\.v1/}
             }
-            allow_archetype INSTRUCTION[at0.4] occurrences matches {0..1} matches {
+            allow_archetype INSTRUCTION[at0.4] occurrences matches {0..*} matches {
                 include
                     archetype_id/value matches {/openEHR-EHR-INSTRUCTION\.request-lab_test-zju\.v1/}
             }
@@ -98,6 +98,11 @@ ontology
                 >
                 ["at0.3"] = <
                     text = <"Discharge">
+                    description = <"">
+
+                >
+                ["at0.4"] = <
+                    text = <"Lab test">
                     description = <"">
 
                 >
