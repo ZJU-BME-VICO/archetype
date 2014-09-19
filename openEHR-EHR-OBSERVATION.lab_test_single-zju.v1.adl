@@ -1,5 +1,5 @@
 archetype (adl_version=1.4)
-    openEHR-EHR-OBSERVATION.lab_test-zju.v1
+    openEHR-EHR-OBSERVATION.lab_test_single-zju.v1
 specialize
     openEHR-EHR-OBSERVATION.lab_test.v1
 
@@ -118,11 +118,6 @@ definition
                                             DV_TEXT matches {*}
                                         }
                                     }
-                                    ELEMENT[at0.6] occurrences matches {0..1} matches {	--	Lab test device identifier
-                                        value matches {
-                                            DV_TEXT matches {*}
-                                        }
-                                    }
                                 }
                             }
                         }
@@ -163,21 +158,11 @@ definition
                             DV_DATE_TIME matches {*}
                         }
                     }
-                }
-            }
-        }
-        links cardinality matches {0..*; unordered} matches {
-            LINK[at0.3] occurrences matches {0..1} matches {	--	Addmission
-                meaning matches {
-                    DV_TEXT matches {
-                        value matches {"related to"}
+                    ELEMENT[at0.6] occurrences matches {0..1} matches {	--	Lab test device identifier
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
                     }
-                }
-                type matches {
-                    DV_TEXT matches {*}
-                }
-                target matches {
-                    DV_EHR_URI matches {*}
                 }
             }
         }
@@ -328,11 +313,6 @@ This archetype also acts as the parent for specialisations appropriate for more 
                 ["at0090"] = <
                     text = <"Requestor">
                     description = <"Details of the clinician or organisation requesting the laboratory test.">
-
-                >
-                ["at0.3"] = <
-                    text = <"Addmission">
-                    description = <"">
 
                 >
                 ["at0.5"] = <
