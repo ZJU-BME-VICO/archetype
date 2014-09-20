@@ -40,9 +40,9 @@ IHE. IHE, Laboratory Technical Framework, Volume 3 Content [Internet]. 2008;Avai
 definition
     OBSERVATION[at0000.1] matches {	--	Laboratory test
         subject matches {
-            PARTY_SELF matches {
+            PARTY_SELF[at0.7] matches {
                 externalRef matches {
-                    PARTY_REF matches {
+                    PARTY_REF[at0.8] matches {
                         id matches {
                             GENERIC_ID matches {*}
                         }
@@ -322,6 +322,16 @@ This archetype also acts as the parent for specialisations appropriate for more 
                 >
                 ["at0.6"] = <
                     text = <"Lab test device identifier">
+                    description = <"">
+
+                >
+                ["at0.7"] = <
+                    text = <"Patient">
+                    description = <"">
+
+                >
+                ["at0.8"] = <
+                    text = <"Patient">
                     description = <"">
 
                 >

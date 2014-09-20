@@ -1,0 +1,568 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-ADMIN_ENTRY.t-admission-zju.v1
+specialize
+    openEHR-EHR-ADMIN_ENTRY.admission-zju.v1
+
+concept
+    [at0000.1]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["date"] = <"19/07/07">
+        ["name"] = <"Chunlan Ma">
+        ["organisation"] = <"Ocean Informatics">
+        ["email"] = <"chunlan.ma@oceaninformatics.com">
+    >
+    lifecycle_state = <"AuthorDraft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"This admission ADMIN_ENTRY archetype was designed for representing the minimum admission data. This is based on the Australian/New Zealand Standard Implementation of Health Level Seven (HL7) Version 2.4 (Part 1: Patient administration) and Health Level Seven (HL7) Standard Version 2.3.1.">
+            copyright = <"© 2011 openEHR Foundation">
+        >
+    >
+    other_details = <
+        ["references"] = <"">
+        ["MD5-CAM-1.0.1"] = <"54E7D096A051918F6E3EF51257DD6B60">
+    >
+
+definition
+    ADMIN_ENTRY[at0000.1] matches {	--	Patient admission
+        subject matches {
+            PARTY_SELF[at0.72] matches {
+                externalRef matches {
+                    PARTY_REF[at0.73] matches {
+                        id matches {
+                            GENERIC_ID matches {*}
+                        }
+                    }
+                }
+            }
+        }
+        data matches {
+            ITEM_TREE[at0001] matches {	--	Tree
+                items cardinality matches {2..*; unordered} matches {
+                    ELEMENT[at0002] matches {	--	Patient class
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at0003,	--	Inpatient/overnight patient
+                                    at0005,	--	Outpatient
+                                    at0006,
+									at0.71]	--	Unknown
+                                }
+                            }
+                        }
+                    }
+                    CLUSTER[at0073] occurrences matches {0..1} matches {	--	Assigned patient location
+                        items cardinality matches {1..*; unordered} matches {
+                            ELEMENT[at0074] occurrences matches {0..1} matches {	--	Point of care/Unit
+                                value matches {
+                                    DV_TEXT matches {*}
+                                }
+                            }
+                            ELEMENT[at0077] occurrences matches {0..1} matches {	--	Ward
+                                value matches {
+                                    DV_TEXT matches {*}
+                                }
+                            }
+                            ELEMENT[at0078] occurrences matches {0..1} matches {	--	Room
+                                value matches {
+                                    DV_TEXT matches {*}
+                                }
+                            }
+                            ELEMENT[at0079] occurrences matches {0..1} matches {	--	Bed
+                                value matches {
+                                    DV_TEXT matches {*}
+                                }
+                            }
+                        }
+                    }
+                    ELEMENT[at0071] matches {	--	Admit date/time
+                        value matches {
+                            DV_DATE_TIME matches {*}
+                        }
+                    }
+                    ELEMENT[at0.4] matches {	--	Main diagnosis
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
+                    }
+                    ELEMENT[at0.5] matches {	--	Patient condition
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
+                    }
+                    ELEMENT[at0.6] matches {	--	Nursing class
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
+                    }
+                    ELEMENT[at0.14] matches {	--	Doctor group id
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
+                    }
+                    ELEMENT[at0.15] matches {	--	Nursing group id
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
+                    }
+                    ELEMENT[at0.17] matches {	--	Charge indicator
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
+                    }
+                    ELEMENT[at0.18] matches {	--	HIS charge count
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
+                    }
+                    ELEMENT[at0.19] matches {	--	Last charge date and time
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
+                    }
+                    ELEMENT[at0.20] matches {	--	First admission indicator
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
+                    }
+                    ELEMENT[at0.21] matches {	--	Special department
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
+                    }
+                }
+            }
+        }
+        otherParticipations cardinality matches {0..*; unordered} matches {
+            PARTICIPATION[at0.26] occurrences matches {0..1} matches {	--	Director
+                performer matches {
+                    PARTY_RELATED matches {
+                        externalRef matches {
+                            PARTY_REF matches {
+                                id matches {
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::at0.62]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            PARTICIPATION[at0.30] occurrences matches {0..1} matches {	--	Deputy doctor
+                performer matches {
+                    PARTY_RELATED matches {
+                        externalRef matches {
+                            PARTY_REF matches {
+                                id matches {
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::at0.63]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            PARTICIPATION[at0.34] occurrences matches {0..1} matches {	--	Attending doctor
+                performer matches {
+                    PARTY_RELATED matches {
+                        externalRef matches {
+                            PARTY_REF matches {
+                                id matches {
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::at0.64]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            PARTICIPATION[at0.38] occurrences matches {0..1} matches {	--	Resident doctor
+                performer matches {
+                    PARTY_RELATED matches {
+                        externalRef matches {
+                            PARTY_REF matches {
+                                id matches {
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::at0.65]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            PARTICIPATION[at0.42] occurrences matches {0..1} matches {	--	Primary nurse
+                performer matches {
+                    PARTY_RELATED matches {
+                        externalRef matches {
+                            PARTY_REF matches {
+                                id matches {
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::at0.66]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            PARTICIPATION[at0.46] occurrences matches {0..1} matches {	--	Continuing doctor
+                performer matches {
+                    PARTY_RELATED matches {
+                        externalRef matches {
+                            PARTY_REF matches {
+                                id matches {
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::at0.67]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            PARTICIPATION[at0.50] occurrences matches {0..1} matches {	--	Interns doctor
+                performer matches {
+                    PARTY_RELATED matches {
+                        externalRef matches {
+                            PARTY_REF matches {
+                                id matches {
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::at0.68]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            PARTICIPATION[at0.54] occurrences matches {0..1} matches {	--	Recorder
+                performer matches {
+                    PARTY_RELATED matches {
+                        externalRef matches {
+                            PARTY_REF matches {
+                                id matches {
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::at0.69]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            PARTICIPATION[at0.58] occurrences matches {0..1} matches {	--	Outpatient doctor
+                performer matches {
+                    PARTY_RELATED matches {
+                        externalRef matches {
+                            PARTY_REF matches {
+                                id matches {
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::at0.70]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Patient admission">
+                    description = <"Used for admitted patient only. It signals the beginning of a patient's stay in a health care facility.">
+
+                >
+                ["at0000.1"] = <
+                    text = <"Patient admission">
+                    description = <"Used for admitted patient only. It signals the beginning of a patient's stay in a health care facility.">
+
+                >
+                ["at0001"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+
+                >
+                ["at0002"] = <
+                    text = <"Patient class">
+                    description = <"Intended mode of treatement.">
+
+                >
+                ["at0003"] = <
+                    text = <"Inpatient/overnight patient">
+                    description = <"Inpatient/overnight patient">
+
+                >
+                ["at0005"] = <
+                    text = <"Outpatient">
+                    description = <"Outpatient">
+
+                >
+                ["at0006"] = <
+                    text = <"Emergency patient">
+                    description = <"Emergency patient">
+
+                >
+                ["at0071"] = <
+                    text = <"Admit date/time">
+                    description = <"Date/time the patient was admitted.">
+
+                >
+                ["at0073"] = <
+                    text = <"Assigned patient location">
+                    description = <"Assigned patient location when the patient was admitted.">
+
+                >
+                ["at0074"] = <
+                    text = <"Point of care/Unit">
+                    description = <"*">
+
+                >
+                ["at0077"] = <
+                    text = <"Ward">
+                    description = <"*">
+
+                >
+                ["at0078"] = <
+                    text = <"Room">
+                    description = <"*">
+
+                >
+                ["at0079"] = <
+                    text = <"Bed">
+                    description = <"*">
+
+                >
+                ["at0.4"] = <
+                    text = <"Main diagnosis">
+                    description = <"*">
+
+                >
+                ["at0.5"] = <
+                    text = <"Patient condition">
+                    description = <"*">
+
+                >
+                ["at0.6"] = <
+                    text = <"Nursing class">
+                    description = <"*">
+
+                >
+                ["at0.14"] = <
+                    text = <"Doctor group id">
+                    description = <"*">
+
+                >
+                ["at0.15"] = <
+                    text = <"Nursing group id">
+                    description = <"*">
+
+                >
+                ["at0.17"] = <
+                    text = <"Charge indicator">
+                    description = <"*">
+
+                >
+                ["at0.18"] = <
+                    text = <"HIS charge count">
+                    description = <"*">
+
+                >
+                ["at0.19"] = <
+                    text = <"Last charge date and time">
+                    description = <"*">
+
+                >
+                ["at0.20"] = <
+                    text = <"First admission indicator">
+                    description = <"*">
+
+                >
+                ["at0.21"] = <
+                    text = <"Special department">
+                    description = <"*">
+
+                >
+                ["at0.26"] = <
+                    text = <"Director">
+                    description = <"*">
+
+                >
+                ["at0.30"] = <
+                    text = <"Deputy doctor">
+                    description = <"*">
+
+                >
+                ["at0.34"] = <
+                    text = <"Attending doctor">
+                    description = <"*">
+
+                >
+                ["at0.38"] = <
+                    text = <"Resident doctor">
+                    description = <"*">
+
+                >
+                ["at0.42"] = <
+                    text = <"Primary nurse">
+                    description = <"*">
+
+                >
+                ["at0.46"] = <
+                    text = <"Continuing doctor">
+                    description = <"*">
+
+                >
+                ["at0.50"] = <
+                    text = <"Interns doctor">
+                    description = <"*">
+
+                >
+                ["at0.54"] = <
+                    text = <"Recorder">
+                    description = <"*">
+
+                >
+                ["at0.58"] = <
+                    text = <"Outpatient doctor">
+                    description = <"*">
+
+                >
+                ["at0.62"] = <
+                    text = <"Director">
+                    description = <"*">
+
+                >
+                ["at0.63"] = <
+                    text = <"Deputy doctor">
+                    description = <"*">
+
+                >
+                ["at0.64"] = <
+                    text = <"Attending doctor">
+                    description = <"*">
+
+                >
+                ["at0.65"] = <
+                    text = <"Resident doctor">
+                    description = <"*">
+
+                >
+                ["at0.66"] = <
+                    text = <"Primary nurse">
+                    description = <"*">
+
+                >
+                ["at0.67"] = <
+                    text = <"Continuing doctor">
+                    description = <"*">
+
+                >
+                ["at0.68"] = <
+                    text = <"Interns doctor">
+                    description = <"*">
+
+                >
+                ["at0.69"] = <
+                    text = <"Recorder">
+                    description = <"*">
+
+                >
+                ["at0.70"] = <
+                    text = <"Outpatient doctor">
+                    description = <"*">
+
+                >
+                ["at0.71"] = <
+                    text = <"Physical examination">
+                    description = <"*">
+
+                >
+                ["at0.72"] = <
+                    text = <"Patient">
+                    description = <"*">
+
+                >
+                ["at0.73"] = <
+                    text = <"Patient">
+                    description = <"*">
+
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+        ["en"] = <
+            items = <
+                ["ac0001"] = <
+                    text = <"Any term that 'is a' 'Charge price indicator'">
+                    description = <"*">
+
+                >
+            >
+        >
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

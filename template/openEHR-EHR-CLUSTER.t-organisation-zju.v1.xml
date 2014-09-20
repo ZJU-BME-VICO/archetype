@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping package="">
+
+  <class name="openEHR-EHR-CLUSTER.t-organisation-zju.v1">
+
+    <id name="/uid/value">
+      <column name="id" />
+    </id>
+
+    <property name="/items[at0001]/value/value" column="name"/>
+
+  </class>
+
+</hibernate-mapping>

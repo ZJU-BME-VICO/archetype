@@ -1,7 +1,7 @@
 archetype (adl_version=1.4)
-    openEHR-EHR-INSTRUCTION.request-lab_test-zju.v1
+    openEHR-EHR-INSTRUCTION.request-imaging_exam-zju.v1
 specialize
-    openEHR-EHR-INSTRUCTION.request-lab_test.v1
+    openEHR-EHR-INSTRUCTION.request-imaging_exam.v1
 
 concept
     [at0000.1.1]
@@ -12,58 +12,44 @@ language
 description
     original_author = <
         ["date"] = <"2009-12-08">
-        ["name"] = <"Ian McNicoll">
+        ["name"] = <"Dr Ian McNicoll">
         ["organisation"] = <"Ocean Informatics, United Kingdom">
         ["email"] = <"ian.mcnicoll@oceaninformatics.com">
     >
-    lifecycle_state = <"AuthorDraft">
+    lifecycle_state = <"CommitteeDraft">
     details = <
         ["en"] = <
             language = <[ISO_639-1::en]>
-            purpose = <"To request a laboratory test to be performed and convey supporting clinical details.">
-            keywords = <"request","refer","order","service","provide","laboratory","pathology","microbiology","haematology","diagnostic">
+            purpose = <"To request an imaging examination to be performed and convey supporting clinical details.">
+            keywords = <"request","refer","order","service","provide","imaging","service","radiology">
             copyright = <"© openEHR Foundation">
-            use = <"Use in most requests for a laboratory test to be conducted on a patient.
-If there are more specific details about the test and/or specimen include this information in more detailed CLUSTER archetypes appropriate for the purpose.">
+            use = <"Use in most requests for an imaging examination to be performed on a patient.
+
+If there are more details about the examination required, include this information in more detailed CLUSTER archetypes appropriate for the purpose in the 'Specific details' SLOT.">
         >
     >
     other_details = <
-        ["MD5-CAM-1.0.1"] = <"3D2186771DC2666AF39652CC7E76E684">
+        ["MD5-CAM-1.0.1"] = <"2E517B75340791AD423C40BFA0A8C4BD">
     >
 
 definition
-    INSTRUCTION[at0000.1.1] matches {	--	Laboratory Test request
-        subject matches {
-            PARTY_SELF matches {
-                externalRef matches {
-                    PARTY_REF matches {
-                        id matches {
-                            GENERIC_ID matches {*}
-                        }
-                    }
-                }
-            }
-        }
+    INSTRUCTION[at0000.1.1] matches {	--	Imaging Examination Request
         activities cardinality matches {0..*; unordered} matches {
             ACTIVITY[at0001] occurrences matches {1..*} matches {	--	Request
                 description matches {
                     ITEM_TREE[at0009] matches {	--	Tree
                         items cardinality matches {1..*; unordered} matches {
-                            ELEMENT[at0121] matches {	--	Service requested
+                            ELEMENT[at0121.1] matches {	--	Examination requested
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0135] occurrences matches {0..1} matches {	--	Description of service
+                            ELEMENT[at0135.1] occurrences matches {0..1} matches {	--	Description of examination
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
                             allow_archetype CLUSTER[at0132] occurrences matches {0..*} matches {	--	Specific details
-                                include
-                                    archetype_id/value matches {/.*/}
-                            }
-                            allow_archetype CLUSTER[at0.145] occurrences matches {0..*} matches {	--	Specimen details
                                 include
                                     archetype_id/value matches {/.*/}
                             }
@@ -94,12 +80,12 @@ definition
                                     }
                                 }
                             }
-                            ELEMENT[at0040.1] occurrences matches {0..1} matches {	--	DateTime test preferred
+                            ELEMENT[at0040] occurrences matches {0..1} matches {	--	Date &/or time service required
                                 value matches {
                                     DV_DATE_TIME matches {*}
                                 }
                             }
-                            ELEMENT[at0144.1] occurrences matches {0..1} matches {	--	Latest DateTime test required
+                            ELEMENT[at0144] occurrences matches {0..1} matches {	--	Latest date service required
                                 value matches {
                                     DV_DATE_TIME matches {*}
                                 }
@@ -137,7 +123,7 @@ definition
                         include
                             archetype_id/value matches {/.*/}
                     }
-                    ELEMENT[at0011] occurrences matches {0..1} matches {	--	Receiver identifier
+                    ELEMENT[at0011] occurrences matches {0..1} matches {	--	Receiver Identifier
                         value matches {
                             DV_TEXT matches {*}
                         }
@@ -159,28 +145,31 @@ definition
                         include
                             archetype_id/value matches {/.*/}
                     }
+                    ELEMENT[at0.1.2] occurrences matches {0..1} matches {	--	Patient identifier
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
+                    }
+                    ELEMENT[at0.1.4] occurrences matches {0..1} matches {	--	DateTime Imaging Examination requirement ordered
+                        value matches {
+                            DV_DATE_TIME matches {*}
+                        }
+                    }
                 }
             }
         }
-        otherParticipations cardinality matches {0..*; unordered} matches {
-            PARTICIPATION[at0.1.12] occurrences matches {0..1} matches {	--	Receive department
-                performer matches {
-                    PARTY_RELATED matches {
-                        externalRef matches {
-                            PARTY_REF matches {
-                                id matches {
-                                    GENERIC_ID matches {*}
-                                }
-                            }
-                        }
-                        relationship matches {
-                            DV_CODED_TEXT matches {
-                                defining_code matches {
-                                    [local::at0.1.17]
-                                }
-                            }
-                        }
+        links cardinality matches {0..*; unordered} matches {
+            LINK[at0.1.3] occurrences matches {1..*} matches {	--	Addmission
+                meaning matches {
+                    DV_TEXT matches {
+                        value matches {"related to"}
                     }
+                }
+                type matches {
+                    DV_TEXT matches {*}
+                }
+                target matches {
+                    DV_EHR_URI matches {*}
                 }
             }
         }
@@ -190,29 +179,24 @@ ontology
     term_definitions = <
         ["en"] = <
             items = <
-                ["at0.145"] = <
-                    text = <"Specimen details">
-                    description = <"Structured detail defining the specimen.">
-
-                >
                 ["at0000"] = <
                     text = <"Healthcare service request">
-                    description = <"Generic request for a range of different healthcare services e.g referral, lab request, equipment request.">
+                    description = <"Request for a range of different healthcare services, for example, a referral, lab request, equipment request.">
 
                 >
                 ["at0000.1"] = <
-                    text = <"Laboratory Test request">
-                    description = <"Generic request for a laboratory request.">
+                    text = <"Imaging Examination Request">
+                    description = <"Generic request for an imaging examination request.">
 
                 >
                 ["at0000.1.1"] = <
-                    text = <"Laboratory Test request">
-                    description = <"Generic request for a laboratory request.">
+                    text = <"Imaging Examination Request">
+                    description = <"Generic request for an imaging examination request.">
 
                 >
                 ["at0001"] = <
                     text = <"Request">
-                    description = <"Current Activity.">
+                    description = <"Current Activity">
 
                 >
                 ["at0008"] = <
@@ -231,18 +215,13 @@ ontology
 
                 >
                 ["at0011"] = <
-                    text = <"Receiver identifier">
+                    text = <"Receiver Identifier">
                     description = <"The ID assigned to the order by the healthcare provider or organisation receiving the request for service. This is also referred to as Filler Order Identifier.">
 
                 >
                 ["at0040"] = <
                     text = <"Date &/or time service required">
                     description = <"The date and time that the service should be performed or completed.">
-
-                >
-                ["at0040.1"] = <
-                    text = <"DateTime test preferred">
-                    description = <"The preferred date and time by which the service should be performed or completed.">
 
                 >
                 ["at0062"] = <
@@ -290,9 +269,15 @@ ontology
                     description = <"Identification of the service requested. This is often coded with an external terminology.">
 
                 >
+                ["at0121.1"] = <
+                    text = <"Examination requested">
+                    description = <"Identification of the examination requested. This is often coded with an external terminology.">
+
+                >
                 ["at0127"] = <
                     text = <"Request status">
-                    description = <"The status of the request for service as indicated by the requester. Status is used to denote whether this is the initial request, or a follow-up request to change or provide supplementary information.">
+                    description = <"The status of the request for service as indicated by the requester. 
+Status is used to denote whether this is the initial request, or a follow-up request to change or provide supplementary information.">
 
                 >
                 ["at0128"] = <
@@ -302,12 +287,17 @@ ontology
                 >
                 ["at0132"] = <
                     text = <"Specific details">
-                    description = <"Structured detail defining the service requested eg CLUSTER archetype specifying the specific catheter that is to be inserted.">
+                    description = <"Structured detail defining the service requested.">
 
                 >
                 ["at0135"] = <
                     text = <"Description of service">
                     description = <"A detailed narrative description of the service requested.">
+
+                >
+                ["at0135.1"] = <
+                    text = <"Description of examination">
+                    description = <"A detailed narrative description of the examination requested.">
 
                 >
                 ["at0136"] = <
@@ -340,19 +330,19 @@ ontology
                     description = <"The latest date that is acceptable for the service to be completed.">
 
                 >
-                ["at0144.1"] = <
-                    text = <"Latest DateTime test required">
-                    description = <"The latest date that is acceptable for the service to be completed.">
+                ["at0.1.2"] = <
+                    text = <"Patient identifier">
+                    description = <"The ID assigned to the patient by the healthcare provider or organisation.">
 
                 >
-                ["at0.1.12"] = <
-                    text = <"Receive department">
-                    description = <"*">
+                ["at0.1.3"] = <
+                    text = <"Addmission">
+                    description = <"">
 
                 >
-                ["at0.1.17"] = <
-                    text = <"Receive department">
-                    description = <"*">
+                ["at0.1.4"] = <
+                    text = <"DateTime Imaging Examination requirement ordered">
+                    description = <"The date that the request is ordered.">
 
                 >
             >

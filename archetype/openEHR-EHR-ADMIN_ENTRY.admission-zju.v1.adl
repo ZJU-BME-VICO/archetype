@@ -32,9 +32,9 @@ description
 definition
     ADMIN_ENTRY[at0000.1] matches {	--	Patient admission
         subject matches {
-            PARTY_SELF matches {
+            PARTY_SELF[at0.72] matches {
                 externalRef matches {
-                    PARTY_REF matches {
+                    PARTY_REF[at0.73] matches {
                         id matches {
                             GENERIC_ID matches {*}
                         }
@@ -58,7 +58,7 @@ definition
                                     at0008,	--	Pre-admit
                                     at0009,	--	Commercial account
                                     at0010,	--	Not-applicable
-                                    at0011]	--	Unknown
+									at0.71]	--	Unknown
                                 }
                             }
                         }
@@ -303,11 +303,6 @@ definition
                     ELEMENT[at0071] matches {	--	Admit date/time
                         value matches {
                             DV_DATE_TIME matches {*}
-                        }
-                    }
-                    ELEMENT[at0.2] matches {	--	Admit status
-                        value matches {
-                            DV_TEXT matches {*}
                         }
                     }
                     ELEMENT[at0.4] matches {	--	Main diagnosis
@@ -983,11 +978,6 @@ patient">
                     description = <"*">
 
                 >
-                ["at0.2"] = <
-                    text = <"Admit status">
-                    description = <"*">
-
-                >
                 ["at0.4"] = <
                     text = <"Main diagnosis">
                     description = <"*">
@@ -1125,6 +1115,21 @@ patient">
                 >
                 ["at0.70"] = <
                     text = <"Outpatient doctor">
+                    description = <"*">
+
+                >
+                ["at0.71"] = <
+                    text = <"Physical examination">
+                    description = <"*">
+
+                >
+                ["at0.72"] = <
+                    text = <"Patient">
+                    description = <"*">
+
+                >
+                ["at0.73"] = <
+                    text = <"Patient">
                     description = <"*">
 
                 >

@@ -1,0 +1,88 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.t-lab_result_annotation-zju.v1
+specialize
+    openEHR-EHR-CLUSTER.lab_result_annotation-zju.v1
+
+concept
+    [at0000.1]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["date"] = <"08/12/2009">
+        ["name"] = <"Dr Ian McNicoll">
+        ["organisation"] = <"Ocean Informatics, United Kingdom">
+        ["email"] = <"ian.mcnicoll@oceaninformatics.com">
+    >
+    lifecycle_state = <"AuthorDraft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"To record comments and other per-node annotations within a lab_test archetype.">
+            keywords = <"lab test","comment">
+            copyright = <"copyright (c) 2010 openEHR foundation">
+            use = <"To be used within a lab_test archetype.">
+        >
+    >
+    other_details = <
+        ["references"] = <"NEHTA, Australia. Pathology Episode v1.0 - Data Group library [Internet]. 2009;[cited 2009 Dec 8 ] Available from: http://www.nehta.gov.au/data-group-library/data-specifications/dgl-pathology
+
+IHE. IHE, Laboratory Technical Framework, Volume 3 Content [Internet]. 2008;Available from: http://www.ihe.net/Technical_Framework/upload/ihe_lab_TF_rel2_1-Vol-3_FT_2008-08-08.pdf
+
+
+
+">
+        ["MD5-CAM-1.0.1"] = <"A8AAEEF10625E6C432BA59922321ED22">
+    >
+
+definition
+    CLUSTER[at0000.1] matches {	--	Laboratory result annotation
+        items cardinality matches {1..*; unordered} matches {
+            ELEMENT[at0002] occurrences matches {0..1} matches {	--	Result comment
+                value matches {
+                    DV_TEXT matches {*}
+                }
+            }
+            ELEMENT[at0005] occurrences matches {0..1} matches {	--	Reference range guidance
+                value matches {
+                    DV_TEXT matches {*}
+                }
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Laboratory result annotation">
+                    description = <"To record comments and other per-node annotations within a lab_test archetype.">
+
+                >
+                ["at0000.1"] = <
+                    text = <"Laboratory result annotation">
+                    description = <"To record comments and other per-node annotations within a lab_test archetype.">
+
+                >
+                ["at0002"] = <
+                    text = <"Result comment">
+                    description = <"A comment on an individual lab result.">
+
+                >
+                ["at0005"] = <
+                    text = <"Reference range guidance">
+                    description = <"Further advice on the applicability of the reference range.">
+
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

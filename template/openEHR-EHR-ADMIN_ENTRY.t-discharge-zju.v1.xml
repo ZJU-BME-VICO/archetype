@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping package="">
+
+  <class name="openEHR-EHR-ADMIN_ENTRY.t-discharge-zju.v1">
+
+    <id name="/uid/value">
+      <column name="id" />
+    </id>
+
+    <property name="/data[at0003]/items[at0004]/value/value" column="dischargeDateTime"/>
+    <property name="/subject[at0.2]/externalRef[at0.3]/id/value" column="patient"/>
+    <property name="/data[at0003]/items[at0069]/items[at0062]/items[at0056]/value/value" column="dischargeType"/>
+    <one-to-many name="/data[at0003]/items[at0069]/items[at0070]" class="openEHR-EHR-CLUSTER.t-organisation-zju"/>
+    <property name="/data[at0003]/items[at0057]/items[at0084]/value/value" column="readmissionPurpose"/>
+
+  </class>
+
+</hibernate-mapping>

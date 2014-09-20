@@ -46,9 +46,21 @@ definition
                 include
                     archetype_id/value matches {/openEHR-EHR-ADMIN_ENTRY\.discharge-zju\.v1/}
             }
-            allow_archetype INSTRUCTION[at0.4] occurrences matches {0..*} matches {	--	Lab test
-                include
-                    archetype_id/value matches {/openEHR-EHR-INSTRUCTION\.request-lab_test-zju\.v1/}
+            SECTION[at0.5] occurrences matches {0..*} matches {	--	Lab test
+                items cardinality matches {0..*; unordered} matches {
+                    allow_archetype INSTRUCTION[at0.4] occurrences matches {0..1} matches {	--	Lab test request
+                        include
+                            archetype_id/value matches {/openEHR-EHR-INSTRUCTION\.request-lab_test-zju\.v1/}
+                    }
+                    allow_archetype OBSERVATION[at0.6] occurrences matches {0..*} matches {	--	Lab test result
+                        include
+                            archetype_id/value matches {/openEHR-EHR-OBSERVATION\.lab_test_single-zju\.v1/}
+                    }
+                    allow_archetype ACTION[at0.7] occurrences matches {0..*} matches {	--	Lab test action
+                        include
+                            archetype_id/value matches {/openEHR-EHR-ACTION\.lab_test-zju\.v1/}
+                    }
+                }
             }
         }
         context matches {
@@ -102,7 +114,22 @@ ontology
 
                 >
                 ["at0.4"] = <
+                    text = <"Lab test request">
+                    description = <"">
+
+                >
+                ["at0.5"] = <
                     text = <"Lab test">
+                    description = <"">
+
+                >
+                ["at0.6"] = <
+                    text = <"Lab test result">
+                    description = <"">
+
+                >
+                ["at0.7"] = <
+                    text = <"Lab test action">
                     description = <"">
 
                 >

@@ -113,15 +113,25 @@ definition
             }
         }
         time matches {
-            DV_DATE_TIME matches {*}
+            DV_DATE_TIME[at0013] matches {*}
         }
         provider matches {
-            PARTY_IDENTIFIED matches {
+            PARTY_IDENTIFIED[at0014] matches {
                 externalRef matches {
-                    PARTY_REF matches {
+                    PARTY_REF[at0015] matches {
                         id matches {
                             GENERIC_ID matches {*}
                         }
+                    }
+                }
+            }
+        }
+        instructionDetails matches {
+            INSTRUCTION_DETAILS[at0016] matches {
+                activityId matches {"/activities[at0001]"}
+                instructionId matches {
+                    LOCATABLE_REF[at0017] matches {
+                        path matches {"openEHR-EHR-INSTRUCTION.t-request-lab_test-zju.v1"}
                     }
                 }
             }
@@ -160,6 +170,31 @@ ontology
                 ["at0012"] = <
                     text = <"Lab test aborted">
                     description = <"The lab test has been aborted.">
+
+                >
+                ["at0013"] = <
+                    text = <"Action date time">
+                    description = <"">
+
+                >
+                ["at0014"] = <
+                    text = <"Patient">
+                    description = <"">
+
+                >
+                ["at0015"] = <
+                    text = <"Patient">
+                    description = <"">
+
+                >
+                ["at0016"] = <
+                    text = <"Request activity">
+                    description = <"">
+
+                >
+                ["at0017"] = <
+                    text = <"Request instruction">
+                    description = <"">
 
                 >
             >
