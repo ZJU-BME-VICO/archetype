@@ -115,12 +115,12 @@ definition
             }
         }
         time matches {
-            DV_DATE_TIME[at0013] matches {*}
+            DV_DATE_TIME[at0013] matches {*}	--	Action date time
         }
         provider matches {
-            PARTY_IDENTIFIED[at0014] matches {
+            PARTY_IDENTIFIED[at0014] matches {	--	Patient
                 externalRef matches {
-                    PARTY_REF[at0015] matches {
+                    PARTY_REF[at0015] matches {	--	Patient
                         id matches {
                             GENERIC_ID matches {*}
                         }
@@ -129,10 +129,10 @@ definition
             }
         }
         instructionDetails matches {
-            INSTRUCTION_DETAILS[at0016] matches {
+            INSTRUCTION_DETAILS[at0016] matches {	--	Request activity
                 activityId matches {"/activities[at0001]"}
                 instructionId matches {
-                    LOCATABLE_REF[at0017] matches {
+                    LOCATABLE_REF[at0017] matches {	--	Request instruction
                         path matches {"openEHR-EHR-INSTRUCTION.t-request-lab_test-zju.v1"}
                     }
                 }

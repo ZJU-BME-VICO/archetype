@@ -32,9 +32,9 @@ description
 definition
     ADMIN_ENTRY[at0000.1] matches {	--	Patient admission
         subject matches {
-            PARTY_SELF[at0.72] matches {
+            PARTY_SELF[at0.72] matches {	--	Patient
                 externalRef matches {
-                    PARTY_REF[at0.73] matches {
+                    PARTY_REF[at0.73] matches {	--	Patient
                         id matches {
                             GENERIC_ID matches {*}
                         }
@@ -58,7 +58,7 @@ definition
                                     at0008,	--	Pre-admit
                                     at0009,	--	Commercial account
                                     at0010,	--	Not-applicable
-									at0.71]	--	Unknown
+                                    at0.71]	--	Physical examination
                                 }
                             }
                         }

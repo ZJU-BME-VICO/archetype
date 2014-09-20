@@ -1,5 +1,5 @@
 archetype (adl_version=1.4)
-	openEHR-EHR-COMPOSITION.t-encounter-zju.v1
+    openEHR-EHR-COMPOSITION.t-encounter-zju.v1
 specialize
     openEHR-EHR-COMPOSITION.encounter-zju.v1
 

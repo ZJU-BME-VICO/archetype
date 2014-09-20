@@ -1,5 +1,5 @@
 archetype (adl_version=1.4)
-	openEHR-EHR-ADMIN_ENTRY.t-admission-zju.v1
+    openEHR-EHR-ADMIN_ENTRY.t-admission-zju.v1
 specialize
     openEHR-EHR-ADMIN_ENTRY.admission-zju.v1
 
@@ -32,9 +32,9 @@ description
 definition
     ADMIN_ENTRY[at0000.1] matches {	--	Patient admission
         subject matches {
-            PARTY_SELF[at0.72] matches {
+            PARTY_SELF[at0.72] matches {	--	Patient
                 externalRef matches {
-                    PARTY_REF[at0.73] matches {
+                    PARTY_REF[at0.73] matches {	--	Patient
                         id matches {
                             GENERIC_ID matches {*}
                         }
@@ -52,8 +52,8 @@ definition
                                     [local::
                                     at0003,	--	Inpatient/overnight patient
                                     at0005,	--	Outpatient
-                                    at0006,
-									at0.71]	--	Unknown
+                                    at0006,	--	Emergency patient
+                                    at0.71]	--	Physical examination
                                 }
                             }
                         }
