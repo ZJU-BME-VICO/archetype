@@ -34,6 +34,17 @@ If there are more details about the examination required, include this informati
 
 definition
     INSTRUCTION[at0000.1.1] matches {	--	Imaging Examination Request
+        subject matches {
+            PARTY_SELF[at0.1.5] matches {	--	Patient
+                externalRef matches {
+                    PARTY_REF[at0.1.6] matches {	--	Patient
+                        id matches {
+                            GENERIC_ID matches {*}
+                        }
+                    }
+                }
+            }
+        }
         activities cardinality matches {0..*; unordered} matches {
             ACTIVITY[at0001] occurrences matches {1..*} matches {	--	Request
                 description matches {
@@ -145,31 +156,6 @@ definition
                         include
                             archetype_id/value matches {/.*/}
                     }
-                    ELEMENT[at0.1.2] occurrences matches {0..1} matches {	--	Patient identifier
-                        value matches {
-                            DV_TEXT matches {*}
-                        }
-                    }
-                    ELEMENT[at0.1.4] occurrences matches {0..1} matches {	--	DateTime Imaging Examination requirement ordered
-                        value matches {
-                            DV_DATE_TIME matches {*}
-                        }
-                    }
-                }
-            }
-        }
-        links cardinality matches {0..*; unordered} matches {
-            LINK[at0.1.3] occurrences matches {1..*} matches {	--	Addmission
-                meaning matches {
-                    DV_TEXT matches {
-                        value matches {"related to"}
-                    }
-                }
-                type matches {
-                    DV_TEXT matches {*}
-                }
-                target matches {
-                    DV_EHR_URI matches {*}
                 }
             }
         }
@@ -330,19 +316,14 @@ Status is used to denote whether this is the initial request, or a follow-up req
                     description = <"The latest date that is acceptable for the service to be completed.">
 
                 >
-                ["at0.1.2"] = <
-                    text = <"Patient identifier">
-                    description = <"The ID assigned to the patient by the healthcare provider or organisation.">
+                ["at0.1.5"] = <
+                    text = <"Patient">
+                    description = <"*">
 
                 >
-                ["at0.1.3"] = <
-                    text = <"Addmission">
-                    description = <"">
-
-                >
-                ["at0.1.4"] = <
-                    text = <"DateTime Imaging Examination requirement ordered">
-                    description = <"The date that the request is ordered.">
+                ["at0.1.6"] = <
+                    text = <"Patient">
+                    description = <"*">
 
                 >
             >

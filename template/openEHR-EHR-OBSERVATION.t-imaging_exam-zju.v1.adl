@@ -1,0 +1,263 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-OBSERVATION.t-imaging_exam-zju.v1
+specialize
+    openEHR-EHR-OBSERVATION.imaging_exam-zju.v1
+
+concept
+    [at0000.1.1]
+
+language
+    original_language = <[ISO_639-1::en]>
+
+description
+    original_author = <
+        ["date"] = <"2011-02-07">
+        ["name"] = <"Grahame Grieve">
+        ["organisation"] = <"Health Intersections Pty Ltd">
+        ["email"] = <"grahame@healthintersections.com.au">
+    >
+    lifecycle_state = <"CommitteeDraft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"To record the findings and interpretation of an imaging examination, or series of examinations, performed.">
+            copyright = <"© openEHR Foundation">
+            use = <"Use to record all results related to the diagnostic imaging aspects of any imaging examinations performed. 
+
+Use to record the imaging examination components (only) of a more complex procedure, including those that may have been undertaken under imaging guidance.
+
+More complex procedures (such as echocardiaograms or Bone density scans) may be represented using templates or specialised archetypes where additional report content is appropriate.
+
+Will normally be reported back to the requesting clinician as one component within the context of an overall COMPOSITION-based report.">
+            misuse = <"Not to be used to record non-imaging examination findings or activities. For example when imaging is performed as part of a procedure the information related to the procedure must be recorded using the ACTION.procedure archetype or an OBSERVATION for the operative findings. This archetype will only be used to record the findings from the imaging.
+
+Not to be used to record details about any parallel procedure undertaken. Use the specific procedure-related archetypes, for example ACTION.procedure.
+
+Not to be used to record details about medications administered during the imaging test. Use specific medication-related archetypes, for example ACTION.medication.">
+        >
+    >
+    other_details = <
+        ["references"] = <"IHE.net Technical Frameworks - Radiology [Internet]. [date unknown];[cited 2011 Jan 2 ] Available from: http://www.ihe.net/Technical_Framework/index.cfm#radiology
+
+RSNA.org: Radiology Reporting [Internet]. [date unknown];[cited 2011 Jan 2 ] Available from: http://www.rsna.org/Informatics/radreports.cfm
+
+Radiology Written Report Guideline Project (Draft Consultation); December 2010.
+
+Diagnostic Imaging data specifications; NEHTA, version 1.0, 2007 Jun 29.
+
+Imaging examination result, draft archetype, NEHTA Clinical Knowledge Manager [Internet]. London: NEHTA. Authored: 11 Feb 2007. Available at: http://dcm.nehta.org.au/ckm/#showArchetype_1013.1.943_6 (accessed 16 Sep 2013).">
+        ["MD5-CAM-1.0.1"] = <"E115450A8DA092A0431A3D9777634573">
+    >
+
+definition
+    OBSERVATION[at0000.1.1] matches {	--	Imaging examination result
+        data matches {
+            HISTORY[at0001] matches {	--	Event Series
+                events cardinality matches {1..*; unordered} matches {
+                    EVENT[at0002] occurrences matches {0..1} matches {	--	Any event
+                        data matches {
+                            ITEM_TREE[at0003] matches {	--	Tree
+                                items cardinality matches {2..*; unordered} matches {
+                                    ELEMENT[at0004] matches {	--	Examination result name
+                                        value matches {
+                                            DV_TEXT matches {*}
+                                        }
+                                    }
+                                    ELEMENT[at0024] occurrences matches {0..1} matches {	--	DateTime result issued
+                                        value matches {
+                                            DV_DATE_TIME matches {*}
+                                        }
+                                    }
+                                    ELEMENT[at0008] occurrences matches {0..1} matches {	--	Findings
+                                        value matches {
+                                            DV_TEXT matches {*}
+                                        }
+                                    }
+                                    ELEMENT[at0021] occurrences matches {0..1} matches {	--	Conclusion
+                                        value matches {
+                                            DV_TEXT matches {*}
+                                        }
+                                    }
+                                    ELEMENT[at0022] occurrences matches {0..*} matches {	--	Examination result representation
+                                        value matches {
+                                            DV_MULTIMEDIA matches {
+                                                media_type matches {
+                                                    [openEHR::
+                                                    517,
+                                                    518,
+                                                    519,
+                                                    682,
+                                                    683,
+                                                    417,
+                                                    418,
+                                                    419]
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0023] occurrences matches {0..1} matches {	--	Examination comment
+                                        value matches {
+                                            DV_TEXT matches {*}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        protocol matches {
+            ITEM_TREE[at0025] matches {	--	Tree
+                items cardinality matches {0..*; unordered} matches {
+                    CLUSTER[at0027] occurrences matches {0..*} matches {	--	Examination request details
+                        items cardinality matches {1..*; unordered} matches {
+                            ELEMENT[at0033] occurrences matches {0..1} matches {	--	Report identifier
+                                value matches {
+                                    DV_IDENTIFIER matches {*}
+                                }
+                            }
+                            CLUSTER[at0034] occurrences matches {0..*} matches {	--	Image details
+                                items cardinality matches {1..*; unordered} matches {
+                                    ELEMENT[at0035] occurrences matches {0..1} matches {	--	Image identifier
+                                        value matches {
+                                            DV_IDENTIFIER matches {*}
+                                        }
+                                    }
+                                    ELEMENT[at0036] occurrences matches {0..1} matches {	--	DICOM series identifier
+                                        value matches {
+                                            DV_IDENTIFIER matches {*}
+                                        }
+                                    }
+                                    ELEMENT[at0040] occurrences matches {0..1} matches {	--	Image
+                                        value matches {
+                                            DV_MULTIMEDIA matches {
+                                                media_type matches {
+                                                    [openEHR::
+                                                    637,
+                                                    425,
+                                                    426,
+                                                    427,
+                                                    428,
+                                                    429]
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Imaging examination result">
+                    description = <"Record the findings and interpretation of an imaging examination, or series of examinations, performed.">
+
+                >
+                ["at0000.1"] = <
+                    text = <"Imaging examination result">
+                    description = <"Record the findings and interpretation of an imaging examination, or series of examinations, performed.">
+
+                >
+                ["at0000.1.1"] = <
+                    text = <"Imaging examination result">
+                    description = <"Record the findings and interpretation of an imaging examination, or series of examinations, performed.">
+
+                >
+                ["at0001"] = <
+                    text = <"Event Series">
+                    description = <"@ internal @">
+
+                >
+                ["at0002"] = <
+                    text = <"Any event">
+                    description = <"Any event.">
+
+                >
+                ["at0003"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+
+                >
+                ["at0004"] = <
+                    text = <"Examination result name">
+                    description = <"Identification of the imaging examination or procedure performed, typically including modality and anatomical location (including laterality). Coding with a terminology, potientially a pre-coordinated term specifying both modality and anatomical location, is desirable where possible. Possible candidate terminologies: LOINC, SNOMED CT or RadLex.">
+
+                >
+                ["at0008"] = <
+                    text = <"Findings">
+                    description = <"Narrative description of findings, including comparative findings.">
+
+                >
+                ["at0021"] = <
+                    text = <"Conclusion">
+                    description = <"Concise and clinically contextualised narrative interpretation of the imaging examination findings.">
+
+                >
+                ["at0022"] = <
+                    text = <"Examination result representation">
+                    description = <"Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they must be semantically equivalent.">
+
+                >
+                ["at0023"] = <
+                    text = <"Examination comment">
+                    description = <"Additional narrative about the examination not captured in other fields. For example, recommendations for future examinations; a comment on appropriateness of the examination or on quality of images, if separate to findings; or a note that the film was given to the patient.">
+
+                >
+                ["at0024"] = <
+                    text = <"DateTime result issued">
+                    description = <"The date and/or time that the result was issued for the recorded 'Examination result status'.">
+
+                >
+                ["at0025"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+
+                >
+                ["at0027"] = <
+                    text = <"Examination request details">
+                    description = <"Details concerning a single examination requested. Note: Usually there is one examination request for each result, however in some circumstances multiple examination requests may be represented using a single Imaging examination result archetype.">
+
+                >
+                ["at0033"] = <
+                    text = <"Report identifier">
+                    description = <"The local identifier given to the imaging examination report.">
+
+                >
+                ["at0034"] = <
+                    text = <"Image details">
+                    description = <"Images referred to, or provided, to assist clinical understanding of the examination. If attached image is in DICOM format, all the fields below should be populated so the values are available to software that does not process DICOM images.">
+
+                >
+                ["at0035"] = <
+                    text = <"Image identifier">
+                    description = <"Unique identifier of this image allocated by the imaging service (often the DICOM image instance UID).">
+
+                >
+                ["at0036"] = <
+                    text = <"DICOM series identifier">
+                    description = <"Unique identifier of this series allocated by the imaging service.">
+
+                >
+                ["at0040"] = <
+                    text = <"Image">
+                    description = <"An attached or referenced image of a current view.">
+
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

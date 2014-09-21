@@ -50,7 +50,7 @@ Imaging examination result, draft archetype, NEHTA Clinical Knowledge Manager [I
     >
 
 definition
-    OBSERVATION[at0000.1] matches {
+    OBSERVATION[at0000.1] matches {	--	Imaging examination result
         data matches {
             HISTORY[at0001] matches {	--	Event Series
                 events cardinality matches {1..*; unordered} matches {
@@ -258,39 +258,6 @@ definition
                             use_node ELEMENT occurrences matches {0..1} /protocol[at0025]/items[at0027]/items[at0034]/items[at0040]
                         }
                     }
-                    ELEMENT[at0.2] occurrences matches {0..1} matches {	--	Patient identifier
-                        value matches {
-                            DV_TEXT matches {*}
-                        }
-                    }
-                }
-            }
-        }
-        links cardinality matches {0..*; unordered} matches {
-            LINK[at0.3] occurrences matches {1..*} matches {	--	Addmission
-                meaning matches {
-                    DV_TEXT matches {
-                        value matches {"related to"}
-                    }
-                }
-                type matches {
-                    DV_TEXT matches {*}
-                }
-                target matches {
-                    DV_EHR_URI matches {*}
-                }
-            }
-            LINK[at0.4] occurrences matches {1..*} matches {	--	imaging exam item
-                meaning matches {
-                    DV_TEXT matches {
-                        value matches {"in response to"}
-                    }
-                }
-                type matches {
-                    DV_TEXT matches {*}
-                }
-                target matches {
-                    DV_EHR_URI matches {*}
                 }
             }
         }
@@ -301,6 +268,11 @@ ontology
         ["en"] = <
             items = <
                 ["at0000"] = <
+                    text = <"Imaging examination result">
+                    description = <"Record the findings and interpretation of an imaging examination, or series of examinations, performed.">
+
+                >
+                ["at0000.1"] = <
                     text = <"Imaging examination result">
                     description = <"Record the findings and interpretation of an imaging examination, or series of examinations, performed.">
 
@@ -514,21 +486,6 @@ values, or information about the source of the value where this may be relevant 
                 ["at0042"] = <
                     text = <"Compared image details">
                     description = <"Details of previous images used for comparison.">
-
-                >
-                ["at0.2"] = <
-                    text = <"Patient identifier">
-                    description = <"The ID assigned to the patient by the healthcare provider or organisation.">
-
-                >
-                ["at0.3"] = <
-                    text = <"Addmission">
-                    description = <"">
-
-                >
-                ["at0.4"] = <
-                    text = <"imaging exam item">
-                    description = <"">
 
                 >
             >

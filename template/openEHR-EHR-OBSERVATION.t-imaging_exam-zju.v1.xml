@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping package="">
+
+  <class name="openEHR-EHR-OBSERVATION.t-imaging_exam-zju.v1" table="">
+
+    <id name="/uid/value">
+      <column name="id" />
+    </id>
+
+    <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0004]/value/value" column="examItem"/>
+    <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0024]/value/value" column="reportDatetime"/>
+    <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0008]/value/value" column="examFindings"/>
+    <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0021]/value/value" column="examConclusion"/>
+    <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0023]/value/value" column="examComment"/>
+    <property name="/data[at0001]/events[at0002]/data[at0003]/items[at0022]/value/uri/value" column="report"/>
+    <property name="/protocol[at0025]/items[at0027]/items[at0033]/id" column="reportIdentifier"/>
+    <property name="/protocol[at0025]/items[at0027]/items[at0034]/items[at0035]/id" column="imageIdentifier"/>
+    <property name="/protocol[at0025]/items[at0027]/items[at0034]/items[at0036]/id" column="dicomStudyIdentifier"/>
+    <property name="/protocol[at0025]/items[at0027]/items[at0034]/items[at0040]/value/uri/value" column="image"/>
+
+
+  </class>
+
+</hibernate-mapping>

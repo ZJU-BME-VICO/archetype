@@ -1,10 +1,10 @@
 archetype (adl_version=1.4)
-    openEHR-EHR-ACTION.t-lab_test-zju.v1
+    openEHR-EHR-ACTION.t-imaging_exam-zju.v1
 specialize
-    openEHR-EHR-ACTION.lab_test-zju.v1
+    openEHR-EHR-ACTION.imaging_exam-zju.v1
 
 concept
-    [at0000.1]
+    [at0000]
 
 language
     original_language = <[ISO_639-1::en]>
@@ -20,10 +20,10 @@ description
     details = <
         ["en"] = <
             language = <[ISO_639-1::en]>
-            purpose = <"To record activity regarding the performance of lab test.">
+            purpose = <"To record activity regarding the performance of imaging exam.">
             keywords = <"lab">
             copyright = <"© Zhejiang University">
-            use = <"Use to record activity regarding the performance of lab test.">
+            use = <"Use to record activity regarding the performance of imaging exam.">
         >
     >
     other_details = <
@@ -31,9 +31,9 @@ description
     >
 
 definition
-    ACTION[at0000.1] matches {	--	Lab test
+    ACTION[at0000] matches {	--	Imaging exam
         ism_transition matches {
-            ISM_TRANSITION[at0003] matches {	--	Lab test requested
+            ISM_TRANSITION[at0003] matches {	--	Imaging exam requested
                 current_state matches {
                     DV_CODED_TEXT matches {
                         defining_code matches {
@@ -49,7 +49,7 @@ definition
                     }
                 }
             }
-            ISM_TRANSITION[at0011] matches {	--	Lab test cancelled
+            ISM_TRANSITION[at0011] matches {	--	Imaging exam cancelled
                 current_state matches {
                     DV_CODED_TEXT matches {
                         defining_code matches {
@@ -81,7 +81,7 @@ definition
                     }
                 }
             }
-            ISM_TRANSITION[at0008] matches {	--	Lab test performed
+            ISM_TRANSITION[at0008] matches {	--	Imaging exam performed
                 current_state matches {
                     DV_CODED_TEXT matches {
                         defining_code matches {
@@ -97,7 +97,7 @@ definition
                     }
                 }
             }
-            ISM_TRANSITION[at0012] matches {	--	Lab test aborted
+            ISM_TRANSITION[at0012] matches {	--	Imaging exam aborted
                 current_state matches {
                     DV_CODED_TEXT matches {
                         defining_code matches {
@@ -133,7 +133,7 @@ definition
                 activityId matches {"/activities[at0001]"}
                 instructionId matches {
                     LOCATABLE_REF[at0017] matches {	--	Request instruction
-                        path matches {"openEHR-EHR-INSTRUCTION.t-request-lab_test-zju.v1"}
+                        path matches {"openEHR-EHR-INSTRUCTION.t-request-imaging_exam-zju.v1"}
                     }
                 }
             }
@@ -145,38 +145,33 @@ ontology
         ["en"] = <
             items = <
                 ["at0000"] = <
-                    text = <"Lab test">
-                    description = <"Clinical activity about performing an lab test.">
-
-                >
-                ["at0000.1"] = <
-                    text = <"Lab test">
-                    description = <"Clinical activity about performing an lab test.">
+                    text = <"Imaging exam">
+                    description = <"Clinical activity about performing an imaging exam.">
 
                 >
                 ["at0003"] = <
-                    text = <"Lab test requested">
-                    description = <"Lab test has been requested.">
+                    text = <"Imaging exam requested">
+                    description = <"Imaging exam has been requested.">
 
                 >
                 ["at0004"] = <
                     text = <"Appointment scheduled">
-                    description = <"Lab test appointment has been made.">
+                    description = <"Imaging exam appointment has been made.">
 
                 >
                 ["at0008"] = <
-                    text = <"Lab test performed">
-                    description = <"The lab test was performed but related activities not completed.">
+                    text = <"Imaging exam performed">
+                    description = <"The imaging exam was performed but related activities not completed.">
 
                 >
                 ["at0011"] = <
-                    text = <"Lab test cancelled">
-                    description = <"The planned lab test has been cancelled prior to commencement.">
+                    text = <"Imaging exam cancelled">
+                    description = <"The planned imaging exam has been cancelled prior to commencement.">
 
                 >
                 ["at0012"] = <
-                    text = <"Lab test aborted">
-                    description = <"The lab test has been aborted.">
+                    text = <"Imaging exam aborted">
+                    description = <"The imaging exam has been aborted.">
 
                 >
                 ["at0013"] = <
@@ -209,32 +204,32 @@ ontology
         ["zh"] = <
             items = <
                 ["at0000"] = <
-                    text = <"Lab test">
-                    description = <"Clinical activity about performing an lab test.">
+                    text = <"Imaging exam">
+                    description = <"Clinical activity about performing an imaging exam.">
 
                 >
                 ["at0003"] = <
-                    text = <"申请下达">
+                    text = <"申请已发送">
                     description = <"Lab test has been requested.">
 
                 >
                 ["at0004"] = <
-                    text = <"检验预约">
+                    text = <"检查预约">
                     description = <"Lab test appointment has been made.">
 
                 >
                 ["at0008"] = <
-                    text = <"检验结束">
+                    text = <"检查完成">
                     description = <"The lab test was performed but related activities not completed.">
 
                 >
                 ["at0011"] = <
-                    text = <"申请已取消">
+                    text = <"申请取消">
                     description = <"The planned lab test has been cancelled prior to commencement.">
 
                 >
                 ["at0012"] = <
-                    text = <"检验作废">
+                    text = <"申请已作废">
                     description = <"The examination has been aborted.">
 
                 >

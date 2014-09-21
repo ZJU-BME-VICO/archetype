@@ -1,10 +1,10 @@
 archetype (adl_version=1.4)
-    openEHR-EHR-INSTRUCTION.request-imaging_exam-zju.v1
+    openEHR-EHR-INSTRUCTION.t-request-imaging_exam-zju.v1
 specialize
-    openEHR-EHR-INSTRUCTION.request-imaging_exam.v1
+    openEHR-EHR-INSTRUCTION.request-imaging_exam-zju.v1
 
 concept
-    [at0000.1.1]
+    [at0000.1.1.1]
 
 language
     original_language = <[ISO_639-1::en]>
@@ -33,7 +33,18 @@ If there are more details about the examination required, include this informati
     >
 
 definition
-    INSTRUCTION[at0000.1.1] matches {	--	Imaging Examination Request
+    INSTRUCTION[at0000.1.1.1] matches {	--	Imaging Examination Request
+        subject matches {
+            PARTY_SELF[at0.1.5] matches {	--	Patient
+                externalRef matches {
+                    PARTY_REF[at0.1.6] matches {	--	Patient
+                        id matches {
+                            GENERIC_ID matches {*}
+                        }
+                    }
+                }
+            }
+        }
         activities cardinality matches {0..*; unordered} matches {
             ACTIVITY[at0001] occurrences matches {1..*} matches {	--	Request
                 description matches {
@@ -49,21 +60,7 @@ definition
                                     DV_TEXT matches {*}
                                 }
                             }
-                            allow_archetype CLUSTER[at0132] occurrences matches {0..*} matches {	--	Specific details
-                                include
-                                    archetype_id/value matches {/.*/}
-                            }
-                            ELEMENT[at0062] occurrences matches {0..1} matches {	--	Reason for request
-                                value matches {
-                                    DV_TEXT matches {*}
-                                }
-                            }
                             ELEMENT[at0064] occurrences matches {0..1} matches {	--	Reason description
-                                value matches {
-                                    DV_TEXT matches {*}
-                                }
-                            }
-                            ELEMENT[at0065] occurrences matches {0..1} matches {	--	Intent
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
@@ -80,31 +77,10 @@ definition
                                     }
                                 }
                             }
-                            ELEMENT[at0040] occurrences matches {0..1} matches {	--	Date &/or time service required
-                                value matches {
-                                    DV_DATE_TIME matches {*}
-                                }
-                            }
-                            ELEMENT[at0144] occurrences matches {0..1} matches {	--	Latest date service required
-                                value matches {
-                                    DV_DATE_TIME matches {*}
-                                }
-                            }
-                            ELEMENT[at0076] occurrences matches {0..1} matches {	--	Supplementary information to follow
-                                value matches {
-                                    DV_BOOLEAN matches {
-                                        value matches {true}
-                                    }
-                                }
-                            }
                             ELEMENT[at0078] occurrences matches {0..1} matches {	--	Supplementary information expected
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
-                            }
-                            allow_archetype CLUSTER[at0116] occurrences matches {0..*} matches {	--	Patient requirements
-                                include
-                                    archetype_id/value matches {/.*/}
                             }
                         }
                     }
@@ -119,57 +95,33 @@ definition
                             DV_TEXT matches {*}
                         }
                     }
-                    allow_archetype CLUSTER[at0141] occurrences matches {0..*} matches {	--	Requestor
-                        include
-                            archetype_id/value matches {/.*/}
-                    }
-                    ELEMENT[at0011] occurrences matches {0..1} matches {	--	Receiver Identifier
-                        value matches {
-                            DV_TEXT matches {*}
-                        }
-                    }
-                    allow_archetype CLUSTER[at0142] occurrences matches {0..*} matches {	--	Receiver
-                        include
-                            archetype_id/value matches {/.*/}
-                    }
                     ELEMENT[at0127] occurrences matches {0..1} matches {	--	Request status
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    allow_archetype CLUSTER[at0128] occurrences matches {0..*} matches {	--	Distribution list for response
-                        include
-                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.distribution\.v1/}
-                    }
-                    allow_archetype CLUSTER[at0112] occurrences matches {0..*} matches {	--	Localisation
-                        include
-                            archetype_id/value matches {/.*/}
-                    }
-                    ELEMENT[at0.1.2] occurrences matches {0..1} matches {	--	Patient identifier
-                        value matches {
-                            DV_TEXT matches {*}
-                        }
-                    }
-                    ELEMENT[at0.1.4] occurrences matches {0..1} matches {	--	DateTime Imaging Examination requirement ordered
-                        value matches {
-                            DV_DATE_TIME matches {*}
-                        }
-                    }
                 }
             }
         }
-        links cardinality matches {0..*; unordered} matches {
-            LINK[at0.1.3] occurrences matches {1..*} matches {	--	Addmission
-                meaning matches {
-                    DV_TEXT matches {
-                        value matches {"related to"}
+        otherParticipations cardinality matches {0..*; unordered} matches {
+            PARTICIPATION[at0.1.7] occurrences matches {0..1} matches {	--	Receive department
+                performer matches {
+                    PARTY_RELATED[at0.1.8] matches {	--	Receive department
+                        externalRef matches {
+                            PARTY_REF[at0.1.9] matches {	--	Receive department
+                                id matches {
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT[at0.1.10] matches {	--	Receive department relationship
+                                defining_code matches {
+                                    [local::at0.1.11]
+                                }
+                            }
+                        }
                     }
-                }
-                type matches {
-                    DV_TEXT matches {*}
-                }
-                target matches {
-                    DV_EHR_URI matches {*}
                 }
             }
         }
@@ -194,6 +146,11 @@ ontology
                     description = <"Generic request for an imaging examination request.">
 
                 >
+                ["at0000.1.1.1"] = <
+                    text = <"Imaging Examination Request">
+                    description = <"Generic request for an imaging examination request.">
+
+                >
                 ["at0001"] = <
                     text = <"Request">
                     description = <"Current Activity">
@@ -214,29 +171,9 @@ ontology
                     description = <"The local ID assigned to the order by the healthcare provider or organisation requesting the service. This is also referred to as Placer Order Identifier.">
 
                 >
-                ["at0011"] = <
-                    text = <"Receiver Identifier">
-                    description = <"The ID assigned to the order by the healthcare provider or organisation receiving the request for service. This is also referred to as Filler Order Identifier.">
-
-                >
-                ["at0040"] = <
-                    text = <"Date &/or time service required">
-                    description = <"The date and time that the service should be performed or completed.">
-
-                >
-                ["at0062"] = <
-                    text = <"Reason for request">
-                    description = <"A short description of the reason for the request.  This is often coded with an external terminology.">
-
-                >
                 ["at0064"] = <
                     text = <"Reason description">
                     description = <"A narrative description explaining the reason for request.">
-
-                >
-                ["at0065"] = <
-                    text = <"Intent">
-                    description = <"Stated intent of the request by the referrer.">
 
                 >
                 ["at0068"] = <
@@ -244,24 +181,9 @@ ontology
                     description = <"Urgency of the request.">
 
                 >
-                ["at0076"] = <
-                    text = <"Supplementary information to follow">
-                    description = <"True indicates that additional information has been identified and will be forwarded when available eg incomplete pathology test results.">
-
-                >
                 ["at0078"] = <
                     text = <"Supplementary information expected">
                     description = <"Details of the nature of supplementary information that is to follow e.g name of laboratory results.">
-
-                >
-                ["at0112"] = <
-                    text = <"Localisation">
-                    description = <"Local detailed information such as billing requirements.">
-
-                >
-                ["at0116"] = <
-                    text = <"Patient requirements">
-                    description = <"Language, transport or other personal requirements to support the patient's attendance or participation in provision of the service.">
 
                 >
                 ["at0121"] = <
@@ -278,16 +200,6 @@ ontology
                     text = <"Request status">
                     description = <"The status of the request for service as indicated by the requester. 
 Status is used to denote whether this is the initial request, or a follow-up request to change or provide supplementary information.">
-
-                >
-                ["at0128"] = <
-                    text = <"Distribution list for response">
-                    description = <"A list of person's or organisation who should receive copies of any communication.">
-
-                >
-                ["at0132"] = <
-                    text = <"Specific details">
-                    description = <"Structured detail defining the service requested.">
 
                 >
                 ["at0135"] = <
@@ -315,34 +227,39 @@ Status is used to denote whether this is the initial request, or a follow-up req
                     description = <"The request is routine.">
 
                 >
-                ["at0141"] = <
-                    text = <"Requestor">
-                    description = <"Details about the healthcare provider or organisation requesting the service.">
+                ["at0.1.5"] = <
+                    text = <"Patient">
+                    description = <"*">
 
                 >
-                ["at0142"] = <
-                    text = <"Receiver">
-                    description = <"Details about the healthcare provider or organisation receiving the request for service.">
+                ["at0.1.6"] = <
+                    text = <"Patient">
+                    description = <"*">
 
                 >
-                ["at0144"] = <
-                    text = <"Latest date service required">
-                    description = <"The latest date that is acceptable for the service to be completed.">
+                ["at0.1.7"] = <
+                    text = <"Receive department">
+                    description = <"*">
 
                 >
-                ["at0.1.2"] = <
-                    text = <"Patient identifier">
-                    description = <"The ID assigned to the patient by the healthcare provider or organisation.">
+                ["at0.1.8"] = <
+                    text = <"Receive department">
+                    description = <"*">
 
                 >
-                ["at0.1.3"] = <
-                    text = <"Addmission">
-                    description = <"">
+                ["at0.1.9"] = <
+                    text = <"Receive department">
+                    description = <"*">
 
                 >
-                ["at0.1.4"] = <
-                    text = <"DateTime Imaging Examination requirement ordered">
-                    description = <"The date that the request is ordered.">
+                ["at0.1.10"] = <
+                    text = <"Receive department relationship">
+                    description = <"*">
+
+                >
+                ["at0.1.11"] = <
+                    text = <"Receive department">
+                    description = <"*">
 
                 >
             >
