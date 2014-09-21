@@ -131,7 +131,7 @@ definition
                 activityId matches {"/activities[at0001]"}
                 instructionId matches {
                     LOCATABLE_REF[at0017] matches {	--	Request instruction
-                        path matches {"openEHR-EHR-INSTRUCTION.t-request-lab_test-zju.v1"}
+                        path matches {"openEHR-EHR-INSTRUCTION.request-lab_test-zju.v1"}
                     }
                 }
             }
