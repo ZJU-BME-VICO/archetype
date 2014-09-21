@@ -118,9 +118,9 @@ definition
             DV_DATE_TIME[at0013] matches {*}	--	Action date time
         }
         provider matches {
-            PARTY_IDENTIFIED[at0014] matches {	--	Patient
+            PARTY_IDENTIFIED[at0014] matches {	--	Actor
                 externalRef matches {
-                    PARTY_REF[at0015] matches {	--	Patient
+                    PARTY_REF[at0015] matches {	--	Actor
                         id matches {
                             GENERIC_ID matches {*}
                         }
@@ -180,12 +180,12 @@ ontology
 
                 >
                 ["at0014"] = <
-                    text = <"Patient">
+                    text = <"Actor">
                     description = <"">
 
                 >
                 ["at0015"] = <
-                    text = <"Patient">
+                    text = <"Actor">
                     description = <"">
 
                 >
