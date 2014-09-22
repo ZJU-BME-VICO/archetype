@@ -7,8 +7,10 @@
     <id name="/uid/value"></id>
 
     <property name="/data[at0001]/items[at0002]/value/definingCode/codeString"/>
-    <property name="/data[at0001]/items[at0094]/items[at0074]/value/value"/>
-    <property name="/data[at0001]/items[at0094]/items[at0077]/value/value"/>
+    <property name="/data[at0001]/items[at0094]/items[at0074.1]/value/definingCode/codeString"/>
+    <property name="/data[at0001]/items[at0094]/items[at0074.1]/value/value"/>
+    <property name="/data[at0001]/items[at0094]/items[at0077.1]/value/definingCode/codeString"/>
+    <property name="/data[at0001]/items[at0094]/items[at0077.1]/value/value"/>
     <property name="/data[at0001]/items[at0071]/value/value"/>
     <many-to-one name="/subject[at0.72]/externalRef[at0.73]/id/value" class="openEHR-DEMOGRAPHIC-PERSON.person-patient-zju.v1"/>
     <property name="/data[at0001]/items[at0094]/items[at0078]/value/value"/>

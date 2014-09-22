@@ -54,7 +54,16 @@ definition
                                     DV_TEXT matches {*}
                                 }
                             }
+                            allow_archetype CLUSTER[at0.145] occurrences matches {0..*} matches {	--	Specimen details
+                                include
+                                    archetype_id/value matches {/openEHR-EHR-CLUSTER\.t-specimen-zju\.v1/}
+                            }
                             ELEMENT[at0064] occurrences matches {0..1} matches {	--	Reason description
+                                value matches {
+                                    DV_TEXT matches {*}
+                                }
+                            }
+                            ELEMENT[at0065] occurrences matches {0..1} matches {	--	Intent
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
@@ -108,6 +117,26 @@ definition
                     }
                 }
             }
+            PARTICIPATION[at0.1.23] occurrences matches {0..1} matches {	--	Receive department
+                performer matches {
+                    PARTY_RELATED[at0.1.24] matches {	--	Receive department
+                        externalRef matches {
+                            PARTY_REF[at0.1.25] matches {	--	Receive department
+                                id matches {
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT[at0.1.26] matches {	--	Receive department relationship
+                                defining_code matches {
+                                    [local::at0.1.27]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -115,6 +144,11 @@ ontology
     term_definitions = <
         ["en"] = <
             items = <
+                ["at0.145"] = <
+                    text = <"Specimen details">
+                    description = <"Structured detail defining the specimen.">
+
+                >
                 ["at0000"] = <
                     text = <"Healthcare service request">
                     description = <"Generic request for a range of different healthcare services e.g referral, lab request, equipment request.">
@@ -158,6 +192,11 @@ ontology
                 ["at0064"] = <
                     text = <"Reason description">
                     description = <"A narrative description explaining the reason for request.">
+
+                >
+                ["at0065"] = <
+                    text = <"Intent">
+                    description = <"Stated intent of the request by the referrer.">
 
                 >
                 ["at0068"] = <
@@ -217,6 +256,31 @@ ontology
                 >
                 ["at0.1.22"] = <
                     text = <"Receive department relationship">
+                    description = <"*">
+
+                >
+                ["at0.1.23"] = <
+                    text = <"Request department">
+                    description = <"*">
+
+                >
+                ["at0.1.24"] = <
+                    text = <"Request department">
+                    description = <"*">
+
+                >
+                ["at0.1.25"] = <
+                    text = <"Request department">
+                    description = <"*">
+
+                >
+                ["at0.1.26"] = <
+                    text = <"Request department relationship">
+                    description = <"*">
+
+                >
+                ["at0.1.27"] = <
+                    text = <"Request department">
                     description = <"*">
 
                 >

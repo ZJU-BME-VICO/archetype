@@ -183,6 +183,26 @@ definition
                     }
                 }
             }
+            PARTICIPATION[at0.1.23] occurrences matches {0..1} matches {	--	Receive department
+                performer matches {
+                    PARTY_RELATED[at0.1.24] matches {	--	Receive department
+                        externalRef matches {
+                            PARTY_REF[at0.1.25] matches {	--	Receive department
+                                id matches {
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT[at0.1.26] matches {	--	Receive department relationship
+                                defining_code matches {
+                                    [local::at0.1.27]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -377,6 +397,31 @@ ontology
                 >
                 ["at0.1.22"] = <
                     text = <"Receive department relationship">
+                    description = <"*">
+
+                >
+                ["at0.1.23"] = <
+                    text = <"Request department">
+                    description = <"*">
+
+                >
+                ["at0.1.24"] = <
+                    text = <"Request department">
+                    description = <"*">
+
+                >
+                ["at0.1.25"] = <
+                    text = <"Request department">
+                    description = <"*">
+
+                >
+                ["at0.1.26"] = <
+                    text = <"Request department relationship">
+                    description = <"*">
+
+                >
+                ["at0.1.27"] = <
+                    text = <"Request department">
                     description = <"*">
 
                 >

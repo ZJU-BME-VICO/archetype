@@ -9,8 +9,13 @@
     <many-to-one name="/subject[at0.1.18]/externalRef[at0.1.19]/id/value" class="openEHR-DEMOGRAPHIC-PERSON.person-patient-zju.v1"/>
     <property name="/activities[at0001]/description[at0009]/items[at0121]/value/value"/>
     <property name="/activities[at0001]/description[at0009]/items[at0064]/value/value"/>
+    <property name="/activities[at0001]/description[at0009]/items[at0065]/value/value"/>
     <property name="/otherParticipations[at0.1.12]/performer[at0.1.20]/externalRef[at0.1.21]/id/value"/>
+    <property column="receiveDepartmentName"/>
     <property name="/activities[at0001]/description[at0009]/items[at0068]/value/definingCode/codeString"/>
+    <property name="/otherParticipations[at0.1.23]/performer[at0.1.24]/externalRef[at0.1.25]/id/value"/>
+    <property column="requestDepartmentName"/>
+    <one-to-many name="/activities[at0001]/description[at0009]/items[at0.145]"/>
 
   </class>
 
