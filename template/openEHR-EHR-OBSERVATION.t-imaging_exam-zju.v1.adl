@@ -78,7 +78,7 @@ definition
                                             DV_TEXT matches {*}
                                         }
                                     }
-                                    ELEMENT[at0022] occurrences matches {0..*} matches {	--	Examination result representation
+                                    ELEMENT[at0022.1] occurrences matches {0..1} matches {	--	Examination result representation
                                         value matches {
                                             DV_MULTIMEDIA matches {
                                                 media_type matches {
@@ -110,7 +110,7 @@ definition
         protocol matches {
             ITEM_TREE[at0025] matches {	--	Tree
                 items cardinality matches {0..*; unordered} matches {
-                    CLUSTER[at0027] occurrences matches {0..*} matches {	--	Examination request details
+                    CLUSTER[at0027.1] occurrences matches {0..1} matches {	--	Examination request details
                         items cardinality matches {1..*; unordered} matches {
                             ELEMENT[at0033] occurrences matches {0..1} matches {	--	Report identifier
                                 value matches {
@@ -207,6 +207,11 @@ ontology
                     description = <"Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they must be semantically equivalent.">
 
                 >
+                ["at0022.1"] = <
+                    text = <"Examination result representation">
+                    description = <"Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they must be semantically equivalent.">
+
+                >
                 ["at0023"] = <
                     text = <"Examination comment">
                     description = <"Additional narrative about the examination not captured in other fields. For example, recommendations for future examinations; a comment on appropriateness of the examination or on quality of images, if separate to findings; or a note that the film was given to the patient.">
@@ -223,6 +228,11 @@ ontology
 
                 >
                 ["at0027"] = <
+                    text = <"Examination request details">
+                    description = <"Details concerning a single examination requested. Note: Usually there is one examination request for each result, however in some circumstances multiple examination requests may be represented using a single Imaging examination result archetype.">
+
+                >
+                ["at0027.1"] = <
                     text = <"Examination request details">
                     description = <"Details concerning a single examination requested. Note: Usually there is one examination request for each result, however in some circumstances multiple examination requests may be represented using a single Imaging examination result archetype.">
 

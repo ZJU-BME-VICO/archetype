@@ -4,21 +4,19 @@
 
   <class name="openEHR-DEMOGRAPHIC-ITEM_TREE.t-person_details-zju.v1">
 
-    <id name="/uid/value">
-      <column name="id" />
-    </id>
+    <id name="/uid/value"></id>
 
-    <property name="/items[at0001]/items[at0010.1]/value/value" column="birthDateTime"/>
-    <property name="/items[at0001]/items[at0017]/value/definingCode/codeString" column="sex"/>
-    <property name="/items[at0002]/items[at0021.1]/value/value" column="deathDateTime"/>
-    <property name="/items[at0001]/items[at0033]/value/definingCode/codeString" column="maritalStatus"/>
-    <property name="/items[at0001]/items[at0034]/value/definingCode/codeString" column="ethnic"/>
-    <one-to-many name="/items[at0005.1]" class="openEHR-DEMOGRAPHIC-CLUSTER.t-person_identifier-zju"/>
-    <one-to-many name="/items[at0005.2]" class="openEHR-DEMOGRAPHIC-CLUSTER.t-person_identifier-zju"/>
-    <one-to-many name="/items[at0005.3]" class="openEHR-DEMOGRAPHIC-CLUSTER.t-person_identifier-zju"/>
-    <one-to-many name="/items[at0005.4]" class="openEHR-DEMOGRAPHIC-CLUSTER.t-person_identifier-zju"/>
-    <one-to-many name="/items[at0005.5]" class="openEHR-DEMOGRAPHIC-CLUSTER.t-person_identifier-zju"/>
-    <one-to-many name="/items[at0005.6]" class="openEHR-DEMOGRAPHIC-CLUSTER.t-person_identifier-zju"/>
+    <property name="/items[at0001]/items[at0010.1]/value/value"/>
+    <property name="/items[at0001]/items[at0017.0.1]/value/definingCode/codeString"/>
+    <property name="/items[at0002]/items[at0021.1]/value/value"/>
+    <property name="/items[at0001]/items[at0033.0.1]/value/definingCode/codeString"/>
+    <property name="/items[at0001]/items[at0034.0.1]/value/definingCode/codeString"/>
+    <one-to-many name="/items[at0005.1]" class="openEHR-DEMOGRAPHIC-CLUSTER.t-person_identifier-zju.v1"/>
+    <one-to-many name="/items[at0005.2]" class="openEHR-DEMOGRAPHIC-CLUSTER.t-person_identifier-zju.v1"/>
+    <one-to-many name="/items[at0005.3]" class="openEHR-DEMOGRAPHIC-CLUSTER.t-person_identifier-zju.v1"/>
+    <one-to-many name="/items[at0005.4]" class="openEHR-DEMOGRAPHIC-CLUSTER.t-person_identifier-zju.v1"/>
+    <one-to-many name="/items[at0005.5]" class="openEHR-DEMOGRAPHIC-CLUSTER.t-person_identifier-zju.v1"/>
+    <one-to-many name="/items[at0005.6]" class="openEHR-DEMOGRAPHIC-CLUSTER.t-person_identifier-zju.v1"/>
 
   </class>
 

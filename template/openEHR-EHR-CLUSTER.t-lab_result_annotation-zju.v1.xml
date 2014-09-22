@@ -4,12 +4,10 @@
 
   <class name="openEHR-EHR-CLUSTER.t-lab_result_annotation-zju.v1">
 
-    <id name="/uid/value">
-      <column name="id" />
-    </id>
+    <id name="/uid/value"></id>
 
-    <property name="/items[at0002]/value/value" column="resultComment"/>
-    <property name="/items[at0005]/value/value" column="referenceRange"/>
+    <property name="/items[at0002]/value/value"/>
+    <property name="/items[at0005]/value/value"/>
 
   </class>
 

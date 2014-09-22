@@ -56,7 +56,7 @@ definition
                             DV_DATE_TIME matches {*}
                         }
                     }
-                    ELEMENT[at0017] occurrences matches {0..*} matches {	--	Sex
+                    ELEMENT[at0017.0.1] occurrences matches {0..1} matches {	--	Sex
                         value matches {
                             DV_CODED_TEXT matches {
                                 defining_code matches {
@@ -80,7 +80,7 @@ definition
                     }
                 }
             }
-            ELEMENT[at0033] occurrences matches {0..*} matches {	--	Marital status
+            ELEMENT[at0033.0.1] occurrences matches {0..1} matches {	--	Marital status
                 value matches {
                     DV_CODED_TEXT matches {
                         defining_code matches {
@@ -89,7 +89,7 @@ definition
                     }
                 }
             }
-            ELEMENT[at0034] occurrences matches {0..*} matches {	--	Ethnic background
+            ELEMENT[at0034.0.1] occurrences matches {0..1} matches {	--	Ethnic background
                 value matches {
                     DV_CODED_TEXT matches {
                         defining_code matches {
@@ -204,6 +204,11 @@ ontology
                     description = <"sexo da pessoa">
 
                 >
+                ["at0017.0.1"] = <
+                    text = <"sexo">
+                    description = <"sexo da pessoa">
+
+                >
                 ["at0021"] = <
                     text = <"Data do óbito">
                     description = <"A data do óbito da pessoa">
@@ -219,7 +224,17 @@ ontology
                     description = <"Estado Civil">
 
                 >
+                ["at0033.0.1"] = <
+                    text = <"Estado Civil">
+                    description = <"Estado Civil">
+
+                >
                 ["at0034"] = <
+                    text = <"Etnia">
+                    description = <"Grupo étnico ao qual a pessoa pertence">
+
+                >
+                ["at0034.0.1"] = <
                     text = <"Etnia">
                     description = <"Grupo étnico ao qual a pessoa pertence">
 
@@ -323,6 +338,11 @@ ontology
                     description = <"The sex of the subject.">
 
                 >
+                ["at0017.0.1"] = <
+                    text = <"Sex">
+                    description = <"The sex of the subject.">
+
+                >
                 ["at0021"] = <
                     text = <"Death date">
                     description = <"The date of death of a person">
@@ -338,7 +358,17 @@ ontology
                     description = <"Marital status.">
 
                 >
+                ["at0033.0.1"] = <
+                    text = <"Marital status">
+                    description = <"Marital status.">
+
+                >
                 ["at0034"] = <
+                    text = <"Ethnic background">
+                    description = <"The person's ethnic background">
+
+                >
+                ["at0034.0.1"] = <
                     text = <"Ethnic background">
                     description = <"The person's ethnic background">
 

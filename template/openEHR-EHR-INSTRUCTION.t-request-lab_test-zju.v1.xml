@@ -4,15 +4,13 @@
 
   <class name="openEHR-EHR-INSTRUCTION.t-request-lab_test-zju.v1">
 
-    <id name="/protocol[at0008]/items[at0010]/value/value">
-      <column name="requestIdentifier" />
-    </id>
+    <id name="/protocol[at0008]/items[at0010]/value/value"></id>
 
-    <many-to-one name="/subject[at0.1.18]/externalRef[at0.1.19]/id/value" column="patient" class="openEHR-DEMOGRAPHIC-PERSON.person-patient-zju"/>
-    <property name="/activities[at0001]/description[at0009]/items[at0121]/value/value" column="requestSubject"/>
-    <property name="/activities[at0001]/description[at0009]/items[at0064]/value/value" column="requestReason"/>
-    <property name="/otherParticipations[at0.1.12]/performer[at0.1.20]/externalRef[at0.1.21]/id/value" column="receiveDepartment"/>
-    <property name="/activities[at0001]/description[at0009]/items[at0068]/value/defining_code/codeString" column="urgency"/>
+    <many-to-one name="/subject[at0.1.18]/externalRef[at0.1.19]/id/value" class="openEHR-DEMOGRAPHIC-PERSON.person-patient-zju.v1"/>
+    <property name="/activities[at0001]/description[at0009]/items[at0121]/value/value"/>
+    <property name="/activities[at0001]/description[at0009]/items[at0064]/value/value"/>
+    <property name="/otherParticipations[at0.1.12]/performer[at0.1.20]/externalRef[at0.1.21]/id/value"/>
+    <property name="/activities[at0001]/description[at0009]/items[at0068]/value/definingCode/codeString"/>
 
   </class>
 

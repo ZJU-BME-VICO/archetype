@@ -53,7 +53,7 @@ definition
         data matches {
             HISTORY[at0001] matches {	--	Event Series
                 events cardinality matches {1..*; unordered} matches {
-                    EVENT[at0002] occurrences matches {0..*} matches {	--	Any event
+                    EVENT[at0002.1] occurrences matches {0..1} matches {	--	Any event
                         data matches {
                             ITEM_TREE[at0003] matches {	--	Tree
                                 items cardinality matches {0..*; unordered} matches {
@@ -131,6 +131,11 @@ This archetype also acts as the parent for specialisations appropriate for more 
 
                 >
                 ["at0002"] = <
+                    text = <"Any event">
+                    description = <"Any event.">
+
+                >
+                ["at0002.1"] = <
                     text = <"Any event">
                     description = <"Any event.">
 

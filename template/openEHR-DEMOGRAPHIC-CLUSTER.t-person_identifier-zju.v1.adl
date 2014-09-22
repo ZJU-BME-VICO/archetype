@@ -50,12 +50,12 @@ description
 definition
     CLUSTER[at0000.1.1] matches {	--	Person identifier
         items matches {
-            ELEMENT[at0001] occurrences matches {1..*} matches {	--	Identifier main data
+            ELEMENT[at0001.0.1] occurrences matches {1..1} matches {	--	Identifier main data
                 value matches {
                     DV_IDENTIFIER matches {*}
                 }
             }
-            ELEMENT[at0.2] occurrences matches {1..*} matches {	--	Type
+            ELEMENT[at0.2.1] occurrences matches {1..1} matches {	--	Type
                 value matches {
                     DV_CODED_TEXT matches {
                         defining_code matches {
@@ -97,7 +97,17 @@ ontology
                     description = <"Identifier number or code, issuer, assigner and type of identifier.">
 
                 >
+                ["at0001.0.1"] = <
+                    text = <"Identifier main data">
+                    description = <"Identifier number or code, issuer, assigner and type of identifier.">
+
+                >
                 ["at0.2"] = <
+                    text = <"Type">
+                    description = <"The type of this identifier.">
+
+                >
+                ["at0.2.1"] = <
                     text = <"Type">
                     description = <"The type of this identifier.">
 
@@ -156,7 +166,17 @@ ontology
                     description = <"Número ou código do documento de identificação, emissor, outorgante e tipo do documento.">
 
                 >
+                ["at0001.0.1"] = <
+                    text = <"Dados principais do identificador">
+                    description = <"Número ou código do documento de identificação, emissor, outorgante e tipo do documento.">
+
+                >
                 ["at0.2"] = <
+                    text = <"Type">
+                    description = <"The type of this identifier.">
+
+                >
+                ["at0.2.1"] = <
                     text = <"Type">
                     description = <"The type of this identifier.">
 

@@ -4,36 +4,34 @@
 
   <class name="openEHR-EHR-ADMIN_ENTRY.admission-zju.v1">
 
-    <id name="/uid/value">
-      <column name="id" />
-    </id>
+    <id name="/uid/value"></id>
 
-    <property name="/data[at0001]/items[at0002]/value/definingCode/codeString" column="patientType"/>
-    <property name="/data[at0001]/items[at0094]/items[at0074]/value/value" column="department"/>
-    <property name="/data[at0001]/items[at0094]/items[at0077]/value/value" column="ward"/>
-    <property name="/data[at0001]/items[at0071]/value/value" column="admissionDateTime"/>
-    <property name="/subject[at0.72]/externalRef[at0.73]/id/value" column="patient"/>
-    <property name="/data[at0001]/items[at0094]/items[at0078]/value/value" column="room"/>
-    <property name="/data[at0001]/items[at0094]/items[at0079]/value/value" column="bed"/>
-    <property name="/data[at0001]/items[at0.4]/value/value" column="mainDiagnosis"/>
-    <property name="/data[at0001]/items[at0.5]/value/value" column="patientCondition"/>
-    <property name="/data[at0001]/items[at0.6]/value/value" column="nursingClass"/>
-    <property name="/otherParticipations[at0.26]/performer/externalRef/id/value" column="directorId"/>
-    <property name="/otherParticipations[at0.30]/performer/externalRef/id/value" column="deputyDirectorId"/>
-    <property name="/otherParticipations[at0.34]/performer/externalRef/id/value" column="attendingDoctorId"/>
-    <property name="/otherParticipations[at0.38]/performer/externalRef/id/value" column="residentDoctorId"/>
-    <property name="/otherParticipations[at0.42]/performer/externalRef/id/value" column="primaryNurseId"/>
-    <property name="/otherParticipations[at0.46]/performer/externalRef/id/value" column="continuingDoctorId"/>
-    <property name="/otherParticipations[at0.50]/performer/externalRef/id/value" column="internsDoctorId"/>
-    <property name="/data[at0001]/items[at0.14]/value/value" column="doctorGroupId"/>
-    <property name="/data[at0001]/items[at0.15]/value/value" column="nurseGroupId"/>
-    <property name="/otherParticipations[at0.54]/performer/externalRef/id/value" column="recorderId"/>
-    <property name="/data[at0001]/items[at0.17]/value/value" column="isCharged"/>
-    <property name="/data[at0001]/items[at0.18]/value/value" column="hisChargeCount"/>
-    <property name="/data[at0001]/items[at0.19]/value/value" column="lastChargeDateTime"/>
-    <property name="/data[at0001]/items[at0.20]/value/value" column="firstAdmissionIndicator"/>
-    <property name="/data[at0001]/items[at0.21]/value/value" column="specialDepartmentId"/>
-    <property name="/otherParticipations[at0.58]/performer/externalRef/id/value" column="outpatientDoctorId"/>
+    <property name="/data[at0001]/items[at0002]/value/definingCode/codeString"/>
+    <property name="/data[at0001]/items[at0094]/items[at0074]/value/value"/>
+    <property name="/data[at0001]/items[at0094]/items[at0077]/value/value"/>
+    <property name="/data[at0001]/items[at0071]/value/value"/>
+    <many-to-one name="/subject[at0.72]/externalRef[at0.73]/id/value" class="openEHR-DEMOGRAPHIC-PERSON.person-patient-zju.v1"/>
+    <property name="/data[at0001]/items[at0094]/items[at0078]/value/value"/>
+    <property name="/data[at0001]/items[at0094]/items[at0079]/value/value"/>
+    <property name="/data[at0001]/items[at0.4]/value/value"/>
+    <property name="/data[at0001]/items[at0.5]/value/value"/>
+    <property name="/data[at0001]/items[at0.6]/value/value"/>
+    <property name="/otherParticipations[at0.26]/performer/externalRef/id/value"/>
+    <property name="/otherParticipations[at0.30]/performer/externalRef/id/value"/>
+    <property name="/otherParticipations[at0.34]/performer/externalRef/id/value"/>
+    <property name="/otherParticipations[at0.38]/performer/externalRef/id/value"/>
+    <property name="/otherParticipations[at0.42]/performer/externalRef/id/value"/>
+    <property name="/otherParticipations[at0.46]/performer/externalRef/id/value"/>
+    <property name="/otherParticipations[at0.50]/performer/externalRef/id/value"/>
+    <property name="/data[at0001]/items[at0.14]/value/value"/>
+    <property name="/data[at0001]/items[at0.15]/value/value"/>
+    <property name="/otherParticipations[at0.54]/performer/externalRef/id/value"/>
+    <property name="/data[at0001]/items[at0.17]/value/value"/>
+    <property name="/data[at0001]/items[at0.18]/value/value"/>
+    <property name="/data[at0001]/items[at0.19]/value/value"/>
+    <property name="/data[at0001]/items[at0.20]/value/value"/>
+    <property name="/data[at0001]/items[at0.21]/value/value"/>
+    <property name="/otherParticipations[at0.58]/performer/externalRef/id/value"/>
 
   </class>
 

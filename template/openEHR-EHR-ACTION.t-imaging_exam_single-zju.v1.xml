@@ -2,14 +2,12 @@
 
 <hibernate-mapping package="">
 
-  <class name="openEHR-EHR-ACTION.t-imaging_exam-zju.v1">
+  <class name="openEHR-EHR-ACTION.t-imaging_exam_single-zju.v1">
 
-    <id name="/uid/value">
-      <column name="id" />
-    </id>
+    <id name="/uid/value"></id>
 
-    <property name="/ism_transition[at0003]/current_state/defining_code/codeString" column="openEHRStatus"/>
-    <property name="/ism_transition[at0003]/careflow_step/defining_code/codeString" column="careflowStatus"/>
+    <property name="/ism_transition[at0003.1]/current_state/definingCode/codeString" column="openEHRStatus"/>
+    <property name="/ism_transition[at0003.1]/careflow_step/definingCode/codeString" column="careflowStatus"/>
     <property name="/time[at0013]/value" column="actionDateTime"/>
     <property name="/provider[at0014]/externalRef[at0015]/id/value" column="actor"/>
     <property name="/instructionDetails[at0016]/activityId" column="requestActivity"/>

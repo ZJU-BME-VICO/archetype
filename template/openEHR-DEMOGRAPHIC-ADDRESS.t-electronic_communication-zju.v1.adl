@@ -1,10 +1,10 @@
 archetype (adl_version=1.4)
     openEHR-DEMOGRAPHIC-ADDRESS.t-electronic_communication-zju.v1
 specialize
-    openEHR-DEMOGRAPHIC-ADDRESS.electronic_communication.v1
+    openEHR-DEMOGRAPHIC-ADDRESS.electronic_communication-zju.v1
 
 concept
-    [at0000.1]
+    [at0000.1.1]
 
 language
     original_language = <[ISO_639-1::pt-br]>
@@ -48,9 +48,9 @@ description
     >
 
 definition
-    ADDRESS[at0000.1] matches {	--	Electronic address
+    ADDRESS[at0000.1.1] matches {	--	Electronic address
         name matches {
-            DV_CODED_TEXT matches {
+            DV_CODED_TEXT[at0.2] matches {
                 defining_code matches {
                     [local::
                     at0020,	--	Telephone
@@ -98,6 +98,11 @@ ontology
 
                 >
                 ["at0000.1"] = <
+                    text = <"Meio de Comunicação eletrônica">
+                    description = <"Meio de comunicação eletrônica.">
+
+                >
+                ["at0000.1.1"] = <
                     text = <"Meio de Comunicação eletrônica">
                     description = <"Meio de comunicação eletrônica.">
 
@@ -172,6 +177,11 @@ ontology
                     description = <"Equipamento para outro tipo de uso. Por exemplo, um telefone para contato, parente, etc.">
 
                 >
+                ["at0.2"] = <
+                    text = <"Type">
+                    description = <"">
+
+                >
             >
         >
         ["en"] = <
@@ -182,6 +192,11 @@ ontology
 
                 >
                 ["at0000.1"] = <
+                    text = <"Electronic address">
+                    description = <"The address of an electronic communication medium.">
+
+                >
+                ["at0000.1.1"] = <
                     text = <"Electronic address">
                     description = <"The address of an electronic communication medium.">
 
@@ -254,6 +269,11 @@ ontology
                 ["at0033"] = <
                     text = <"Other use">
                     description = <"The medium is for another use, e.g., a telephone for contact, a relative's phone.">
+
+                >
+                ["at0.2"] = <
+                    text = <"Type">
+                    description = <"">
 
                 >
             >

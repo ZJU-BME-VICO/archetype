@@ -4,13 +4,11 @@
 
   <class name="openEHR-DEMOGRAPHIC-ADDRESS.t-address-zju.v1">
 
-    <id name="/uid/value">
-      <column name="id" />
-    </id>
+    <id name="/uid/value"></id>
 
-    <property name="/name/definingCode/codeString" column="addressType"/>
-    <property name="/details[at0001]/items[at0.2]/value/value" column="fullAddress"/>
-    <property name="/details[at0001]/items[at0006]/value/value" column="zipcode"/>
+    <property name="/name[at0.0.3]/definingCode/codeString"/>
+    <property name="/details[at0001]/items[at0.0.2]/value/value"/>
+    <property name="/details[at0001]/items[at0006]/value/value"/>
 
   </class>
 
