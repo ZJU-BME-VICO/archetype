@@ -52,7 +52,7 @@ description
 definition
     ADDRESS[at0000.1.1] matches {	--	Address
         name matches {
-            DV_CODED_TEXT[at0.0.3] matches {
+            DV_CODED_TEXT[at0.0.3] matches {	--	Type
                 defining_code matches {
                     [local::
                     at0461,	--	Business
@@ -72,7 +72,7 @@ definition
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0.0.2] occurrences matches {0..1} matches {	--	Full address
+                    ELEMENT[at0.0.2] occurrences matches {0..1} matches {	--	Content
                         value matches {
                             DV_TEXT matches {*}
                         }

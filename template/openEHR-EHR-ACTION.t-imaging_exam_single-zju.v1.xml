@@ -6,12 +6,12 @@
 
     <id name="/uid/value"></id>
 
-    <property name="/ism_transition[at0003.1]/current_state/definingCode/codeString" column="openEHRStatus"/>
-    <property name="/ism_transition[at0003.1]/careflow_step/definingCode/codeString" column="careflowStatus"/>
-    <property name="/time[at0013]/value" column="actionDateTime"/>
-    <property name="/provider[at0014]/externalRef[at0015]/id/value" column="actor"/>
-    <property name="/instructionDetails[at0016]/activityId" column="requestActivity"/>
-    <property name="/instructionDetails[at0016]/instructionId[at0017]/path" column="requestInstruction"/>
+    <property name="/ism_transition[at0003]/current_state/definingCode/codeString"/>
+    <property name="/ism_transition[at0003]/careflow_step/definingCode/codeString"/>
+    <property name="/time[at0013]/value"/>
+    <property name="/provider[at0014]/externalRef[at0015]/id/value"/>
+    <property name="/instructionDetails[at0016]/activityId"/>
+    <property name="/instructionDetails[at0016]/instructionId[at0017.1]/path"/>
 
   </class>
 

@@ -31,14 +31,14 @@ description
 definition
     ACTION[at0000] matches {	--	Imaging exam
         ism_transition matches {
-            ISM_TRANSITION[at0003] occurrences matches {0..*} {	--	Lab test requested
+            ISM_TRANSITION[at0003] matches {	--	Imaging exam status
                 current_state matches {
-                    DV_CODED_TEXT[at0004] matches {
+                    DV_CODED_TEXT[at0004] matches {	--	openEHR status
                         defining_code matches {*}
                     }
                 }
                 careflow_step matches {
-                    DV_CODED_TEXT[at0005] matches {
+                    DV_CODED_TEXT[at0005] matches {	--	Careflow status
                         defining_code matches {*}
                     }
                 }

@@ -50,7 +50,7 @@ description
 definition
     ADDRESS[at0000.1.1] matches {	--	Electronic address
         name matches {
-            DV_CODED_TEXT[at0.2] matches {
+            DV_CODED_TEXT[at0.2] matches {	--	Type
                 defining_code matches {
                     [local::
                     at0020,	--	Telephone

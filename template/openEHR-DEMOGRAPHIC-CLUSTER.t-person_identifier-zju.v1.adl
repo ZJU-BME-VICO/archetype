@@ -50,12 +50,12 @@ description
 definition
     CLUSTER[at0000.1.1] matches {	--	Person identifier
         items matches {
-            ELEMENT[at0001.0.1] occurrences matches {1..1} matches {	--	Identifier main data
+            ELEMENT[at0001.0.1] matches {	--	Identifier main data
                 value matches {
                     DV_IDENTIFIER matches {*}
                 }
             }
-            ELEMENT[at0.2.1] occurrences matches {1..1} matches {	--	Type
+            ELEMENT[at0.2.1] matches {	--	Type
                 value matches {
                     DV_CODED_TEXT matches {
                         defining_code matches {

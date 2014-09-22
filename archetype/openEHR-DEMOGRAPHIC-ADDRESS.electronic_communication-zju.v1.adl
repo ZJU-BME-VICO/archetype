@@ -1,5 +1,5 @@
 archetype (adl_version=1.4)
-	openEHR-DEMOGRAPHIC-ADDRESS.electronic_communication-zju.v1
+    openEHR-DEMOGRAPHIC-ADDRESS.electronic_communication-zju.v1
 specialize
     openEHR-DEMOGRAPHIC-ADDRESS.electronic_communication.v1
 
@@ -51,7 +51,7 @@ definition
     ADDRESS[at0000.1] matches {	--	Electronic address
         name matches {
             DV_TEXT matches {*}
-            DV_CODED_TEXT[at0.2] matches {
+            DV_CODED_TEXT[at0.2] matches {	--	Type
                 defining_code matches {
                     [local::
                     at0020,	--	Telephone

@@ -1,5 +1,5 @@
 archetype (adl_version=1.4)
-	openEHR-EHR-ACTION.t-lab_test_single-zju.v1
+    openEHR-EHR-ACTION.t-lab_test_single-zju.v1
 specialize
     openEHR-EHR-ACTION.lab_test_single-zju.v1
 
@@ -33,14 +33,14 @@ description
 definition
     ACTION[at0000.1] matches {	--	Lab test
         ism_transition matches {
-            ISM_TRANSITION[at0003.1] occurrences matches {0..1} {	--	Lab test requested
+            ISM_TRANSITION[at0003] matches {	--	Lab test status
                 current_state matches {
-                    DV_CODED_TEXT[at0004] matches {
+                    DV_CODED_TEXT[at0004] matches {	--	openEHR status
                         defining_code matches {*}
                     }
                 }
                 careflow_step matches {
-                    DV_CODED_TEXT[at0005] matches {
+                    DV_CODED_TEXT[at0005] matches {	--	Careflow status
                         defining_code matches {*}
                     }
                 }
@@ -64,7 +64,7 @@ definition
             INSTRUCTION_DETAILS[at0016] matches {	--	Request activity
                 activityId matches {"/activities[at0001]"}
                 instructionId matches {
-                    LOCATABLE_REF[at0017] matches {	--	Request instruction
+                    LOCATABLE_REF[at0017.1] matches {	--	Request instruction
                         path matches {"openEHR-EHR-INSTRUCTION.t-request-lab_test-zju.v1"}
                     }
                 }
@@ -87,11 +87,6 @@ ontology
 
                 >
                 ["at0003"] = <
-                    text = <"Lab test status">
-                    description = <"">
-
-                >
-                ["at0003.1"] = <
                     text = <"Lab test status">
                     description = <"">
 
@@ -127,6 +122,11 @@ ontology
 
                 >
                 ["at0017"] = <
+                    text = <"Request instruction">
+                    description = <"">
+
+                >
+                ["at0017.1"] = <
                     text = <"Request instruction">
                     description = <"">
 

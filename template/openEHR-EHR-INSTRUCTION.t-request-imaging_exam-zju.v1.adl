@@ -46,7 +46,7 @@ definition
             }
         }
         activities cardinality matches {0..*; unordered} matches {
-            ACTIVITY[at0001.1] occurrences matches {1..1} matches {	--	Request
+            ACTIVITY[at0001.1] matches {	--	Request
                 description matches {
                     ITEM_TREE[at0009] matches {	--	Tree
                         items cardinality matches {1..*; unordered} matches {
