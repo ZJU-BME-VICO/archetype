@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping package="">
+
+  <class name="openEHR-DEMOGRAPHIC-PERSON.t-person-patient-zju.v1">
+
+    <id name="/uid/value">
+      <column name="id" />
+    </id>
+
+    <one-to-many name="/details[at0001.0.1]" class="openEHR-DEMOGRAPHIC-ITEM_TREE.t-person_details-zju"/>
+    <one-to-many name="/identities[at0002.1.1]" class="openEHR-DEMOGRAPHIC-PARTY_IDENTITY.t-person_name-zju"/>
+    <one-to-many name="/contacts[at0003.1.1]/addresses[at0030.0.1]" class="openEHR-DEMOGRAPHIC-ADDRESS.t-address-zju"/>
+    <one-to-many name="/contacts[at0003.1.1]/addresses[at0030.0.2]" class="openEHR-DEMOGRAPHIC-ADDRESS.t-address-zju"/>
+    <one-to-many name="/contacts[at0003.1.1]/addresses[at0030.0.3]" class="openEHR-DEMOGRAPHIC-ADDRESS.t-address-zju"/>
+    <one-to-many name="/contacts[at0003.1.1]/addresses[at0030.0.4]" class="openEHR-DEMOGRAPHIC-ADDRESS.t-address-zju"/>
+    <one-to-many name="/contacts[at0003.1.1]/addresses[at0030.0.5]" class="openEHR-DEMOGRAPHIC-ADDRESS.t-address-zju"/>
+
+  </class>
+
+</hibernate-mapping>

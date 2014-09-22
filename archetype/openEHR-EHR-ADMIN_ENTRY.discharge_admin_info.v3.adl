@@ -133,9 +133,9 @@ definition
                                         items cardinality matches {0..*; unordered} matches {
                                             allow_archetype CLUSTER occurrences matches {0..*} matches {
                                                 include
-                                                    archetype_id/value matches {/checklist_item-discharge_method_hospital\.v2/}
                                                     archetype_id/value matches {/checklist_item-discharge_method_mental_health\.v2/}
                                                     archetype_id/value matches {/checklist_item-discharge_method_community\.v2/}
+                                                    archetype_id/value matches {/checklist_item-discharge_method_hospital\.v2/}
                                                 exclude
                                                     archetype_id/value matches {/.*/}
                                             }

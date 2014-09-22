@@ -1,0 +1,221 @@
+archetype (adl_version=1.4)
+    openEHR-DEMOGRAPHIC-ADDRESS.t-address-zju.v1
+specialize
+    openEHR-DEMOGRAPHIC-ADDRESS.address-zju.v1
+
+concept
+    [at0000.1.1]
+
+language
+    original_language = <[ISO_639-1::pt-br]>
+    translations = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            author = <
+                ["name"] = <"Sergio Miranda Freire">
+                ["organisation"] = <"Universidade do Estado do Rio de Janeiro - UERJ">
+                ["email"] = <"sergio@lampada.uerj.br">
+            >
+        >
+    >
+
+description
+    original_author = <
+        ["date"] = <"22/05/2009">
+        ["name"] = <"Sergio Miranda Freire & Rigoleta Dutra Mediano Dias">
+        ["organisation"] = <"Universidade do Estado do Rio de Janeiro - UERJ">
+        ["email"] = <"sergio@lampada.uerj.br">
+    >
+    lifecycle_state = <"AuthorDraft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"Representation of data about a personal/organizational address, based on ISO 22220 standard. This address represents a geographic location which can be used in several ways: residential address, postal address, etc.">
+            keywords = <"demographic service","address","geographic location","residential address">
+            copyright = <"© 2011 openEHR Foundation">
+            use = <"Used to communicate with, identify service provision requirements and trends, and to provide direct services.">
+            misuse = <"This archetype can not used for email address, IP address, computer address, telephone, fax and pager. For these items use the electronic_communication archetype.">
+        >
+        ["pt-br"] = <
+            language = <[ISO_639-1::pt-br]>
+            purpose = <"Representação dos detalhes do endereço de uma pessoa/organização com base na norma ISO 22220. Este endereço representa uma localização geográfica que pode ser utilizada para diversos fins: endereço residencial, endereço postal, etc.">
+            keywords = <"serviço demográfico","endereço","localização geográfica">
+            copyright = <"© 2011 openEHR Foundation">
+            use = <"Usado para comunicação, identificar requisitos para provimento de serviços e tendências, e proporcionar serviços diretos.">
+            misuse = <"Este arquétipo não deve ser usado para endereços de correio eletrônico, endereços IP, endereços de computador, telefone, fax e pager. Para estes itens, use o arquétipo electronic_communication.">
+        >
+    >
+    other_details = <
+        ["references"] = <"ISO/TS 22220:2008(E) - Identification of Subject of Care - Technical Specification - International Organization for Standardization.">
+    >
+
+definition
+    ADDRESS[at0000.1.1] matches {	--	Address
+        name matches {
+            DV_CODED_TEXT matches {
+                defining_code matches {
+                    [local::
+                    at0461,	--	Business
+                    at0462,	--	Mailing or postal
+                    at0463,	--	Temporary accomodation
+                    at0464,	--	Residential
+                    at0465,	--	No fixed address
+                    at0466]	--	Unknown/not stated/inadequately described
+                }
+            }
+        }
+        details matches {
+            ITEM_TREE[at0001] occurrences matches {0..1} matches {	--	Items
+                items matches {
+                    ELEMENT[at0006] occurrences matches {0..1} matches {	--	Postal code (ZIP code)
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
+                    }
+                    ELEMENT[at0.2] occurrences matches {0..1} matches {	--	Full address
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["pt-br"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Endereço">
+                    description = <"Endereço.">
+
+                >
+                ["at0000.1"] = <
+                    text = <"Endereço">
+                    description = <"Endereço.">
+
+                >
+                ["at0000.1.1"] = <
+                    text = <"Endereço">
+                    description = <"Endereço.">
+
+                >
+                ["at0001"] = <
+                    text = <"Itens do endereço">
+                    description = <"Itens do endereço.">
+
+                >
+                ["at0006"] = <
+                    text = <"CEP">
+                    description = <"O código para uma área de entrega postal, alinhada com a localidade, subúrbio ou local para o endereço, conforme definido pelo serviço postal.">
+
+                >
+                ["at0461"] = <
+                    text = <"Comercial">
+                    description = <"Usado para indicar um endereço que é a localização física de um escritório ou de um negócio no qual uma entidade pode ser contactada.">
+
+                >
+                ["at0462"] = <
+                    text = <"Correio ou postal">
+                    description = <"Usado para indicar um endereço que é somente para correspondência e/ou cobrança.">
+
+                >
+                ["at0463"] = <
+                    text = <"Acomodação temporária">
+                    description = <"Acomodação temporária (tal como um endereço de uma pessoa que usualmente reside no exterior ou onde o fornecedor do endereço está em uma acomodação temporária devido a renovação ou tratamento).">
+
+                >
+                ["at0464"] = <
+                    text = <"Residencial">
+                    description = <"Usado para indicar onde a pessoa está morando. Observe que este código não é válido para organizações.">
+
+                >
+                ["at0465"] = <
+                    text = <"Sem endereço fixo">
+                    description = <"Usado onde a pessoa não possui endereço fixo.">
+
+                >
+                ["at0466"] = <
+                    text = <"Desconhecido/Não declarado/Descrito inadequadamente">
+                    description = <"Desconhecido/Não declarado/Descrito inadequadamente pode também ser usado onde a pessoa não possui endereço fixo ou não deseja ter o seu endereço residencial ou para correspondência registrado.">
+
+                >
+                ["at0.2"] = <
+                    text = <"Full address">
+                    description = <"">
+
+                >
+            >
+        >
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Address">
+                    description = <"Address based on ISO22220 standard.">
+
+                >
+                ["at0000.1"] = <
+                    text = <"Address">
+                    description = <"Address based on ISO22220 standard.">
+
+                >
+                ["at0000.1.1"] = <
+                    text = <"Address">
+                    description = <"Address based on ISO22220 standard.">
+
+                >
+                ["at0001"] = <
+                    text = <"Items">
+                    description = <"Address items.">
+
+                >
+                ["at0006"] = <
+                    text = <"Postal code (ZIP code)">
+                    description = <"The code for a postal delivery area, aligned with locality, suburb or place for the address, as defined by the postal service.">
+
+                >
+                ["at0461"] = <
+                    text = <"Business">
+                    description = <"Used to indicate an address that is the physical location of a business or office at which an entity can be contacted.">
+
+                >
+                ["at0462"] = <
+                    text = <"Mailing or postal">
+                    description = <"Used to indicate an address that is only for correspondence and/or billing purposes.">
+
+                >
+                ["at0463"] = <
+                    text = <"Temporary accomodation">
+                    description = <"Temporary accomodation address (such as for a person who usually resides overseas or where the provider of the address is in temporary accomodation due to renovation or treatment).">
+
+                >
+                ["at0464"] = <
+                    text = <"Residential">
+                    description = <"Used to indicate where a person is living. Note that this code is not valid for organisations.">
+
+                >
+                ["at0465"] = <
+                    text = <"No fixed address">
+                    description = <"Used where a person has no fixed address.">
+
+                >
+                ["at0466"] = <
+                    text = <"Unknown/not stated/inadequately described">
+                    description = <"Unknown/not stated/inadequately described may also be used where the person has no fixed address or does not wish to have their residential or correspondence address recorded.">
+
+                >
+                ["at0.2"] = <
+                    text = <"Full address">
+                    description = <"">
+
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

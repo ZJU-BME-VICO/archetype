@@ -127,14 +127,14 @@ ontology
                     description = <"Dados do paciente.">
 
                 >
-                ["at0001"] = <
-                    text = <"Detalhes">
-                    description = <"Detalhes demográficos do paciente.">
-
-                >
                 ["at0000.1.1"] = <
                     text = <"Dados do paciente">
                     description = <"Dados do paciente.">
+
+                >
+                ["at0001"] = <
+                    text = <"Detalhes">
+                    description = <"Detalhes demográficos do paciente.">
 
                 >
                 ["at0002"] = <
@@ -221,14 +221,14 @@ ontology
                     description = <"Patient demographic data.">
 
                 >
-                ["at0001"] = <
-                    text = <"Demographic details">
-                    description = <"A patient's demographic details.">
-
-                >
                 ["at0000.1.1"] = <
                     text = <"Patient">
                     description = <"Patient demographic data.">
+
+                >
+                ["at0001"] = <
+                    text = <"Demographic details">
+                    description = <"A patient's demographic details.">
 
                 >
                 ["at0002"] = <

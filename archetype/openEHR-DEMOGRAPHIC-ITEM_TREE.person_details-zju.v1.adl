@@ -135,9 +135,9 @@ definition
             }
             CLUSTER[at0002] matches {	--	Death data
                 items matches {
-                    ELEMENT[at0021] matches {	--	Death date
+                    ELEMENT[at0021.1] matches {	--	Death date
                         value matches {
-                            DV_DATE matches {*}
+                            DV_DATE_TIME matches {*}
                         }
                     }
                     ELEMENT[at0022] occurrences matches {0..1} matches {	--	Source of notification
@@ -401,6 +401,11 @@ ontology
 
                 >
                 ["at0021"] = <
+                    text = <"Data do óbito">
+                    description = <"A data do óbito da pessoa">
+
+                >
+                ["at0021.1"] = <
                     text = <"Data do óbito">
                     description = <"A data do óbito da pessoa">
 
@@ -710,6 +715,11 @@ ontology
 
                 >
                 ["at0021"] = <
+                    text = <"Death date">
+                    description = <"The date of death of a person">
+
+                >
+                ["at0021.1"] = <
                     text = <"Death date">
                     description = <"The date of death of a person">
 

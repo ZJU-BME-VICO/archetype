@@ -1,0 +1,462 @@
+archetype (adl_version=1.4)
+    openEHR-DEMOGRAPHIC-ITEM_TREE.t-person_details-zju.v1
+specialize
+    openEHR-DEMOGRAPHIC-ITEM_TREE.person_details-zju.v1
+
+concept
+    [at0000.1.1]
+
+language
+    original_language = <[ISO_639-1::pt-br]>
+    translations = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            author = <
+                ["name"] = <"Sergio Miranda Freire">
+                ["organisation"] = <"Universidade do Estado do Rio de Janeiro - UERJ">
+                ["email"] = <"sergio@lampada.uerj.br">
+            >
+        >
+    >
+
+description
+    original_author = <
+        ["date"] = <"22/05/2009">
+        ["name"] = <"Sergio Miranda Freire & Rigoleta Dutra Mediano Dias">
+        ["organisation"] = <"Universidade do Estado do Rio de Janeiro - UERJ">
+        ["email"] = <"sergio@lampada.uerj.br">
+    >
+    lifecycle_state = <"Authordraft">
+    details = <
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"Representation of a person's demographic data such as, birth data, death data, sex, marital status, ethnic group and biometric identifier">
+            keywords = <"demographic service","person's demographic data">
+            copyright = <"© 2011 openEHR Foundation">
+            use = <"Used in demographic service to collect a person's demographic data">
+        >
+        ["pt-br"] = <
+            language = <[ISO_639-1::pt-br]>
+            purpose = <"Representação de dados demográficos de uma pessoa, tais como dados do nascimento, do óbito, sexo, estado civil, grupo étnico e identificador biométrico">
+            keywords = <"serviço demográfico","dados demográficos de uma pessoa">
+            copyright = <"© 2011 openEHR Foundation">
+            use = <"Usado em serviço demográficos para coletar os dados demográficos de uma pessoa">
+        >
+    >
+    other_details = <
+    >
+
+definition
+    ITEM_TREE[at0000.1.1] occurrences matches {0..1} matches {	--	Person data
+        items cardinality matches {1..*; ordered} matches {
+            CLUSTER[at0001] matches {	--	Birth data
+                items matches {
+                    ELEMENT[at0010.1] matches {	--	Birth date
+                        value matches {
+                            DV_DATE_TIME matches {*}
+                        }
+                    }
+                    ELEMENT[at0017] occurrences matches {0..*} matches {	--	Sex
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [local::
+                                    at0310,	--	Male
+                                    at0311,	--	Female
+                                    at0312,	--	Intersex or indeterminate
+                                    at0313]	--	Not declared/inadequately described
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            CLUSTER[at0002] matches {	--	Death data
+                items matches {
+                    ELEMENT[at0021.1] matches {	--	Death date
+                        value matches {
+                            DV_DATE_TIME matches {*}
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0033] occurrences matches {0..*} matches {	--	Marital status
+                value matches {
+                    DV_CODED_TEXT matches {
+                        defining_code matches {
+                            [ac0006]
+                        }
+                    }
+                }
+            }
+            ELEMENT[at0034] occurrences matches {0..*} matches {	--	Ethnic background
+                value matches {
+                    DV_CODED_TEXT matches {
+                        defining_code matches {
+                            [ac0007]
+                        }
+                    }
+                }
+            }
+            allow_archetype CLUSTER[at0005.1] occurrences matches {0..1} matches {	--	Resident identity
+                include
+                    archetype_id/value matches {/openEHR-DEMOGRAPHIC-PERSON\.t-person-patient-zju\.v1/}
+            }
+            allow_archetype CLUSTER[at0005.2] occurrences matches {0..1} matches {	--	Household identity
+                include
+                    archetype_id/value matches {/openEHR-DEMOGRAPHIC-PERSON\.t-person-patient-zju\.v1/}
+            }
+            allow_archetype CLUSTER[at0005.3] occurrences matches {0..1} matches {	--	Passport identity
+                include
+                    archetype_id/value matches {/openEHR-DEMOGRAPHIC-PERSON\.t-person-patient-zju\.v1/}
+            }
+            allow_archetype CLUSTER[at0005.4] occurrences matches {0..1} matches {	--	Military identity
+                include
+                    archetype_id/value matches {/openEHR-DEMOGRAPHIC-PERSON\.t-person-patient-zju\.v1/}
+            }
+            allow_archetype CLUSTER[at0005.5] occurrences matches {0..1} matches {	--	Health insurance identity
+                include
+                    archetype_id/value matches {/openEHR-DEMOGRAPHIC-PERSON\.t-person-patient-zju\.v1/}
+            }
+            allow_archetype CLUSTER[at0005.6] occurrences matches {0..1} matches {	--	Health card identity
+                include
+                    archetype_id/value matches {/openEHR-DEMOGRAPHIC-PERSON\.t-person-patient-zju\.v1/}
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["pt-br"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Dados da pessoa">
+                    description = <"Dados demográficos da pessoa tais como dados sobre o nascimento, do óbito, sexo, estado civil, grupo étnico e identificador biométrico">
+
+                >
+                ["at0000.1"] = <
+                    text = <"Dados da pessoa">
+                    description = <"Dados demográficos da pessoa tais como dados sobre o nascimento, do óbito, sexo, estado civil, grupo étnico e identificador biométrico">
+
+                >
+                ["at0000.1.1"] = <
+                    text = <"Dados da pessoa">
+                    description = <"Dados demográficos da pessoa tais como dados sobre o nascimento, do óbito, sexo, estado civil, grupo étnico e identificador biométrico">
+
+                >
+                ["at0001"] = <
+                    text = <"Dados do nascimento">
+                    description = <"Dados demográficos do nascimento">
+
+                >
+                ["at0002"] = <
+                    text = <"Dados do óbito">
+                    description = <"Dados demográficos do óbito">
+
+                >
+                ["at0005"] = <
+                    text = <"Identificadores da pessoa">
+                    description = <"Outros documentos de identificação usados pela pessoa: documento de identidade, carteira de motorista, etc">
+
+                >
+                ["at0005.1"] = <
+                    text = <"Resident identity">
+                    description = <"">
+
+                >
+                ["at0005.2"] = <
+                    text = <"Household identity">
+                    description = <"">
+
+                >
+                ["at0005.3"] = <
+                    text = <"Passport identity">
+                    description = <"">
+
+                >
+                ["at0005.4"] = <
+                    text = <"Military identity">
+                    description = <"">
+
+                >
+                ["at0005.5"] = <
+                    text = <"Health insurance identity">
+                    description = <"">
+
+                >
+                ["at0005.6"] = <
+                    text = <"Health card identity">
+                    description = <"">
+
+                >
+                ["at0010"] = <
+                    text = <"Data do nascimento">
+                    description = <"A data do nascimento da pessoa">
+
+                >
+                ["at0010.1"] = <
+                    text = <"Data do nascimento">
+                    description = <"A data do nascimento da pessoa">
+
+                >
+                ["at0017"] = <
+                    text = <"sexo">
+                    description = <"sexo da pessoa">
+
+                >
+                ["at0021"] = <
+                    text = <"Data do óbito">
+                    description = <"A data do óbito da pessoa">
+
+                >
+                ["at0021.1"] = <
+                    text = <"Data do óbito">
+                    description = <"A data do óbito da pessoa">
+
+                >
+                ["at0033"] = <
+                    text = <"Estado Civil">
+                    description = <"Estado Civil">
+
+                >
+                ["at0034"] = <
+                    text = <"Etnia">
+                    description = <"Grupo étnico ao qual a pessoa pertence">
+
+                >
+                ["at0310"] = <
+                    text = <"Masculino">
+                    description = <"Sexo masculino">
+
+                >
+                ["at0311"] = <
+                    text = <"Feminino">
+                    description = <"Sexo feminino">
+
+                >
+                ["at0312"] = <
+                    text = <"Intersexo ou indeterminado">
+                    description = <"Usado normalmente para bebês para os quais o sexo não foi determinado por qualquer razão. Não deve ser usado em formulários de coleta de dados completados pelo respondente e deve ser usado somente se a pessoa ou respondente voluntariamente afirma que a pessoa é intersexo ou onde fica claro durante o processo de coleta que o indivíduo não é nem do sexo masculino nem feminino">
+
+                >
+                ["at0313"] = <
+                    text = <"Não declarado/inadequadamente descrito">
+                    description = <"Não é para ser usado em formulários de coleta primária. É primariamente usado em coleções administrativas, ao transferir conjuntos de dados onde o item não foi coletado">
+
+                >
+            >
+        >
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Person data">
+                    description = <"Demographic data about a person such as birth data, death data, sex, marital status, ethnic group and biometric identifier">
+
+                >
+                ["at0000.1"] = <
+                    text = <"Person data">
+                    description = <"Demographic data about a person such as birth data, death data, sex, marital status, ethnic group and biometric identifier">
+
+                >
+                ["at0000.1.1"] = <
+                    text = <"Person data">
+                    description = <"Demographic data about a person such as birth data, death data, sex, marital status, ethnic group and biometric identifier">
+
+                >
+                ["at0001"] = <
+                    text = <"Birth data">
+                    description = <"Birth demographic data">
+
+                >
+                ["at0002"] = <
+                    text = <"Death data">
+                    description = <"Death demographic data">
+
+                >
+                ["at0005"] = <
+                    text = <"Other person identifiers">
+                    description = <"Other person identifiers: ID cards, driver's lisence, etc">
+
+                >
+                ["at0005.1"] = <
+                    text = <"Resident identity">
+                    description = <"">
+
+                >
+                ["at0005.2"] = <
+                    text = <"Household identity">
+                    description = <"">
+
+                >
+                ["at0005.3"] = <
+                    text = <"Passport identity">
+                    description = <"">
+
+                >
+                ["at0005.4"] = <
+                    text = <"Military identity">
+                    description = <"">
+
+                >
+                ["at0005.5"] = <
+                    text = <"Health insurance identity">
+                    description = <"">
+
+                >
+                ["at0005.6"] = <
+                    text = <"Health card identity">
+                    description = <"">
+
+                >
+                ["at0010"] = <
+                    text = <"Birth date">
+                    description = <"The date of birth of a person">
+
+                >
+                ["at0010.1"] = <
+                    text = <"Birth date">
+                    description = <"The date of birth of a person">
+
+                >
+                ["at0017"] = <
+                    text = <"Sex">
+                    description = <"The sex of the subject.">
+
+                >
+                ["at0021"] = <
+                    text = <"Death date">
+                    description = <"The date of death of a person">
+
+                >
+                ["at0021.1"] = <
+                    text = <"Death date">
+                    description = <"The date of death of a person">
+
+                >
+                ["at0033"] = <
+                    text = <"Marital status">
+                    description = <"Marital status.">
+
+                >
+                ["at0034"] = <
+                    text = <"Ethnic background">
+                    description = <"The person's ethnic background">
+
+                >
+                ["at0310"] = <
+                    text = <"Male">
+                    description = <"Male">
+
+                >
+                ["at0311"] = <
+                    text = <"Female">
+                    description = <"Female">
+
+                >
+                ["at0312"] = <
+                    text = <"Intersex or indeterminate">
+                    description = <"is normally used for babies for whom sex has not been determined for whatever reason, should not generally be used on data collection forms completed by the respondent and should only be used if the person or respondent volunteers that the person is intersex or where it otherwise becomes clear during the collection process that the individual is neither male nor female">
+
+                >
+                ["at0313"] = <
+                    text = <"Not declared/inadequately described">
+                    description = <"is not to be used on primary collection forms. It is primarily for use in administrative collections when transferring data from data sets where the item has not been collected.">
+
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+        ["pt-br"] = <
+            items = <
+                ["ac0001"] = <
+                    text = <"Códigos de países">
+                    description = <"códigos válidos para paises">
+
+                >
+                ["ac0002"] = <
+                    text = <"Códigos de estados">
+                    description = <"códigos válidos para estados">
+
+                >
+                ["ac0003"] = <
+                    text = <"Códigos de cidades">
+                    description = <"códigos válidos para cidade">
+
+                >
+                ["ac0004"] = <
+                    text = <"Códigos para nascimento múltiplo">
+                    description = <"códigos válidos para nascimento múltiplo">
+
+                >
+                ["ac0005"] = <
+                    text = <"Códigos para ordem de nascimento">
+                    description = <"códigos válidos para  ordem de nascimento">
+
+                >
+                ["ac0006"] = <
+                    text = <"Códigos para Estado Civil">
+                    description = <"Códigos válidos para Estado Civil">
+
+                >
+                ["ac0007"] = <
+                    text = <"Códigos para grupos étnicos">
+                    description = <"códigos válidos para grupos étnicos">
+
+                >
+                ["ac0008"] = <
+                    text = <"Localização do objeto biométrico">
+                    description = <"código válido para a localização do identificador biométrico">
+
+                >
+            >
+        >
+        ["en"] = <
+            items = <
+                ["ac0001"] = <
+                    text = <"Country codes">
+                    description = <"valid codes for countries">
+
+                >
+                ["ac0002"] = <
+                    text = <"State codes">
+                    description = <"valid codes for state/territory/province">
+
+                >
+                ["ac0003"] = <
+                    text = <"City codes">
+                    description = <"valid codes for city/town/locality">
+
+                >
+                ["ac0004"] = <
+                    text = <"Birth plurality codes">
+                    description = <"valid codes for birth plurality">
+
+                >
+                ["ac0005"] = <
+                    text = <"Birth order codes">
+                    description = <"valid codes for birth order">
+
+                >
+                ["ac0006"] = <
+                    text = <"Marital status codes">
+                    description = <"Valid codes for marital status">
+
+                >
+                ["ac0007"] = <
+                    text = <"Ethnic background codes">
+                    description = <"Valid codes for ethnic background">
+
+                >
+                ["ac0008"] = <
+                    text = <"Localization code">
+                    description = <"Valid codes for the biometric localization">
+
+                >
+            >
+        >
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

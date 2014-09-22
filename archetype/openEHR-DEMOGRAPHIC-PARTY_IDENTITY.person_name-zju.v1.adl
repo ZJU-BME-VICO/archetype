@@ -103,7 +103,7 @@ definition
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0022] matches {	--	Alternative representation
+                            ELEMENT[at0022.1] matches {	--	Phonetic name
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
@@ -132,11 +132,6 @@ definition
                         }
                     }
                     ELEMENT[at0010] occurrences matches {0..1} matches {	--	Full Name
-                        value matches {
-                            DV_TEXT matches {*}
-                        }
-                    }
-                    ELEMENT[at0.2] occurrences matches {0..1} matches {	--	Phonetic name
                         value matches {
                             DV_TEXT matches {*}
                         }
@@ -225,6 +220,11 @@ ontology
                     description = <"Representação alternativa do nome desta pessoa usando estilos alternativos de representação, tais como caracteres ou variações do conjunto de caracteres do idioma para exibição local.">
 
                 >
+                ["at0022.1"] = <
+                    text = <"Phonetic name">
+                    description = <"">
+
+                >
                 ["at0023"] = <
                     text = <"Nome para relatório">
                     description = <"O nome do sujeito usado para relatório, quando acompanhado por um identificador específico.">
@@ -283,11 +283,6 @@ ontology
                 ["at0036"] = <
                     text = <"Nome temporário">
                     description = <"Indica que o nome da pessoa não foi determinado.">
-
-                >
-                ["at0.2"] = <
-                    text = <"Phonetic name">
-                    description = <"">
 
                 >
             >
@@ -369,6 +364,11 @@ ontology
                     description = <"Alternative Representation of this subject of care name using alternative styles of representation such as characters or language character set variations for local display.">
 
                 >
+                ["at0022.1"] = <
+                    text = <"Phonetic name">
+                    description = <"">
+
+                >
                 ["at0023"] = <
                     text = <"Reporting name">
                     description = <"The subject’s name as it is to be used for reporting, when used with a specific identifier.">
@@ -427,11 +427,6 @@ ontology
                 ["at0036"] = <
                     text = <"Temporary name">
                     description = <"A temporary name issued where the subject's name has not been determined.">
-
-                >
-                ["at0.2"] = <
-                    text = <"Phonetic name">
-                    description = <"">
 
                 >
             >

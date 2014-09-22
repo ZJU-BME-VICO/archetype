@@ -1,7 +1,7 @@
 archetype (adl_version=1.4)
-    openEHR-DEMOGRAPHIC-PERSON.person-patient-zju.v1
+    openEHR-DEMOGRAPHIC-PERSON.t-person-patient-zju.v1
 specialize
-    openEHR-DEMOGRAPHIC-PERSON.person-patient.v1
+    openEHR-DEMOGRAPHIC-PERSON.person-patient-zju.v1
 
 concept
     [at0000.1.1]
@@ -50,24 +50,39 @@ description
 definition
     PERSON[at0000.1.1] matches {	--	Patient
         details matches {
-            allow_archetype ITEM_TREE[at0001] matches {	--	Demographic details
+            allow_archetype ITEM_TREE[at0001.0.1] matches {	--	Demographic details
                 include
-                    archetype_id/value matches {/(person_details)[a-zA-Z0-9_-]*\.v1/}
+                    archetype_id/value matches {/openEHR-DEMOGRAPHIC-ITEM_TREE\.t-person_details-zju\.v1/}
             }
         }
         identities matches {
-            allow_archetype PARTY_IDENTITY[at0002.1] matches {	--	Name
+            allow_archetype PARTY_IDENTITY[at0002.1.1] matches {	--	Name
                 include
-                    archetype_id/value matches {/(person_name)[a-zA-Z0-9_-]*\.v1/}
+                    archetype_id/value matches {/openEHR-DEMOGRAPHIC-PARTY_IDENTITY\.t-person_name-zju\.v1/}
             }
         }
         contacts matches {
-            CONTACT[at0003.1] matches {	--	Contacts
+            CONTACT[at0003.1.1] matches {	--	Contacts
                 addresses matches {
-                    allow_archetype ADDRESS[at0030] matches {	--	Addresses
+                    allow_archetype ADDRESS[at0030.0.1] matches {	--	Mail address
                         include
-                            archetype_id/value matches {/(address)([a-zA-Z0-9_]+)*\.v1/}
-                            archetype_id/value matches {/(electronic_communication)[a-zA-Z0-9_-]*\.v1/}
+                            archetype_id/value matches {/openEHR-DEMOGRAPHIC-ADDRESS\.t-address-zju\.v1/}
+                    }
+                    allow_archetype ADDRESS[at0030.0.2] matches {	--	Email
+                        include
+                            archetype_id/value matches {/openEHR-DEMOGRAPHIC-ADDRESS\.t-electronic_communication-zju\.v1/}
+                    }
+                    allow_archetype ADDRESS[at0030.0.3] matches {	--	Mobile phone
+                        include
+                            archetype_id/value matches {/openEHR-DEMOGRAPHIC-ADDRESS\.t-electronic_communication-zju\.v1/}
+                    }
+                    allow_archetype ADDRESS[at0030.0.4] matches {	--	Home phone
+                        include
+                            archetype_id/value matches {/openEHR-DEMOGRAPHIC-ADDRESS\.t-electronic_communication-zju\.v1/}
+                    }
+                    allow_archetype ADDRESS[at0030.0.5] matches {	--	Business phone
+                        include
+                            archetype_id/value matches {/openEHR-DEMOGRAPHIC-ADDRESS\.t-electronic_communication-zju\.v1/}
                     }
                 }
             }
@@ -127,14 +142,19 @@ ontology
                     description = <"Dados do paciente.">
 
                 >
+                ["at0000.1.1"] = <
+                    text = <"Dados do paciente">
+                    description = <"Dados do paciente.">
+
+                >
                 ["at0001"] = <
                     text = <"Detalhes">
                     description = <"Detalhes demográficos do paciente.">
 
                 >
-                ["at0000.1.1"] = <
-                    text = <"Dados do paciente">
-                    description = <"Dados do paciente.">
+                ["at0001.0.1"] = <
+                    text = <"Detalhes">
+                    description = <"Detalhes demográficos do paciente.">
 
                 >
                 ["at0002"] = <
@@ -157,7 +177,17 @@ ontology
                     description = <"Conjunto de dados que especificam o nome do paciente.">
 
                 >
+                ["at0002.1.1"] = <
+                    text = <"Nome">
+                    description = <"Conjunto de dados que especificam o nome do paciente.">
+
+                >
                 ["at0003.1"] = <
+                    text = <"Contatos">
+                    description = <"Contatos da pessoa.">
+
+                >
+                ["at0003.1.1"] = <
                     text = <"Contatos">
                     description = <"Contatos da pessoa.">
 
@@ -168,6 +198,11 @@ ontology
 
                 >
                 ["at0030"] = <
+                    text = <"Endereço">
+                    description = <"Endereços vinculados a um único contato, ou seja, com o mesmo período de validade.">
+
+                >
+                ["at0030.0.1"] = <
                     text = <"Endereço">
                     description = <"Endereços vinculados a um único contato, ou seja, com o mesmo período de validade.">
 
@@ -221,14 +256,19 @@ ontology
                     description = <"Patient demographic data.">
 
                 >
+                ["at0000.1.1"] = <
+                    text = <"Patient">
+                    description = <"Patient demographic data.">
+
+                >
                 ["at0001"] = <
                     text = <"Demographic details">
                     description = <"A patient's demographic details.">
 
                 >
-                ["at0000.1.1"] = <
-                    text = <"Patient">
-                    description = <"Patient demographic data.">
+                ["at0001.0.1"] = <
+                    text = <"Demographic details">
+                    description = <"A patient's demographic details.">
 
                 >
                 ["at0002"] = <
@@ -251,7 +291,17 @@ ontology
                     description = <"A patient's name.">
 
                 >
+                ["at0002.1.1"] = <
+                    text = <"Name">
+                    description = <"A patient's name.">
+
+                >
                 ["at0003.1"] = <
+                    text = <"Contacts">
+                    description = <"A patient's contacts.">
+
+                >
+                ["at0003.1.1"] = <
                     text = <"Contacts">
                     description = <"A patient's contacts.">
 
@@ -264,6 +314,31 @@ ontology
                 ["at0030"] = <
                     text = <"Addresses">
                     description = <"Addresses linked to a single contact, i.e. with the same time validity.">
+
+                >
+                ["at0030.0.1"] = <
+                    text = <"Mail address">
+                    description = <"">
+
+                >
+                ["at0030.0.2"] = <
+                    text = <"Email">
+                    description = <"">
+
+                >
+                ["at0030.0.3"] = <
+                    text = <"Mobile phone">
+                    description = <"">
+
+                >
+                ["at0030.0.4"] = <
+                    text = <"Home phone">
+                    description = <"">
+
+                >
+                ["at0030.0.5"] = <
+                    text = <"Business phone">
+                    description = <"">
 
                 >
                 ["at0040"] = <

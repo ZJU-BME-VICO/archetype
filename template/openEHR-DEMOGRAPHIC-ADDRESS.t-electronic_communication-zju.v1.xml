@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping package="">
+
+  <class name="openEHR-DEMOGRAPHIC-ADDRESS.t-electronic_communication-zju.v1">
+
+    <id name="/uid/value">
+      <column name="id" />
+    </id>
+
+    <property name="/name/definingCode/codeString" column="addressType"/>
+    <property name="/details[at0001]/items[at0003]/value/definingCode/codeString" column="usage"/>
+    <property name="/details[at0001]/items[at0007]/value[at0012]/value" column="address"/>
+
+  </class>
+
+</hibernate-mapping>
