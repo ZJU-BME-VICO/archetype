@@ -61,7 +61,7 @@ definition
                     }
                     CLUSTER[at0069] occurrences matches {0..1} matches {	--	Discharge Destination
                         items cardinality matches {0..*; unordered} matches {
-                            CLUSTER[at0070] occurrences matches {0..1} matches {	--	Discharge destination
+                            CLUSTER[at0070.1] occurrences matches {0..1} matches {	--	Discharge destination
                                 items cardinality matches {0..*; unordered} matches {
                                     allow_archetype CLUSTER occurrences matches {0..1} matches {
                                         include
@@ -132,6 +132,11 @@ ontology
 
                 >
                 ["at0070"] = <
+                    text = <"Discharge destination">
+                    description = <"The details of the organisation to which the patient is to be discharged if not the usual place of residence">
+
+                >
+                ["at0070.1"] = <
                     text = <"Discharge destination">
                     description = <"The details of the organisation to which the patient is to be discharged if not the usual place of residence">
 

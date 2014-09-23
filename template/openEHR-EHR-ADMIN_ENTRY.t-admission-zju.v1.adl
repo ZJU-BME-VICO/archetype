@@ -70,14 +70,14 @@ definition
                                     DV_CODED_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0078] occurrences matches {0..1} matches {	--	Room
+                            ELEMENT[at0078.1] occurrences matches {0..1} matches {	--	Room
                                 value matches {
-                                    DV_TEXT matches {*}
+                                    DV_CODED_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0079] occurrences matches {0..1} matches {	--	Bed
+                            ELEMENT[at0079.1] occurrences matches {0..1} matches {	--	Bed
                                 value matches {
-                                    DV_TEXT matches {*}
+                                    DV_CODED_TEXT matches {*}
                                 }
                             }
                         }
@@ -134,7 +134,7 @@ definition
                     }
                     ELEMENT[at0.21] matches {	--	Special department
                         value matches {
-                            DV_TEXT matches {*}
+                            DV_CODED_TEXT matches {*}
                         }
                     }
                 }
@@ -398,7 +398,17 @@ ontology
                     description = <"*">
 
                 >
+                ["at0078.1"] = <
+                    text = <"Room">
+                    description = <"*">
+
+                >
                 ["at0079"] = <
+                    text = <"Bed">
+                    description = <"*">
+
+                >
+                ["at0079.1"] = <
                     text = <"Bed">
                     description = <"*">
 

@@ -75,14 +75,14 @@ definition
                                     DV_CODED_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0078] occurrences matches {0..1} matches {	--	Room
+                            ELEMENT[at0078.1] occurrences matches {0..1} matches {	--	Room
                                 value matches {
-                                    DV_TEXT matches {*}
+                                    DV_CODED_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0079] occurrences matches {0..1} matches {	--	Bed
+                            ELEMENT[at0079.1] occurrences matches {0..1} matches {	--	Bed
                                 value matches {
-                                    DV_TEXT matches {*}
+                                    DV_CODED_TEXT matches {*}
                                 }
                             }
                             CLUSTER[at0104] occurrences matches {0..1} matches {	--	Facility
@@ -300,6 +300,13 @@ definition
                             }
                         }
                     }
+					ELEMENT[at0066] occurrences matches {0..1} matches {	-- Charge price indicator
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {[ac0001]}		-- Any term that 'is a' 'Charge price indicator'
+							}
+						}
+					}
                     ELEMENT[at0071] matches {	--	Admit date/time
                         value matches {
                             DV_DATE_TIME matches {*}
@@ -352,7 +359,7 @@ definition
                     }
                     ELEMENT[at0.21] matches {	--	Special department
                         value matches {
-                            DV_TEXT matches {*}
+                            DV_CODED_TEXT matches {*}
                         }
                     }
                 }
@@ -752,7 +759,17 @@ NHDD 000150 Source of referral to public psychiatric hospital">
                     description = <"*">
 
                 >
+                ["at0078.1"] = <
+                    text = <"Room">
+                    description = <"*">
+
+                >
                 ["at0079"] = <
+                    text = <"Bed">
+                    description = <"*">
+
+                >
+                ["at0079.1"] = <
                     text = <"Bed">
                     description = <"*">
 

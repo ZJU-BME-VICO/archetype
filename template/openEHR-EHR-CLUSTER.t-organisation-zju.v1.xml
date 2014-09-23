@@ -4,9 +4,7 @@
 
   <class name="openEHR-EHR-CLUSTER.t-organisation-zju.v1">
 
-    <id name="/uid/value"></id>
-
-    <property name="/items[at0001]/value/value" column="name"/>
+    <property name="/items[at0001]/value"/>
 
   </class>
 
