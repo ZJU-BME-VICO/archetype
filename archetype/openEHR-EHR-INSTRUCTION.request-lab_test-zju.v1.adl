@@ -32,7 +32,7 @@ If there are more specific details about the test and/or specimen include this i
     >
 
 definition
-    INSTRUCTION[at0000.1.1] matches {	--	Laboratory Test request
+    INSTRUCTION[at0000.1.1] matches {
         subject matches {
             PARTY_SELF[at0.1.18] matches {	--	Patient
                 externalRef matches {
@@ -45,13 +45,22 @@ definition
             }
         }
         activities cardinality matches {0..*; unordered} matches {
-            ACTIVITY[at0001.0.1] occurrences matches {1..*} matches {
+            ACTIVITY[at0001] occurrences matches {1..*} matches {	--	Request
                 description matches {
                     ITEM_TREE[at0009] matches {	--	Tree
                         items cardinality matches {1..*; unordered} matches {
-                            ELEMENT[at0121.0.1] matches {	--	Service requested
-                                value matches {
-                                    DV_CODED_TEXT matches {*}
+                            CLUSTER[at0.1.28] occurrences matches {0..*} matches {	--	Service requested
+                                items cardinality matches {1..*; unordered} matches {
+                                    ELEMENT[at0121.0.1] matches {	--	Service requested
+                                        value matches {
+                                            DV_CODED_TEXT matches {*}
+                                        }
+                                    }
+                                    ELEMENT[at0.1.29] matches {	--	Service class
+                                        value matches {
+                                            DV_CODED_TEXT matches {*}
+                                        }
+                                    }
                                 }
                             }
                             ELEMENT[at0135] occurrences matches {0..1} matches {	--	Description of service
@@ -221,11 +230,6 @@ ontology
 
                 >
                 ["at0000.1"] = <
-                    text = <"Laboratory Test request">
-                    description = <"Generic request for a laboratory request.">
-
-                >
-                ["at0000.1.1"] = <
                     text = <"Laboratory Test request">
                     description = <"Generic request for a laboratory request.">
 
@@ -427,6 +431,16 @@ ontology
                 >
                 ["at0.1.27"] = <
                     text = <"Request department">
+                    description = <"*">
+
+                >
+                ["at0.1.28"] = <
+                    text = <"Service requested">
+                    description = <"*">
+
+                >
+                ["at0.1.29"] = <
+                    text = <"Service class">
                     description = <"*">
 
                 >

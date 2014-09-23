@@ -4,18 +4,17 @@
 
   <class name="openEHR-EHR-OBSERVATION.t-lab_test_single-zju.v1">
 
-    <id name="/uid/value"></id>
-
     <many-to-one name="/subject[at0.7]/externalRef[at0.8]/id/value" class="openEHR-DEMOGRAPHIC-PERSON.t-person-patient-zju.v1"/>
-    <property name="/data[at0001.1.1]/events[at0002.0.1]/data[at0003]/items[at0005.0.1]/value/definingCode/codeString"/>
-    <property name="/data[at0001.1.1]/events[at0002.0.1]/data[at0003]/items[at0005.0.1]/value/value"/>
-    <property name="/data[at0001.1.1]/events[at0002.0.1]/data[at0003]/items[at0078.1]/value/value"/>
-    <property name="/data[at0001.1.1]/events[at0002.0.1]/data[at0003]/items[at0.5]/value/value"/>
-    <one-to-many name="/data[at0001.1.1]/events[at0002.0.1]/data[at0003]/items[at0089.1.1]" class="openEHR-EHR-CLUSTER.t-lab_result_annotation-zju.v1"/>
-    <property name="/protocol[at0004]/items[at0.6]/value/value"/>
-    <property name="/protocol[at0004]/items[at0075]/value/value"/>
-    <many-to-one class="openEHR-EHR-INSTRUCTION.t-request-lab_test-zju.v1#/activities[at0001]"/>
-    <property name="/data[at0001.1.1]/events[at0002.0.1]/data[at0003]/items[at0.9]/value/magnitude"/>
+    <property name="/data[at0001.1.1]/events[at0002.0.1]/data[at0003]/items[at0.10]"/>
+    <property name="/data[at0001.1.1]/events[at0002.0.1]/data[at0003]/items[at0.10]/items[at0078.1]/value"/>
+    <property name="/data[at0001.1.1]/events[at0002.0.1]/data[at0003]/items[at0.10]/items[at0.5]/value"/>
+    <one-to-many name="/data[at0001.1.1]/events[at0002.0.1]/data[at0003]/items[at0.10]/items[at0089.1.1]"/>
+    <property name="/protocol[at0004]/items[at0.6]/value"/>
+    <property name="/protocol[at0004]/items[at0075]/value"/>
+    <property name="/data[at0001.1.1]/events[at0002.0.1]/data[at0003]/items[at0.10]/items[at0.9]/value"/>
+    <property name="/data[at0001.1.1]/events[at0002.0.1]/data[at0003]/items[at0.10]/items[at0.11]/value"/>
+    <property name="/data[at0001.1.1]/events[at0002.0.1]/data[at0003]/items[at0057]/value"/>
+    <one-to-one name="openEHR-EHR-INSTRUCTION.t-request-lab_test-zju.v1#/activities[at0001.0.0.1]/description[at0009]/items[at0.1.28]"/>
 
   </class>
 

@@ -1,6 +1,4 @@
 archetype (adl_version=1.4)
-    openEHR-EHR-CLUSTER.lab_result_annotation-zju.v1
-specialize
     openEHR-EHR-CLUSTER.lab_result_annotation.v1
 
 concept

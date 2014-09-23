@@ -62,25 +62,39 @@ definition
                                             DV_CODED_TEXT matches {*}
                                         }
                                     }
-                                    ELEMENT[at0078.1] occurrences matches {0..1} matches {	--	Result
-                                        value matches {
-                                            DV_TEXT matches {*}
+                                    CLUSTER[at0.10] occurrences matches {0..*} matches {	--	Result
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0.11] occurrences matches {0..1} matches {	--	Test item
+                                                value matches {
+                                                    DV_CODED_TEXT matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0078.1] occurrences matches {0..1} matches {	--	Result
+                                                value matches {
+                                                    DV_TEXT matches {*}
+                                                }
+                                            }
+                                            allow_archetype CLUSTER[at0089.1.1] occurrences matches {0..1} matches {	--	Per-result annotation
+                                                include
+                                                    archetype_id/value matches {/openEHR-EHR-CLUSTER\.t-lab_result_annotation-zju\.v1/}
+                                                exclude
+                                                    archetype_id/value matches {/.*/}
+                                            }
+                                            ELEMENT[at0.5] occurrences matches {0..1} matches {	--	Lab test result unit
+                                                value matches {
+                                                    DV_TEXT matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0.9] occurrences matches {0..1} matches {	--	Item order
+                                                value matches {
+                                                    DV_COUNT matches {*}
+                                                }
+                                            }
                                         }
                                     }
-                                    allow_archetype CLUSTER[at0089.1.1] occurrences matches {0..1} matches {	--	Per-result annotation
-                                        include
-                                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.t-lab_result_annotation-zju\.v1/}
-                                        exclude
-                                            archetype_id/value matches {/.*/}
-                                    }
-                                    ELEMENT[at0.5] occurrences matches {0..1} matches {	--	Lab test result unit
+                                    ELEMENT[at0057] occurrences matches {0..1} matches {	--	Overall interpretation
                                         value matches {
                                             DV_TEXT matches {*}
-                                        }
-                                    }
-                                    ELEMENT[at0.9] occurrences matches {0..1} matches {	--	Item order
-                                        value matches {
-                                            DV_COUNT matches {*}
                                         }
                                     }
                                 }
@@ -102,6 +116,23 @@ definition
                         value matches {
                             DV_TEXT matches {*}
                         }
+                    }
+                }
+            }
+        }
+        links cardinality matches {0..*; unordered} matches {
+            LINK[at0.12] occurrences matches {0..1} matches {	--	Lab test
+                meaning matches {
+                    DV_TEXT matches {
+                        value matches {"in response to"}
+                    }
+                }
+                type matches {
+                    DV_TEXT matches {*}
+                }
+                target matches {
+                    DV_EHR_URI matches {
+                        value matches {"openEHR-EHR-INSTRUCTION.t-request-lab_test-zju.v1#/activities[at0001.0.0.1]/description[at0009]/items[at0.1.28]"}
                     }
                 }
             }
@@ -175,6 +206,11 @@ This archetype also acts as the parent for specialisations appropriate for more 
                     description = <"Specific identifier for this lab test. e.g. Full blood count , blood glucose, urine microbiology.  May equate to the result name for a single value result. Commonly a coded term e.g from LOINC or SNOMED-CT.">
 
                 >
+                ["at0057"] = <
+                    text = <"Overall interpretation">
+                    description = <"An overall interpretative comment on this test.">
+
+                >
                 ["at0075"] = <
                     text = <"Datetime result issued">
                     description = <"The date and/or time that the result was issued for the recorded ‘test status’.">
@@ -228,6 +264,21 @@ This archetype also acts as the parent for specialisations appropriate for more 
                 >
                 ["at0.9"] = <
                     text = <"Item order">
+                    description = <"">
+
+                >
+                ["at0.10"] = <
+                    text = <"Result">
+                    description = <"">
+
+                >
+                ["at0.11"] = <
+                    text = <"Test item">
+                    description = <"">
+
+                >
+                ["at0.12"] = <
+                    text = <"Lab test">
                     description = <"">
 
                 >

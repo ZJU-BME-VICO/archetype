@@ -4,10 +4,8 @@
 
   <class name="openEHR-EHR-CLUSTER.t-lab_result_annotation-zju.v1">
 
-    <id name="/uid/value"></id>
-
-    <property name="/items[at0002]/value/value"/>
-    <property name="/items[at0005]/value/value"/>
+    <property name="/items[at0002]/value"/>
+    <property name="/items[at0005]/value"/>
 
   </class>
 

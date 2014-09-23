@@ -4,11 +4,8 @@
 
   <class name="openEHR-EHR-CLUSTER.t-specimen-zju.v1">
 
-    <id name="/uid/value"></id>
-
-    <property name="/items[at0029.1]/value/definingCode/codeString"/>
-    <property name="/items[at0029.1]/value/value"/>
-    <property name="/items[at0007]/value/value"/>
+    <property name="/items[at0029.1]/value"/>
+    <property name="/items[at0007]/value"/>
 
   </class>
 

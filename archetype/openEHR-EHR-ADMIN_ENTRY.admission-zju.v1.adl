@@ -300,13 +300,15 @@ definition
                             }
                         }
                     }
-					ELEMENT[at0066] occurrences matches {0..1} matches {	-- Charge price indicator
-						value matches {
-							DV_CODED_TEXT matches {
-								defining_code matches {[ac0001]}		-- Any term that 'is a' 'Charge price indicator'
-							}
-						}
-					}
+                    ELEMENT[at0066] occurrences matches {0..1} matches {	--	Charge price indicator
+                        value matches {
+                            DV_CODED_TEXT matches {
+                                defining_code matches {
+                                    [ac0001]
+                                }
+                            }
+                        }
+                    }
                     ELEMENT[at0071] matches {	--	Admit date/time
                         value matches {
                             DV_DATE_TIME matches {*}
