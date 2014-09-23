@@ -109,7 +109,7 @@ definition
                     }
                 }
             }
-            ELEMENT[at0.2] occurrences matches {1..*} matches {	--	Type
+            ELEMENT[at0.2] occurrences matches {0..1} matches {	--	Type
                 value matches {
                     DV_CODED_TEXT matches {
                         defining_code matches {

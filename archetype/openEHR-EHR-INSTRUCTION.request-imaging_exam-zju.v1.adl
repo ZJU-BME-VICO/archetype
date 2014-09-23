@@ -159,6 +159,48 @@ definition
                 }
             }
         }
+        otherParticipations cardinality matches {0..*; unordered} matches {
+            PARTICIPATION[at0.1.7] occurrences matches {0..1} matches {	--	Receive department
+                performer matches {
+                    PARTY_RELATED[at0.1.8] matches {	--	Receive department
+                        externalRef matches {
+                            PARTY_REF[at0.1.9] matches {	--	Receive department
+                                id matches {
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT[at0.1.10] matches {	--	Receive department relationship
+                                defining_code matches {
+                                    [local::at0.1.11]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            PARTICIPATION[at0.1.12] occurrences matches {0..1} matches {	--	Request department
+                performer matches {
+                    PARTY_RELATED[at0.1.13] matches {	--	Request department
+                        externalRef matches {
+                            PARTY_REF[at0.1.14] matches {	--	Request department
+                                id matches {
+                                    GENERIC_ID matches {*}
+                                }
+                            }
+                        }
+                        relationship matches {
+                            DV_CODED_TEXT[at0.1.15] matches {	--	Request department relationship
+                                defining_code matches {
+                                    [local::at0.1.16]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
 ontology
@@ -323,6 +365,56 @@ Status is used to denote whether this is the initial request, or a follow-up req
                 >
                 ["at0.1.6"] = <
                     text = <"Patient">
+                    description = <"*">
+
+                >
+                ["at0.1.7"] = <
+                    text = <"Receive department">
+                    description = <"*">
+
+                >
+                ["at0.1.8"] = <
+                    text = <"Receive department">
+                    description = <"*">
+
+                >
+                ["at0.1.9"] = <
+                    text = <"Receive department">
+                    description = <"*">
+
+                >
+                ["at0.1.10"] = <
+                    text = <"Receive department relationship">
+                    description = <"*">
+
+                >
+                ["at0.1.11"] = <
+                    text = <"Receive department">
+                    description = <"*">
+
+                >
+                ["at0.1.12"] = <
+                    text = <"Request department">
+                    description = <"*">
+
+                >
+                ["at0.1.13"] = <
+                    text = <"Request department">
+                    description = <"*">
+
+                >
+                ["at0.1.14"] = <
+                    text = <"Request department">
+                    description = <"*">
+
+                >
+                ["at0.1.15"] = <
+                    text = <"Request department relationship">
+                    description = <"*">
+
+                >
+                ["at0.1.16"] = <
+                    text = <"Request department">
                     description = <"*">
 
                 >

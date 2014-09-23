@@ -58,9 +58,9 @@ definition
                         data matches {
                             ITEM_TREE[at0003] matches {	--	Tree
                                 items cardinality matches {2..*; unordered} matches {
-                                    ELEMENT[at0004] matches {	--	Examination result name
+                                    ELEMENT[at0004.1] matches {	--	Examination result name
                                         value matches {
-                                            DV_TEXT matches {*}
+                                            DV_CODED_TEXT matches {*}
                                         }
                                     }
                                     ELEMENT[at0005] occurrences matches {0..1} matches {	--	Modality
@@ -238,6 +238,11 @@ definition
                                             }
                                         }
                                     }
+                                    ELEMENT[at0.2] occurrences matches {0..1} matches {	--	Key image
+                                        value matches {
+                                            DV_TEXT matches {*}
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -293,6 +298,11 @@ ontology
 
                 >
                 ["at0004"] = <
+                    text = <"Examination result name">
+                    description = <"Identification of the imaging examination or procedure performed, typically including modality and anatomical location (including laterality). Coding with a terminology, potientially a pre-coordinated term specifying both modality and anatomical location, is desirable where possible. Possible candidate terminologies: LOINC, SNOMED CT or RadLex.">
+
+                >
+                ["at0004.1"] = <
                     text = <"Examination result name">
                     description = <"Identification of the imaging examination or procedure performed, typically including modality and anatomical location (including laterality). Coding with a terminology, potientially a pre-coordinated term specifying both modality and anatomical location, is desirable where possible. Possible candidate terminologies: LOINC, SNOMED CT or RadLex.">
 
@@ -486,6 +496,11 @@ values, or information about the source of the value where this may be relevant 
                 ["at0042"] = <
                     text = <"Compared image details">
                     description = <"Details of previous images used for comparison.">
+
+                >
+                ["at0.2"] = <
+                    text = <"Key image">
+                    description = <"">
 
                 >
             >

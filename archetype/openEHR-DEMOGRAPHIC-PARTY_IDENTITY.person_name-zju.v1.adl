@@ -103,7 +103,7 @@ definition
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0022.0.1] matches {	--	Phonetic name
+                            ELEMENT[at0022.1] matches {	--	Phonetic name
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
@@ -220,7 +220,7 @@ ontology
                     description = <"Representação alternativa do nome desta pessoa usando estilos alternativos de representação, tais como caracteres ou variações do conjunto de caracteres do idioma para exibição local.">
 
                 >
-                ["at0022.0.1"] = <
+                ["at0022.1"] = <
                     text = <"Phonetic name">
                     description = <"">
 
@@ -364,7 +364,7 @@ ontology
                     description = <"Alternative Representation of this subject of care name using alternative styles of representation such as characters or language character set variations for local display.">
 
                 >
-                ["at0022.0.1"] = <
+                ["at0022.1"] = <
                     text = <"Phonetic name">
                     description = <"">
 

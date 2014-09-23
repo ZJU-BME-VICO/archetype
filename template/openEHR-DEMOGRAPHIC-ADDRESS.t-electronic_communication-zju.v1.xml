@@ -4,11 +4,9 @@
 
   <class name="openEHR-DEMOGRAPHIC-ADDRESS.t-electronic_communication-zju.v1">
 
-    <id name="/uid/value"></id>
-
-    <property name="/name[at0.2]/definingCode/codeString"/>
-    <property name="/details[at0001]/items[at0003]/value/definingCode/codeString"/>
-    <property name="/details[at0001]/items[at0007]/value[at0012]/value"/>
+    <property name="/name[at0.2]"/>
+    <property name="/details[at0001]/items[at0003]/value"/>
+    <property name="/details[at0001]/items[at0007]/value[at0012]"/>
 
   </class>
 

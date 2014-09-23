@@ -58,9 +58,9 @@ definition
                         data matches {
                             ITEM_TREE[at0003] matches {	--	Tree
                                 items cardinality matches {2..*; unordered} matches {
-                                    ELEMENT[at0004] matches {	--	Examination result name
+                                    ELEMENT[at0004.1] matches {	--	Examination result name
                                         value matches {
-                                            DV_TEXT matches {*}
+                                            DV_CODED_TEXT matches {*}
                                         }
                                     }
                                     ELEMENT[at0024] occurrences matches {0..1} matches {	--	DateTime result issued
@@ -78,7 +78,7 @@ definition
                                             DV_TEXT matches {*}
                                         }
                                     }
-                                    ELEMENT[at0022.1] occurrences matches {0..1} matches {	--	Examination result representation
+                                    ELEMENT[at0022.0.1] occurrences matches {0..1} matches {	--	Examination result representation
                                         value matches {
                                             DV_MULTIMEDIA matches {
                                                 media_type matches {
@@ -144,6 +144,11 @@ definition
                                             }
                                         }
                                     }
+                                    ELEMENT[at0.2] occurrences matches {0..1} matches {	--	Key image
+                                        value matches {
+                                            DV_TEXT matches {*}
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -192,6 +197,11 @@ ontology
                     description = <"Identification of the imaging examination or procedure performed, typically including modality and anatomical location (including laterality). Coding with a terminology, potientially a pre-coordinated term specifying both modality and anatomical location, is desirable where possible. Possible candidate terminologies: LOINC, SNOMED CT or RadLex.">
 
                 >
+                ["at0004.1"] = <
+                    text = <"Examination result name">
+                    description = <"Identification of the imaging examination or procedure performed, typically including modality and anatomical location (including laterality). Coding with a terminology, potientially a pre-coordinated term specifying both modality and anatomical location, is desirable where possible. Possible candidate terminologies: LOINC, SNOMED CT or RadLex.">
+
+                >
                 ["at0008"] = <
                     text = <"Findings">
                     description = <"Narrative description of findings, including comparative findings.">
@@ -207,7 +217,7 @@ ontology
                     description = <"Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they must be semantically equivalent.">
 
                 >
-                ["at0022.1"] = <
+                ["at0022.0.1"] = <
                     text = <"Examination result representation">
                     description = <"Rich text representation of the entire result as issued by the diagnostic service. Multiple formats are allowed but they must be semantically equivalent.">
 
@@ -260,6 +270,11 @@ ontology
                 ["at0040"] = <
                     text = <"Image">
                     description = <"An attached or referenced image of a current view.">
+
+                >
+                ["at0.2"] = <
+                    text = <"Key image">
+                    description = <"">
 
                 >
             >

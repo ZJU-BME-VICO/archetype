@@ -98,29 +98,29 @@ definition
                     }
                 }
             }
-            allow_archetype CLUSTER[at0005.1] occurrences matches {0..1} matches {	--	Resident identity
+            allow_archetype CLUSTER[at0005.0.1] occurrences matches {0..1} matches {	--	Resident identity
                 include
-                    archetype_id/value matches {/openEHR-DEMOGRAPHIC-PERSON\.t-person-patient-zju\.v1/}
+                    archetype_id/value matches {/openEHR-DEMOGRAPHIC-CLUSTER\.t-person_identifier-zju\.v1/}
             }
-            allow_archetype CLUSTER[at0005.2] occurrences matches {0..1} matches {	--	Household identity
+            allow_archetype CLUSTER[at0005.0.2] occurrences matches {0..1} matches {	--	Household identity
                 include
-                    archetype_id/value matches {/openEHR-DEMOGRAPHIC-PERSON\.t-person-patient-zju\.v1/}
+                    archetype_id/value matches {/openEHR-DEMOGRAPHIC-CLUSTER\.t-person_identifier-zju\.v1/}
             }
-            allow_archetype CLUSTER[at0005.3] occurrences matches {0..1} matches {	--	Passport identity
+            allow_archetype CLUSTER[at0005.0.3] occurrences matches {0..1} matches {	--	Passport identity
                 include
-                    archetype_id/value matches {/openEHR-DEMOGRAPHIC-PERSON\.t-person-patient-zju\.v1/}
+                    archetype_id/value matches {/openEHR-DEMOGRAPHIC-CLUSTER\.t-person_identifier-zju\.v1/}
             }
-            allow_archetype CLUSTER[at0005.4] occurrences matches {0..1} matches {	--	Military identity
+            allow_archetype CLUSTER[at0005.0.4] occurrences matches {0..1} matches {	--	Military identity
                 include
-                    archetype_id/value matches {/openEHR-DEMOGRAPHIC-PERSON\.t-person-patient-zju\.v1/}
+                    archetype_id/value matches {/openEHR-DEMOGRAPHIC-CLUSTER\.t-person_identifier-zju\.v1/}
             }
-            allow_archetype CLUSTER[at0005.5] occurrences matches {0..1} matches {	--	Health insurance identity
+            allow_archetype CLUSTER[at0005.0.5] occurrences matches {0..1} matches {	--	Health insurance identity
                 include
-                    archetype_id/value matches {/openEHR-DEMOGRAPHIC-PERSON\.t-person-patient-zju\.v1/}
+                    archetype_id/value matches {/openEHR-DEMOGRAPHIC-CLUSTER\.t-person_identifier-zju\.v1/}
             }
-            allow_archetype CLUSTER[at0005.6] occurrences matches {0..1} matches {	--	Health card identity
+            allow_archetype CLUSTER[at0005.0.6] occurrences matches {0..1} matches {	--	Health card identity
                 include
-                    archetype_id/value matches {/openEHR-DEMOGRAPHIC-PERSON\.t-person-patient-zju\.v1/}
+                    archetype_id/value matches {/openEHR-DEMOGRAPHIC-CLUSTER\.t-person_identifier-zju\.v1/}
             }
         }
     }
@@ -159,32 +159,32 @@ ontology
                     description = <"Outros documentos de identificação usados pela pessoa: documento de identidade, carteira de motorista, etc">
 
                 >
-                ["at0005.1"] = <
+                ["at0005.0.1"] = <
                     text = <"Resident identity">
                     description = <"">
 
                 >
-                ["at0005.2"] = <
+                ["at0005.0.2"] = <
                     text = <"Household identity">
                     description = <"">
 
                 >
-                ["at0005.3"] = <
+                ["at0005.0.3"] = <
                     text = <"Passport identity">
                     description = <"">
 
                 >
-                ["at0005.4"] = <
+                ["at0005.0.4"] = <
                     text = <"Military identity">
                     description = <"">
 
                 >
-                ["at0005.5"] = <
+                ["at0005.0.5"] = <
                     text = <"Health insurance identity">
                     description = <"">
 
                 >
-                ["at0005.6"] = <
+                ["at0005.0.6"] = <
                     text = <"Health card identity">
                     description = <"">
 
@@ -293,32 +293,32 @@ ontology
                     description = <"Other person identifiers: ID cards, driver's lisence, etc">
 
                 >
-                ["at0005.1"] = <
+                ["at0005.0.1"] = <
                     text = <"Resident identity">
                     description = <"">
 
                 >
-                ["at0005.2"] = <
+                ["at0005.0.2"] = <
                     text = <"Household identity">
                     description = <"">
 
                 >
-                ["at0005.3"] = <
+                ["at0005.0.3"] = <
                     text = <"Passport identity">
                     description = <"">
 
                 >
-                ["at0005.4"] = <
+                ["at0005.0.4"] = <
                     text = <"Military identity">
                     description = <"">
 
                 >
-                ["at0005.5"] = <
+                ["at0005.0.5"] = <
                     text = <"Health insurance identity">
                     description = <"">
 
                 >
-                ["at0005.6"] = <
+                ["at0005.0.6"] = <
                     text = <"Health card identity">
                     description = <"">
 

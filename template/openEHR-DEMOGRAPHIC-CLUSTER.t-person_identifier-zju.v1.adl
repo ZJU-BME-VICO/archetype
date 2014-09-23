@@ -55,7 +55,7 @@ definition
                     DV_IDENTIFIER matches {*}
                 }
             }
-            ELEMENT[at0.2.1] matches {	--	Type
+            ELEMENT[at0.2] occurrences matches {0..1} matches {	--	Type
                 value matches {
                     DV_CODED_TEXT matches {
                         defining_code matches {
@@ -103,11 +103,6 @@ ontology
 
                 >
                 ["at0.2"] = <
-                    text = <"Type">
-                    description = <"The type of this identifier.">
-
-                >
-                ["at0.2.1"] = <
                     text = <"Type">
                     description = <"The type of this identifier.">
 
@@ -172,11 +167,6 @@ ontology
 
                 >
                 ["at0.2"] = <
-                    text = <"Type">
-                    description = <"The type of this identifier.">
-
-                >
-                ["at0.2.1"] = <
                     text = <"Type">
                     description = <"The type of this identifier.">
 

@@ -52,7 +52,7 @@ description
 definition
     ADDRESS[at0000.1.1] matches {	--	Address
         name matches {
-            DV_CODED_TEXT[at0.0.3] matches {	--	Type
+            DV_CODED_TEXT[at0.3] matches {	--	Type
                 defining_code matches {
                     [local::
                     at0461,	--	Business
@@ -72,7 +72,7 @@ definition
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0.0.2] occurrences matches {0..1} matches {	--	Content
+                    ELEMENT[at0.2] occurrences matches {0..1} matches {	--	Content
                         value matches {
                             DV_TEXT matches {*}
                         }
@@ -141,12 +141,12 @@ ontology
                     description = <"Desconhecido/Não declarado/Descrito inadequadamente pode também ser usado onde a pessoa não possui endereço fixo ou não deseja ter o seu endereço residencial ou para correspondência registrado.">
 
                 >
-                ["at0.0.2"] = <
+                ["at0.2"] = <
                     text = <"Content">
                     description = <"">
 
                 >
-                ["at0.0.3"] = <
+                ["at0.3"] = <
                     text = <"Type">
                     description = <"">
 
@@ -210,12 +210,12 @@ ontology
                     description = <"Unknown/not stated/inadequately described may also be used where the person has no fixed address or does not wish to have their residential or correspondence address recorded.">
 
                 >
-                ["at0.0.2"] = <
+                ["at0.2"] = <
                     text = <"Content">
                     description = <"">
 
                 >
-                ["at0.0.3"] = <
+                ["at0.3"] = <
                     text = <"Type">
                     description = <"">
 

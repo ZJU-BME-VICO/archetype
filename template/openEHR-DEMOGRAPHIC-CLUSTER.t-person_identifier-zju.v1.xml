@@ -4,10 +4,8 @@
 
   <class name="openEHR-DEMOGRAPHIC-CLUSTER.t-person_identifier-zju.v1">
 
-    <id name="/uid/value"></id>
-
-    <property name="/items[at0001.0.1]/value/id"/>
-    <property name="/items[at0.2.1]/value/definingCode/codeString"/>
+    <property name="/items[at0001.0.1]/value"/>
+    <property name="/items[at0.2]/value"/>
 
   </class>
 

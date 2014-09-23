@@ -6,10 +6,11 @@
 
     <id name="/uid/value"></id>
 
-    <property name="/ism_transition[at0003]/current_state/definingCode/codeString"/>
-    <property name="/ism_transition[at0003]/careflow_step/definingCode/codeString"/>
+    <property name="/ism_transition[at0003]/current_state[at0004]/definingCode/codeString"/>
+    <property name="/ism_transition[at0003]/careflow_step[at0005]/definingCode/codeString"/>
     <property name="/time[at0013]/value"/>
     <property name="/provider[at0014]/externalRef[at0015]/id/value"/>
+    <property column="actorName"/>
     <property name="/instructionDetails[at0016]/activityId"/>
     <property name="/instructionDetails[at0016]/instructionId[at0017.1]/path"/>
 

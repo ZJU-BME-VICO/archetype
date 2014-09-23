@@ -51,15 +51,15 @@ definition
             }
         }
         data matches {
-            HISTORY[at0001] matches {	--	Event Series
+            HISTORY[at0001.1.1] matches {	--	Event Series
                 events cardinality matches {1..*; unordered} matches {
-                    EVENT[at0002.1] occurrences matches {0..1} matches {	--	Any event
+                    EVENT[at0002.0.1] occurrences matches {0..1} matches {	--	Any event
                         data matches {
                             ITEM_TREE[at0003] matches {	--	Tree
                                 items cardinality matches {0..*; unordered} matches {
-                                    ELEMENT[at0005] occurrences matches {0..1} matches {	--	Test name
+                                    ELEMENT[at0005.0.1] occurrences matches {0..1} matches {	--	Test name
                                         value matches {
-                                            DV_TEXT matches {*}
+                                            DV_CODED_TEXT matches {*}
                                         }
                                     }
                                     ELEMENT[at0078.1] occurrences matches {0..1} matches {	--	Result
@@ -67,15 +67,20 @@ definition
                                             DV_TEXT matches {*}
                                         }
                                     }
-                                    allow_archetype CLUSTER[at0089.1] occurrences matches {0..1} matches {	--	Per-result annotation
+                                    allow_archetype CLUSTER[at0089.1.1] occurrences matches {0..1} matches {	--	Per-result annotation
                                         include
-                                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.lab_result_annotation(-[a-zA-Z0-9_]+)*\.v1/}
+                                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.t-lab_result_annotation-zju\.v1/}
                                         exclude
                                             archetype_id/value matches {/.*/}
                                     }
                                     ELEMENT[at0.5] occurrences matches {0..1} matches {	--	Lab test result unit
                                         value matches {
                                             DV_TEXT matches {*}
+                                        }
+                                    }
+                                    ELEMENT[at0.9] occurrences matches {0..1} matches {	--	Item order
+                                        value matches {
+                                            DV_COUNT matches {*}
                                         }
                                     }
                                 }
@@ -130,12 +135,22 @@ This archetype also acts as the parent for specialisations appropriate for more 
                     description = <"@ internal @">
 
                 >
+                ["at0001.1"] = <
+                    text = <"Event Series">
+                    description = <"@ internal @">
+
+                >
+                ["at0001.1.1"] = <
+                    text = <"Event Series">
+                    description = <"@ internal @">
+
+                >
                 ["at0002"] = <
                     text = <"Any event">
                     description = <"Any event.">
 
                 >
-                ["at0002.1"] = <
+                ["at0002.0.1"] = <
                     text = <"Any event">
                     description = <"Any event.">
 
@@ -151,6 +166,11 @@ This archetype also acts as the parent for specialisations appropriate for more 
 
                 >
                 ["at0005"] = <
+                    text = <"Test name">
+                    description = <"Specific identifier for this lab test. e.g. Full blood count , blood glucose, urine microbiology.  May equate to the result name for a single value result. Commonly a coded term e.g from LOINC or SNOMED-CT.">
+
+                >
+                ["at0005.0.1"] = <
                     text = <"Test name">
                     description = <"Specific identifier for this lab test. e.g. Full blood count , blood glucose, urine microbiology.  May equate to the result name for a single value result. Commonly a coded term e.g from LOINC or SNOMED-CT.">
 
@@ -181,6 +201,11 @@ This archetype also acts as the parent for specialisations appropriate for more 
                     description = <"Slot to allow an annotation to be added to a particular test result at run-time.">
 
                 >
+                ["at0089.1.1"] = <
+                    text = <"Per-result annotation">
+                    description = <"Slot to allow an annotation to be added to a particular test result at run-time.">
+
+                >
                 ["at0.5"] = <
                     text = <"Lab test result unit">
                     description = <"">
@@ -198,6 +223,11 @@ This archetype also acts as the parent for specialisations appropriate for more 
                 >
                 ["at0.8"] = <
                     text = <"Patient">
+                    description = <"">
+
+                >
+                ["at0.9"] = <
+                    text = <"Item order">
                     description = <"">
 
                 >

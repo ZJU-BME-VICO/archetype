@@ -51,7 +51,7 @@ definition
             }
         }
         data matches {
-            HISTORY[at0001] matches {	--	Event Series
+            HISTORY[at0001.1] matches {	--	Event Series
                 events cardinality matches {1..*; unordered} matches {
                     EVENT[at0002] occurrences matches {0..*} matches {	--	Any event
                         data matches {
@@ -116,6 +116,11 @@ definition
                                     ELEMENT[at0.5] occurrences matches {0..1} matches {	--	Lab test result unit
                                         value matches {
                                             DV_TEXT matches {*}
+                                        }
+                                    }
+                                    ELEMENT[at0.9] occurrences matches {0..1} matches {	--	Item order
+                                        value matches {
+                                            DV_COUNT matches {*}
                                         }
                                     }
                                 }
@@ -185,6 +190,11 @@ This archetype also acts as the parent for specialisations appropriate for more 
 
                 >
                 ["at0001"] = <
+                    text = <"Event Series">
+                    description = <"@ internal @">
+
+                >
+                ["at0001.1"] = <
                     text = <"Event Series">
                     description = <"@ internal @">
 
@@ -332,6 +342,11 @@ This archetype also acts as the parent for specialisations appropriate for more 
                 >
                 ["at0.8"] = <
                     text = <"Patient">
+                    description = <"">
+
+                >
+                ["at0.9"] = <
+                    text = <"Item order">
                     description = <"">
 
                 >

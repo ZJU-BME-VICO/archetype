@@ -45,16 +45,16 @@ definition
             }
         }
         activities cardinality matches {0..*; unordered} matches {
-            ACTIVITY[at0001] occurrences matches {1..*} matches {	--	Request
+            ACTIVITY[at0001.0.1.1] matches {	--	Request
                 description matches {
                     ITEM_TREE[at0009] matches {	--	Tree
                         items cardinality matches {1..*; unordered} matches {
-                            ELEMENT[at0121] matches {	--	Service requested
+                            ELEMENT[at0121.0.1] matches {	--	Service requested
                                 value matches {
-                                    DV_TEXT matches {*}
+                                    DV_CODED_TEXT matches {*}
                                 }
                             }
-                            allow_archetype CLUSTER[at0.145] occurrences matches {0..*} matches {	--	Specimen details
+                            allow_archetype CLUSTER[at0.145.0.1] occurrences matches {0..1} matches {	--	Specimen details
                                 include
                                     archetype_id/value matches {/openEHR-EHR-CLUSTER\.t-specimen-zju\.v1/}
                             }
@@ -78,6 +78,11 @@ definition
                                             at0138]	--	Routine
                                         }
                                     }
+                                }
+                            }
+                            ELEMENT[at0.1.28] occurrences matches {0..1} matches {
+                                value matches {
+                                    DV_TEXT matches {*}
                                 }
                             }
                         }
@@ -117,18 +122,18 @@ definition
                     }
                 }
             }
-            PARTICIPATION[at0.1.23] occurrences matches {0..1} matches {	--	Receive department
+            PARTICIPATION[at0.1.23] occurrences matches {0..1} matches {	--	Request department
                 performer matches {
-                    PARTY_RELATED[at0.1.24] matches {	--	Receive department
+                    PARTY_RELATED[at0.1.24] matches {	--	Request department
                         externalRef matches {
-                            PARTY_REF[at0.1.25] matches {	--	Receive department
+                            PARTY_REF[at0.1.25] matches {	--	Request department
                                 id matches {
                                     GENERIC_ID matches {*}
                                 }
                             }
                         }
                         relationship matches {
-                            DV_CODED_TEXT[at0.1.26] matches {	--	Receive department relationship
+                            DV_CODED_TEXT[at0.1.26] matches {	--	Request department relationship
                                 defining_code matches {
                                     [local::at0.1.27]
                                 }
@@ -145,6 +150,11 @@ ontology
         ["en"] = <
             items = <
                 ["at0.145"] = <
+                    text = <"Specimen details">
+                    description = <"Structured detail defining the specimen.">
+
+                >
+                ["at0.145.0.1"] = <
                     text = <"Specimen details">
                     description = <"Structured detail defining the specimen.">
 
@@ -170,6 +180,16 @@ ontology
 
                 >
                 ["at0001"] = <
+                    text = <"Request">
+                    description = <"Current Activity.">
+
+                >
+                ["at0001.0.1"] = <
+                    text = <"Request">
+                    description = <"Current Activity.">
+
+                >
+                ["at0001.0.1.1"] = <
                     text = <"Request">
                     description = <"Current Activity.">
 
@@ -205,6 +225,11 @@ ontology
 
                 >
                 ["at0121"] = <
+                    text = <"Service requested">
+                    description = <"Identification of the service requested. This is often coded with an external terminology.">
+
+                >
+                ["at0121.0.1"] = <
                     text = <"Service requested">
                     description = <"Identification of the service requested. This is often coded with an external terminology.">
 
