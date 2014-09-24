@@ -98,7 +98,7 @@ ontology
 
                 >
                 ["at0001.0.1"] = <
-                    text = <"Identifier main data">
+                    text = <"Identifier">
                     description = <"Identifier number or code, issuer, assigner and type of identifier.">
 
                 >
