@@ -347,12 +347,12 @@ This archetype also acts as the parent for specialisations appropriate for more 
 
                 >
                 ["at0.5"] = <
-                    text = <"Lab test result unit">
+                    text = <"Result unit">
                     description = <"">
 
                 >
                 ["at0.6"] = <
-                    text = <"Lab test device identifier">
+                    text = <"Device identifier">
                     description = <"">
 
                 >
