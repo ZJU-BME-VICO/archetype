@@ -6,7 +6,7 @@
 
     <property name="/name[at0.2]"/>
     <property name="/details[at0001]/items[at0003]/value"/>
-    <property name="/details[at0001]/items[at0007]/value[at0012]"/>
+    <property name="/details[at0001]/items[at0007]/value[at0012.1]"/>
 
   </class>
 

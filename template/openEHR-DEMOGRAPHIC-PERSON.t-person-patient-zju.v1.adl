@@ -297,7 +297,7 @@ ontology
 
                 >
                 ["at0001.0.0.1"] = <
-                    text = <"Demographic details">
+                    text = <"Details">
                     description = <"A patient's demographic details.">
 
                 >

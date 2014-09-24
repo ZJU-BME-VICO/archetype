@@ -157,7 +157,7 @@ definition
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0006] occurrences matches {0..1} matches {	--	Postal code (ZIP code)
+                    ELEMENT[at0006.1] occurrences matches {0..1} matches {	--	Postal code (ZIP code)
                         value matches {
                             DV_TEXT matches {*}
                         }
@@ -249,6 +249,11 @@ ontology
 
                 >
                 ["at0006"] = <
+                    text = <"CEP">
+                    description = <"O código para uma área de entrega postal, alinhada com a localidade, subúrbio ou local para o endereço, conforme definido pelo serviço postal.">
+
+                >
+                ["at0006.1"] = <
                     text = <"CEP">
                     description = <"O código para uma área de entrega postal, alinhada com a localidade, subúrbio ou local para o endereço, conforme definido pelo serviço postal.">
 
@@ -414,6 +419,11 @@ ontology
                 >
                 ["at0006"] = <
                     text = <"Postal code (ZIP code)">
+                    description = <"The code for a postal delivery area, aligned with locality, suburb or place for the address, as defined by the postal service.">
+
+                >
+                ["at0006.1"] = <
+                    text = <"Postal code">
                     description = <"The code for a postal delivery area, aligned with locality, suburb or place for the address, as defined by the postal service.">
 
                 >

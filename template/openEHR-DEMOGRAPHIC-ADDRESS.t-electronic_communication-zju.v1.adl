@@ -80,7 +80,7 @@ definition
                     }
                     ELEMENT[at0007] matches {	--	Details
                         value matches {
-                            DV_TEXT[at0012] matches {*}	--	Identification of the electronic communication medium
+                            DV_TEXT[at0012.1] matches {*}	--	Identification of the electronic communication medium
                         }
                     }
                 }
@@ -123,6 +123,11 @@ ontology
 
                 >
                 ["at0012"] = <
+                    text = <"Identificação do meio de comunicação">
+                    description = <"Identificação do telefone, pager, correio eletrônico, etc.">
+
+                >
+                ["at0012.1"] = <
                     text = <"Identificação do meio de comunicação">
                     description = <"Identificação do telefone, pager, correio eletrônico, etc.">
 
@@ -218,6 +223,11 @@ ontology
                 >
                 ["at0012"] = <
                     text = <"Identification of the electronic communication medium">
+                    description = <"Identification of telephone, fax, pager, e-mail, etc.">
+
+                >
+                ["at0012.1"] = <
+                    text = <"Content">
                     description = <"Identification of telephone, fax, pager, e-mail, etc.">
 
                 >
