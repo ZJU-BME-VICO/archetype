@@ -62,6 +62,26 @@ definition
                     }
                 }
             }
+            SECTION[at0.8] occurrences matches {0..*} matches {	--	Imaging exam
+                items cardinality matches {0..*; unordered} matches {
+                    allow_archetype INSTRUCTION[at0.9] occurrences matches {0..1} matches {	--	Imaging exam request
+                        include
+                            archetype_id/value matches {/openEHR-EHR-INSTRUCTION\.t-request-imaging_exam-zju\.v1/}
+                    }
+                    allow_archetype OBSERVATION[at0.10] occurrences matches {0..*} matches {	--	Imaging exam result
+                        include
+                            archetype_id/value matches {/openEHR-EHR-OBSERVATION\.t-imaging_exam-zju\.v1/}
+                    }
+                    allow_archetype ACTION[at0.11] occurrences matches {0..*} matches {	--	Imaging exam action
+                        include
+                            archetype_id/value matches {/openEHR-EHR-ACTION\.t-imaging_exam_single-zju\.v1/}
+                    }
+                    allow_archetype EVALUATION[at0.12] occurrences matches {0..1} matches {	--	Imaging exam report
+                        include
+                            archetype_id/value matches {/openEHR-EHR-EVALUATION\.t-imaging_exam_result-zju\.v1/}
+                    }
+                }
+            }
         }
         context matches {
             EVENT_CONTEXT matches {
@@ -130,6 +150,31 @@ ontology
                 >
                 ["at0.7"] = <
                     text = <"Lab test action">
+                    description = <"">
+
+                >
+                ["at0.8"] = <
+                    text = <"Imaging exam">
+                    description = <"">
+
+                >
+                ["at0.9"] = <
+                    text = <"Imaging exam request">
+                    description = <"">
+
+                >
+                ["at0.10"] = <
+                    text = <"Imaging exam result">
+                    description = <"">
+
+                >
+                ["at0.11"] = <
+                    text = <"Imaging exam action">
+                    description = <"">
+
+                >
+                ["at0.12"] = <
+                    text = <"Imaging exam report">
                     description = <"">
 
                 >
