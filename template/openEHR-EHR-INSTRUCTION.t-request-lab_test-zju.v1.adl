@@ -101,6 +101,11 @@ definition
                         value matches {
                             DV_TEXT matches {*}
                         }
+                    ELEMENT[at0127] occurrences matches {0..1} matches {	--	Request status
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
+                    }
                     }
                 }
             }
@@ -231,6 +236,10 @@ ontology
                 ["at0121.0.1"] = <
                     text = <"Service requested">
                     description = <"Identification of the service requested. This is often coded with an external terminology.">
+                >
+                ["at0127"] = <
+                    text = <"Request status">
+                    description = <"The status of the request for service as indicated by the requester. Status is used to denote whether this is the initial request, or a follow-up request to change or provide supplementary information.">
 
                 >
                 ["at0136"] = <

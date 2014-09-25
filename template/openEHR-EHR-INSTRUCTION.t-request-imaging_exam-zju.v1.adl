@@ -77,7 +77,32 @@ definition
                                     }
                                 }
                             }
-                            ELEMENT[at0078] occurrences matches {0..1} matches {	--	Supplementary information expected
+                            ELEMENT[at0078.1] occurrences matches {0..1} matches {	--	Supplementary information expected
+                                value matches {
+                                    DV_TEXT matches {*}
+                                }
+                            }
+                            ELEMENT[at0.1.7] occurrences matches {0..1} matches {	--	Intent
+                                value matches {
+                                    DV_TEXT matches {*}
+                                }
+                            }
+                            ELEMENT[at0.1.8] occurrences matches {0..1} matches {	--	Intent
+                                value matches {
+                                    DV_TEXT matches {*}
+                                }
+                            }
+                            ELEMENT[at0.1.9] occurrences matches {0..1} matches {	--	Intent
+                                value matches {
+                                    DV_TEXT matches {*}
+                                }
+                            }
+                            ELEMENT[at0.1.10] occurrences matches {0..1} matches {	--	Intent
+                                value matches {
+                                    DV_TEXT matches {*}
+                                }
+                            }
+                            ELEMENT[at0.1.11] occurrences matches {0..1} matches {	--	Intent
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
@@ -88,60 +113,19 @@ definition
             }
         }
         protocol matches {
-            ITEM_TREE[at0008.0.0.1] matches {	--	Tree
+            ITEM_TREE[at0008] matches {	--	Tree
                 items cardinality matches {1..*; unordered} matches {
                     ELEMENT[at0010] occurrences matches {0..1} matches {	--	Requestor Identifier
                         value matches {
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0127] occurrences matches {0..1} matches {	--	Request status
-                        value matches {
-                            DV_TEXT matches {*}
-                        }
-                    }
-                }
-            }
-        }
-        otherParticipations cardinality matches {0..*; unordered} matches {
-            PARTICIPATION[at0.1.7] occurrences matches {0..1} matches {	--	Receive department
-                performer matches {
-                    PARTY_RELATED[at0.1.8] matches {	--	Receive department
-                        externalRef matches {
-                            PARTY_REF[at0.1.9] matches {	--	Receive department
-                                id matches {
-                                    GENERIC_ID matches {*}
+
+                            ELEMENT[at0.1.12] occurrences matches {0..1} matches {	--	Intent
+                                value matches {
+                                    DV_TEXT matches {*}
                                 }
                             }
-                        }
-                        relationship matches {
-                            DV_CODED_TEXT[at0.1.10] matches {	--	Receive department relationship
-                                defining_code matches {
-                                    [local::at0.1.11]
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            PARTICIPATION[at0.1.12] occurrences matches {0..1} matches {	--	Request department
-                performer matches {
-                    PARTY_RELATED[at0.1.13] matches {	--	Request department
-                        externalRef matches {
-                            PARTY_REF[at0.1.14] matches {	--	Request department
-                                id matches {
-                                    GENERIC_ID matches {*}
-                                }
-                            }
-                        }
-                        relationship matches {
-                            DV_CODED_TEXT[at0.1.15] matches {	--	Request department relationship
-                                defining_code matches {
-                                    [local::at0.1.16]
-                                }
-                            }
-                        }
-                    }
                 }
             }
         }
@@ -186,11 +170,6 @@ ontology
                     description = <"@ internal @">
 
                 >
-                ["at0008.0.0.1"] = <
-                    text = <"Tree">
-                    description = <"@ internal @">
-
-                >
                 ["at0009"] = <
                     text = <"Tree">
                     description = <"@ internal @">
@@ -213,6 +192,11 @@ ontology
                 >
                 ["at0078"] = <
                     text = <"Supplementary information expected">
+                    description = <"Details of the nature of supplementary information that is to follow e.g name of laboratory results.">
+
+                >
+                ["at0078.1"] = <
+                    text = <"Lab test">
                     description = <"Details of the nature of supplementary information that is to follow e.g name of laboratory results.">
 
                 >
@@ -268,52 +252,32 @@ Status is used to denote whether this is the initial request, or a follow-up req
 
                 >
                 ["at0.1.7"] = <
-                    text = <"Receive department">
+                    text = <"Syndrom">
                     description = <"*">
 
                 >
                 ["at0.1.8"] = <
-                    text = <"Receive department">
+                    text = <"Body sign">
                     description = <"*">
 
                 >
                 ["at0.1.9"] = <
-                    text = <"Receive department">
+                    text = <"Other diagnosis">
                     description = <"*">
 
                 >
                 ["at0.1.10"] = <
-                    text = <"Receive department relationship">
+                    text = <"Diagnosis">
                     description = <"*">
 
                 >
                 ["at0.1.11"] = <
-                    text = <"Receive department">
+                    text = <"Memo">
                     description = <"*">
 
                 >
                 ["at0.1.12"] = <
-                    text = <"Request department">
-                    description = <"*">
-
-                >
-                ["at0.1.13"] = <
-                    text = <"Request department">
-                    description = <"*">
-
-                >
-                ["at0.1.14"] = <
-                    text = <"Request department">
-                    description = <"*">
-
-                >
-                ["at0.1.15"] = <
-                    text = <"Request department relationship">
-                    description = <"*">
-
-                >
-                ["at0.1.16"] = <
-                    text = <"Request department">
+                    text = <"Exam mode">
                     description = <"*">
 
                 >

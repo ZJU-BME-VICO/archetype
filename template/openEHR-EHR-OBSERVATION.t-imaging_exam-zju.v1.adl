@@ -63,6 +63,11 @@ definition
                                             DV_CODED_TEXT matches {*}
                                         }
                                     }
+                                    ELEMENT[at0.3] occurrences matches {0..1} matches {	--	Key image
+                                        value matches {
+                                            DV_TEXT matches {*}
+                                        }
+                                    }
                                     ELEMENT[at0024] occurrences matches {0..1} matches {	--	DateTime result issued
                                         value matches {
                                             DV_DATE_TIME matches {*}
@@ -112,6 +117,11 @@ definition
                 items cardinality matches {0..*; unordered} matches {
                     CLUSTER[at0027.1] occurrences matches {0..1} matches {	--	Examination request details
                         items cardinality matches {1..*; unordered} matches {
+                            ELEMENT[at0028] occurrences matches {0..1} matches {	--	Requester order identifier
+                                value matches {
+                                    DV_IDENTIFIER matches {*}
+                                }
+                            }
                             ELEMENT[at0033] occurrences matches {0..1} matches {	--	Report identifier
                                 value matches {
                                     DV_IDENTIFIER matches {*}
@@ -247,6 +257,11 @@ ontology
                     description = <"Details concerning a single examination requested. Note: Usually there is one examination request for each result, however in some circumstances multiple examination requests may be represented using a single Imaging examination result archetype.">
 
                 >
+                ["at0028"] = <
+                    text = <"Requester order identifier">
+                    description = <"The local identifier assigned to the order by the order requester. Equivalent to the HL7 Placer Order Identifier.">
+
+                >
                 ["at0033"] = <
                     text = <"Report identifier">
                     description = <"The local identifier given to the imaging examination report.">
@@ -274,6 +289,11 @@ ontology
                 >
                 ["at0.2"] = <
                     text = <"Key image">
+                    description = <"">
+
+                >
+                ["at0.3"] = <
+                    text = <"Exam description">
                     description = <"">
 
                 >

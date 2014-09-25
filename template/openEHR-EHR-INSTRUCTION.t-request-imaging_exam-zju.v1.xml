@@ -4,18 +4,6 @@
 
   <class name="openEHR-EHR-INSTRUCTION.t-request-imaging_exam-zju.v1" table="">
 
-    <id name="/protocol[at0008.0.0.1]/items[at0010]/value/value"></id>
-
-    <many-to-one name="/subject[at0.1.5]/externalRef[at0.1.6]/id/value" class="openEHR-DEMOGRAPHIC-PERSON.person-patient-zju.v1"/>
-    <property name="/activities[at0001.0.0.1]/description[at0009]/items[at0121.1]/value/value"/>
-    <property name="/activities[at0001.0.0.1]/description[at0009]/items[at0064]/value/value"/>
-    <property name="/activities[at0001.0.0.1]/description[at0009]/items[at0068]/value/value"/>
-    <property name="/activities[at0001.0.0.1]/description[at0009]/items[at0078]/value/value"/>
-    <property name="/otherParticipations[at0.1.7]/performer[at0.1.8]/externalRef[at0.1.9]/id/value"/>
-    <property column="receiveDepartmentName"/>
-    <property name="/otherParticipations[at0.1.12]/performer[at0.1.13]/externalRef[at0.1.14]/id/value"/>
-    <property column="requestDepartmentName"/>
-
   </class>
 
 </hibernate-mapping>

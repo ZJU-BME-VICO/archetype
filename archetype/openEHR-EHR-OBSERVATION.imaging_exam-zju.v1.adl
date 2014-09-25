@@ -63,6 +63,11 @@ definition
                                             DV_CODED_TEXT matches {*}
                                         }
                                     }
+                                    ELEMENT[at0.3] occurrences matches {0..1} matches {	--	Key image
+                                        value matches {
+                                            DV_TEXT matches {*}
+                                        }
+                                    }
                                     ELEMENT[at0005] occurrences matches {0..1} matches {	--	Modality
                                         value matches {
                                             DV_TEXT matches {*}
@@ -500,6 +505,11 @@ values, or information about the source of the value where this may be relevant 
                 >
                 ["at0.2"] = <
                     text = <"Key image">
+                    description = <"">
+
+                >
+                ["at0.3"] = <
+                    text = <"Exam description">
                     description = <"">
 
                 >
