@@ -117,27 +117,27 @@ definition
                                 include
                                     archetype_id/value matches {/.*/}
                             }
-                            ELEMENT[at0.1.7] occurrences matches {0..1} matches {	--	Intent
+                            ELEMENT[at0.1.7] occurrences matches {0..1} matches {	--	Syndrom
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0.1.8] occurrences matches {0..1} matches {	--	Intent
+                            ELEMENT[at0.1.8] occurrences matches {0..1} matches {	--	Body sign
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0.1.9] occurrences matches {0..1} matches {	--	Intent
+                            ELEMENT[at0.1.9] occurrences matches {0..1} matches {	--	Other diagnosis
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0.1.10] occurrences matches {0..1} matches {	--	Intent
+                            ELEMENT[at0.1.10] occurrences matches {0..1} matches {	--	Diagnosis
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
                             }
-                            ELEMENT[at0.1.11] occurrences matches {0..1} matches {	--	Intent
+                            ELEMENT[at0.1.11] occurrences matches {0..1} matches {	--	Memo
                                 value matches {
                                     DV_TEXT matches {*}
                                 }
@@ -181,11 +181,11 @@ definition
                         include
                             archetype_id/value matches {/.*/}
                     }
-                            ELEMENT[at0.1.12] occurrences matches {0..1} matches {	--	Intent
-                                value matches {
-                                    DV_TEXT matches {*}
-                                }
-                            }
+                    ELEMENT[at0.1.12] occurrences matches {0..1} matches {	--	Exam mode
+                        value matches {
+                            DV_TEXT matches {*}
+                        }
+                    }
                 }
             }
         }

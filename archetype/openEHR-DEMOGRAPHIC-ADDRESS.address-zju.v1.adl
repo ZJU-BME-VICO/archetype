@@ -157,7 +157,7 @@ definition
                             DV_TEXT matches {*}
                         }
                     }
-                    ELEMENT[at0006.1] occurrences matches {0..1} matches {	--	Postal code (ZIP code)
+                    ELEMENT[at0006.1] occurrences matches {0..1} matches {	--	Postal code
                         value matches {
                             DV_TEXT matches {*}
                         }

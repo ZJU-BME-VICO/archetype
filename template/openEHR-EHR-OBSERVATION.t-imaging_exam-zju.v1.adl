@@ -63,7 +63,7 @@ definition
                                             DV_CODED_TEXT matches {*}
                                         }
                                     }
-                                    ELEMENT[at0.3] occurrences matches {0..1} matches {	--	Key image
+                                    ELEMENT[at0.3] occurrences matches {0..1} matches {	--	Exam description
                                         value matches {
                                             DV_TEXT matches {*}
                                         }

@@ -50,7 +50,7 @@ description
 definition
     PERSON[at0000.1.1.1] matches {	--	Patient
         details matches {
-            allow_archetype ITEM_TREE[at0001.0.0.1] matches {	--	Demographic details
+            allow_archetype ITEM_TREE[at0001.0.0.1] matches {	--	Details
                 include
                     archetype_id/value matches {/openEHR-DEMOGRAPHIC-ITEM_TREE\.t-person_details-zju\.v1/}
             }

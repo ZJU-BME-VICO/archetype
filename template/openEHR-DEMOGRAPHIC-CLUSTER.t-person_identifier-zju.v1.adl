@@ -50,7 +50,7 @@ description
 definition
     CLUSTER[at0000.1.1] matches {	--	Person identifier
         items matches {
-            ELEMENT[at0001.0.1] matches {	--	Identifier main data
+            ELEMENT[at0001.0.1] matches {	--	Identifier
                 value matches {
                     DV_IDENTIFIER matches {*}
                 }

@@ -80,7 +80,7 @@ definition
                                                 exclude
                                                     archetype_id/value matches {/.*/}
                                             }
-                                            ELEMENT[at0.5] occurrences matches {0..1} matches {	--	Lab test result unit
+                                            ELEMENT[at0.5] occurrences matches {0..1} matches {	--	Result unit
                                                 value matches {
                                                     DV_TEXT matches {*}
                                                 }
@@ -112,7 +112,7 @@ definition
                             DV_DATE_TIME matches {*}
                         }
                     }
-                    ELEMENT[at0.6] occurrences matches {0..1} matches {	--	Lab test device identifier
+                    ELEMENT[at0.6] occurrences matches {0..1} matches {	--	Device identifier
                         value matches {
                             DV_TEXT matches {*}
                         }

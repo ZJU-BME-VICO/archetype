@@ -65,7 +65,7 @@ definition
                     }
                     CLUSTER[at0073] occurrences matches {0..1} matches {	--	Assigned patient location
                         items cardinality matches {1..*; unordered} matches {
-                            ELEMENT[at0074.1] occurrences matches {0..1} matches {	--	Point of care/Unit
+                            ELEMENT[at0074.1] occurrences matches {0..1} matches {	--	Department
                                 value matches {
                                     DV_CODED_TEXT matches {*}
                                 }

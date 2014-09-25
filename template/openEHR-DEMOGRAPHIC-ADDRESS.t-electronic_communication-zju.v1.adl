@@ -80,7 +80,7 @@ definition
                     }
                     ELEMENT[at0007] matches {	--	Details
                         value matches {
-                            DV_TEXT[at0012.1] matches {*}	--	Identification of the electronic communication medium
+                            DV_TEXT[at0012.1] matches {*}	--	Content
                         }
                     }
                 }
