@@ -4,9 +4,6 @@
 
   <class name="openEHR-EHR-CLUSTER.t-specimen-zju.v1">
 
-    <property name="/items[at0029.1]/value"/>
-    <property name="/items[at0007]/value"/>
-
   </class>
 
 </hibernate-mapping>

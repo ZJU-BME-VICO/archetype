@@ -4,9 +4,6 @@
 
   <class name="openEHR-DEMOGRAPHIC-PARTY_IDENTITY.t-person_name-zju.v1">
 
-    <property name="/details[at0001]/items[at0010]/value"/>
-    <property name="/details[at0001]/items[at0007]/items[at0022.1]/value"/>
-
   </class>
 
 </hibernate-mapping>

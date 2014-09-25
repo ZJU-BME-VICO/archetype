@@ -4,10 +4,6 @@
 
   <class name="openEHR-DEMOGRAPHIC-ADDRESS.t-address-zju.v1">
 
-    <property name="/name[at0.3]"/>
-    <property name="/details[at0001]/items[at0.2]/value"/>
-    <property name="/details[at0001]/items[at0006]/value"/>
-
   </class>
 
 </hibernate-mapping>

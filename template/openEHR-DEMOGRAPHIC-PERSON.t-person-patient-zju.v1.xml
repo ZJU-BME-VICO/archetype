@@ -6,14 +6,6 @@
 
     <id name="/uid/value"></id>
 
-    <one-to-many name="/details[at0001.0.0.1]" class="openEHR-DEMOGRAPHIC-ITEM_TREE.t-person_details-zju.v1"/>
-    <one-to-many name="/identities[at0002.1.0.1]" class="openEHR-DEMOGRAPHIC-PARTY_IDENTITY.t-person_name-zju.v1"/>
-    <one-to-many name="/contacts[at0003.1]/addresses[at0030.0.0.1]" class="openEHR-DEMOGRAPHIC-ADDRESS.t-address-zju.v1"/>
-    <one-to-many name="/contacts[at0003.1]/addresses[at0030.0.0.2]" class="openEHR-DEMOGRAPHIC-ADDRESS.t-electronic_communication-zju.v1"/>
-    <one-to-many name="/contacts[at0003.1]/addresses[at0030.0.0.3]" class="openEHR-DEMOGRAPHIC-ADDRESS.t-electronic_communication-zju.v1"/>
-    <one-to-many name="/contacts[at0003.1]/addresses[at0030.0.0.4]" class="openEHR-DEMOGRAPHIC-ADDRESS.t-electronic_communication-zju.v1"/>
-    <one-to-many name="/contacts[at0003.1]/addresses[at0030.0.0.5]" class="openEHR-DEMOGRAPHIC-ADDRESS.t-electronic_communication-zju.v1"/>
-
   </class>
 
 </hibernate-mapping>

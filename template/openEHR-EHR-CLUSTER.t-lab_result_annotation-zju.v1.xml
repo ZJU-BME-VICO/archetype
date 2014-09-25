@@ -4,9 +4,6 @@
 
   <class name="openEHR-EHR-CLUSTER.t-lab_result_annotation-zju.v1">
 
-    <property name="/items[at0002]/value"/>
-    <property name="/items[at0005]/value"/>
-
   </class>
 
 </hibernate-mapping>

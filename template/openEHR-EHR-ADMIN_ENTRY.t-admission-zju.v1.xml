@@ -6,33 +6,6 @@
 
     <id name="/uid/value"></id>
 
-    <property name="/data[at0001]/items[at0002]/value"/>
-    <property name="/data[at0001]/items[at0094]/items[at0074.1]"/>
-    <property name="/data[at0001]/items[at0094]/items[at0077.1]"/>
-    <property name="/data[at0001]/items[at0071]/value"/>
-    <many-to-one name="/subject[at0.72]/externalRef[at0.73]/id" class="openEHR-DEMOGRAPHIC-PERSON.person-patient-zju.v1"/>
-    <property name="/data[at0001]/items[at0094]/items[at0078.1]"/>
-    <property name="/data[at0001]/items[at0094]/items[at0079.1]"/>
-    <property name="/data[at0001]/items[at0.4]/value"/>
-    <property name="/data[at0001]/items[at0.5]/value"/>
-    <property name="/data[at0001]/items[at0.6]/value"/>
-    <property name="/otherParticipations[at0.26]/performer/externalRef/id"/>
-    <property name="/otherParticipations[at0.30]/performer/externalRef/id"/>
-    <property name="/otherParticipations[at0.34]/performer/externalRef/id"/>
-    <property name="/otherParticipations[at0.38]/performer/externalRef/id"/>
-    <property name="/otherParticipations[at0.42]/performer/externalRef/id"/>
-    <property name="/otherParticipations[at0.46]/performer/externalRef/id"/>
-    <property name="/otherParticipations[at0.50]/performer/externalRef/id"/>
-    <property name="/data[at0001]/items[at0.14]/value"/>
-    <property name="/data[at0001]/items[at0.15]/value"/>
-    <property name="/otherParticipations[at0.54]/performer/externalRef/id"/>
-    <property name="/data[at0001]/items[at0.17]/value"/>
-    <property name="/data[at0001]/items[at0.18]/value"/>
-    <property name="/data[at0001]/items[at0.19]/value"/>
-    <property name="/data[at0001]/items[at0.20]/value"/>
-    <property name="/data[at0001]/items[at0.21]/value"/>
-    <property name="/otherParticipations[at0.58]/performer/externalRef/id"/>
-
   </class>
 
 </hibernate-mapping>

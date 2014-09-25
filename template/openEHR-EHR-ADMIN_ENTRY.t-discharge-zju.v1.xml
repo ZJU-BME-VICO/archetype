@@ -4,12 +4,6 @@
 
   <class name="openEHR-EHR-ADMIN_ENTRY.t-discharge-zju.v1">
 
-    <property name="/data[at0003]/items[at0004]/value"/>
-    <property name="/subject[at0.2]/externalRef[at0.3]/id/value"/>
-    <property name="/data[at0003]/items[at0069]/items[at0062]/items[at0056]/value"/>
-    <one-to-many name="/data[at0003]/items[at0069]/items[at0070]" class="openEHR-EHR-CLUSTER.t-organisation-zju.v1"/>
-    <property name="/data[at0003]/items[at0057]/items[at0084]/value"/>
-
   </class>
 
 </hibernate-mapping>

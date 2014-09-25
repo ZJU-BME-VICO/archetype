@@ -4,9 +4,6 @@
 
   <class name="openEHR-DEMOGRAPHIC-CLUSTER.t-person_identifier-zju.v1">
 
-    <property name="/items[at0001.0.1]/value"/>
-    <property name="/items[at0.2]/value"/>
-
   </class>
 
 </hibernate-mapping>
