@@ -73,29 +73,11 @@ definition
             }
         }
         relationships matches {
-            PARTY_RELATIONSHIP[at0004.1] matches {	--	Relationships
+            PARTY_RELATIONSHIP[at0.3] matches {	--	Healthcare provider/Health professional
                 details matches {
-                    ITEM_TREE[at0.40] matches {	--	Personal relationship
+                    ITEM_TREE[at0.30] matches {	--	Patient identifiers
                         items matches {
-                            ELEMENT[at0040] matches {	--	Relationship type
-                                value matches {
-                                    DV_TEXT matches {*}
-                                    DV_CODED_TEXT matches {
-                                        defining_code matches {
-                                            [ac0000]
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            PARTY_RELATIONSHIP[at0.2] matches {	--	Third party payer
-                details matches {
-                    ITEM_TREE[at0.20] matches {	--	Patient identifiers
-                        items matches {
-                            allow_archetype CLUSTER[at0.21] matches {	--	Healthcare consumer identifier.
+                            allow_archetype CLUSTER[at0.31] matches {	--	Patient identifier
                                 include
                                     archetype_id/value matches {/(person_identifier)[a-zA-Z0-9_-]*\.v1/}
                             }
@@ -103,11 +85,11 @@ definition
                     }
                 }
             }
-            PARTY_RELATIONSHIP[at0.3] matches {	--	Healthcare provider/Health professional
+            PARTY_RELATIONSHIP[at0000.1.2] matches {	--	Reference patient identifier
                 details matches {
-                    ITEM_TREE[at0.30] matches {	--	Patient identifiers
+                    ITEM_TREE[at0000.1.3] matches {	--	Reference patient identifier
                         items matches {
-                            allow_archetype CLUSTER[at0.31] matches {	--	Patient identifier
+                            allow_archetype CLUSTER[at0000.1.4] matches {	--	Reference patient identifier
                                 include
                                     archetype_id/value matches {/(person_identifier)[a-zA-Z0-9_-]*\.v1/}
                             }
@@ -147,11 +129,6 @@ ontology
                     description = <"Contatos da pessoa.">
 
                 >
-                ["at0004"] = <
-                    text = <"Relacionamentos">
-                    description = <"Relacionamentos de uma pessoa, especialmente laços familiares.">
-
-                >
                 ["at0002.1"] = <
                     text = <"Nome">
                     description = <"Conjunto de dados que especificam o nome do paciente.">
@@ -160,11 +137,6 @@ ontology
                 ["at0003.1"] = <
                     text = <"Contatos">
                     description = <"Contatos da pessoa.">
-
-                >
-                ["at0004.1"] = <
-                    text = <"Relacionamentos">
-                    description = <"Relacionamentos de um paciente, especialmente laços familiares.">
 
                 >
                 ["at0030"] = <
@@ -177,29 +149,9 @@ ontology
                     description = <"Define o grau de parentesco entre as pessoas envolvidas.">
 
                 >
-                ["at0.2"] = <
-                    text = <"Fonte pagadora">
-                    description = <"Beneficiário: Relacionamento do paciente com uma Fonte Pagadora.">
-
-                >
                 ["at0.3"] = <
                     text = <"Serviço de saúde/Profissional de saúde">
                     description = <"Relacionamento do paciente com uma organização prestadora de serviço de saúde/profissional de saúde.">
-
-                >
-                ["at0.40"] = <
-                    text = <"Personal relationships">
-                    description = <"Personal relationship.">
-
-                >
-                ["at0.20"] = <
-                    text = <"Identificações do beneficiário">
-                    description = <"Identificações do beneficiário junto à fonte pagadora.">
-
-                >
-                ["at0.21"] = <
-                    text = <"Identificação do beneficiário">
-                    description = <"Documento de identificação do beneficiário junto à fonte pagadora.">
 
                 >
                 ["at0.30"] = <
@@ -241,11 +193,6 @@ ontology
                     description = <"A person's contacts.">
 
                 >
-                ["at0004"] = <
-                    text = <"Relationships">
-                    description = <"A person's relationships, especially family ties.">
-
-                >
                 ["at0002.1"] = <
                     text = <"Name">
                     description = <"A patient's name.">
@@ -254,11 +201,6 @@ ontology
                 ["at0003.1"] = <
                     text = <"Contacts">
                     description = <"A patient's contacts.">
-
-                >
-                ["at0004.1"] = <
-                    text = <"Relationships">
-                    description = <"A patient's relationships, especially family ties.">
 
                 >
                 ["at0030"] = <
@@ -271,29 +213,9 @@ ontology
                     description = <"Defines the type of relationship between related persons.">
 
                 >
-                ["at0.2"] = <
-                    text = <"Third party payer">
-                    description = <"Relationship between the patient and a third-party payer.">
-
-                >
                 ["at0.3"] = <
                     text = <"Healthcare provider/Health professional">
                     description = <"Patient: relationship between the patient and a healthcare provider organisation/health professional.">
-
-                >
-                ["at0.40"] = <
-                    text = <"Personal relationship">
-                    description = <"Personal relationship.">
-
-                >
-                ["at0.20"] = <
-                    text = <"Patient identifiers">
-                    description = <"Identifiers of the patient at the third-party payer.">
-
-                >
-                ["at0.21"] = <
-                    text = <"Healthcare consumer identifier.">
-                    description = <"An identifier of the patient at the third-party payer.">
 
                 >
                 ["at0.30"] = <
@@ -304,6 +226,21 @@ ontology
                 ["at0.31"] = <
                     text = <"Patient identifier">
                     description = <"A patient identifier at the related healthcare provider.">
+
+                >
+                ["at0000.1.2"] = <
+                    text = <"Reference patient identifier">
+                    description = <"">
+
+                >
+                ["at0000.1.3"] = <
+                    text = <"Reference patient identifier">
+                    description = <"">
+
+                >
+                ["at0000.1.4"] = <
+                    text = <"Reference patient identifier">
+                    description = <"">
 
                 >
             >

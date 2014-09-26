@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <hibernate-mapping package="">
 
   <class name="openEHR-DEMOGRAPHIC-PERSON.t-person-patient-zju.v1">
 
-    <id name="/uid/value"></id>
+    <id name="/relationships[at0.3]/details[at0.30]/items[at0.31.0.1]#/items[at0001.0.1]/value/id"></id>
 
   </class>
 
