@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <hibernate-mapping package="">
 
   <class name="openEHR-EHR-COMPOSITION.t-encounter-zju.v1">
 
-    <id name="/content[at0.2]"></id>
-    <id name="/content[at0.5]/items[at0.4]"></id>
-    <id name="/content[at0.8]/items[at0.9]"></id>
+    <id name="/content[at0.2.1]"></id>
+    <id name="/content[at0.5.1]/items[at0.4.1]"></id>
+    <id name="/content[at0.8.1]/items[at0.9.1]"></id>
 
   </class>
 

@@ -4,7 +4,7 @@ specialize
     openEHR-EHR-COMPOSITION.encounter-zju.v1
 
 concept
-    [at0000.1]
+    [at0000.1.1]
 
 language
     original_language = <[ISO_639-1::en]>
@@ -29,7 +29,7 @@ description
     >
 
 definition
-    COMPOSITION[at0000.1] matches {	--	Encounter
+    COMPOSITION[at0000.1.1] matches {	--	Encounter
         category matches {
             DV_CODED_TEXT matches {
                 defining_code matches {
@@ -38,25 +38,25 @@ definition
             }
         }
         content cardinality matches {1..*; unordered} matches {
-            allow_archetype ADMIN_ENTRY[at0.2] occurrences matches {0..1} matches {	--	Admission
+            allow_archetype ADMIN_ENTRY[at0.2.1] occurrences matches {0..1} matches {	--	Admission
                 include
                     archetype_id/value matches {/openEHR-EHR-ADMIN_ENTRY\.t-admission-zju\.v1/}
             }
-            allow_archetype ADMIN_ENTRY[at0.3] occurrences matches {0..1} matches {	--	Discharge
+            allow_archetype ADMIN_ENTRY[at0.3.1] occurrences matches {0..1} matches {	--	Discharge
                 include
                     archetype_id/value matches {/openEHR-EHR-ADMIN_ENTRY\.t-discharge-zju\.v1/}
             }
             SECTION[at0.5] occurrences matches {0..*} matches {	--	Lab test
                 items cardinality matches {0..*; unordered} matches {
-                    allow_archetype INSTRUCTION[at0.4] occurrences matches {0..1} matches {	--	Lab test request
+                    allow_archetype INSTRUCTION[at0.4.1] occurrences matches {0..1} matches {	--	Lab test request
                         include
                             archetype_id/value matches {/openEHR-EHR-INSTRUCTION\.t-request-lab_test-zju\.v1/}
                     }
-                    allow_archetype OBSERVATION[at0.6] occurrences matches {0..*} matches {	--	Lab test result
+                    allow_archetype OBSERVATION[at0.6.1] occurrences matches {0..*} matches {	--	Lab test result
                         include
                             archetype_id/value matches {/openEHR-EHR-OBSERVATION\.t-lab_test_single-zju\.v1/}
                     }
-                    allow_archetype ACTION[at0.7] occurrences matches {0..*} matches {	--	Lab test action
+                    allow_archetype ACTION[at0.7.1] occurrences matches {0..*} matches {	--	Lab test action
                         include
                             archetype_id/value matches {/openEHR-EHR-ACTION\.t-lab_test-zju\.v1/}
                     }
@@ -64,19 +64,19 @@ definition
             }
             SECTION[at0.8] occurrences matches {0..*} matches {	--	Imaging exam
                 items cardinality matches {0..*; unordered} matches {
-                    allow_archetype INSTRUCTION[at0.9] occurrences matches {0..1} matches {	--	Imaging exam request
+                    allow_archetype INSTRUCTION[at0.9.1] occurrences matches {0..1} matches {	--	Imaging exam request
                         include
                             archetype_id/value matches {/openEHR-EHR-INSTRUCTION\.t-request-imaging_exam-zju\.v1/}
                     }
-                    allow_archetype OBSERVATION[at0.10] occurrences matches {0..*} matches {	--	Imaging exam result
+                    allow_archetype OBSERVATION[at0.10.1] occurrences matches {0..*} matches {	--	Imaging exam result
                         include
                             archetype_id/value matches {/openEHR-EHR-OBSERVATION\.t-imaging_exam-zju\.v1/}
                     }
-                    allow_archetype ACTION[at0.11] occurrences matches {0..*} matches {	--	Imaging exam action
+                    allow_archetype ACTION[at0.11.1] occurrences matches {0..*} matches {	--	Imaging exam action
                         include
                             archetype_id/value matches {/openEHR-EHR-ACTION\.t-imaging_exam_single-zju\.v1/}
                     }
-                    allow_archetype EVALUATION[at0.12] occurrences matches {0..1} matches {	--	Imaging exam report
+                    allow_archetype EVALUATION[at0.12.1] occurrences matches {0..1} matches {	--	Imaging exam report
                         include
                             archetype_id/value matches {/openEHR-EHR-EVALUATION\.t-imaging_exam_result-zju\.v1/}
                     }
@@ -113,6 +113,11 @@ ontology
                     description = <"Generic encounter or progress note composition.">
 
                 >
+                ["at0000.1.1"] = <
+                    text = <"Encounter">
+                    description = <"Generic encounter or progress note composition.">
+
+                >
                 ["at0001"] = <
                     text = <"Tree">
                     description = <"@ internal @">
@@ -128,7 +133,17 @@ ontology
                     description = <"">
 
                 >
+                ["at0.2.1"] = <
+                    text = <"Admission">
+                    description = <"">
+
+                >
                 ["at0.3"] = <
+                    text = <"Discharge">
+                    description = <"">
+
+                >
+                ["at0.3.1"] = <
                     text = <"Discharge">
                     description = <"">
 
@@ -138,7 +153,17 @@ ontology
                     description = <"">
 
                 >
+                ["at0.4.1"] = <
+                    text = <"Lab test request">
+                    description = <"">
+
+                >
                 ["at0.5"] = <
+                    text = <"Lab test">
+                    description = <"">
+
+                >
+                ["at0.5.1"] = <
                     text = <"Lab test">
                     description = <"">
 
@@ -148,7 +173,17 @@ ontology
                     description = <"">
 
                 >
+                ["at0.6.1"] = <
+                    text = <"Lab test result">
+                    description = <"">
+
+                >
                 ["at0.7"] = <
+                    text = <"Lab test action">
+                    description = <"">
+
+                >
+                ["at0.7.1"] = <
                     text = <"Lab test action">
                     description = <"">
 
@@ -158,7 +193,17 @@ ontology
                     description = <"">
 
                 >
+                ["at0.8.1"] = <
+                    text = <"Imaging exam">
+                    description = <"">
+
+                >
                 ["at0.9"] = <
+                    text = <"Imaging exam request">
+                    description = <"">
+
+                >
+                ["at0.9.1"] = <
                     text = <"Imaging exam request">
                     description = <"">
 
@@ -168,12 +213,27 @@ ontology
                     description = <"">
 
                 >
+                ["at0.10.1"] = <
+                    text = <"Imaging exam result">
+                    description = <"">
+
+                >
                 ["at0.11"] = <
                     text = <"Imaging exam action">
                     description = <"">
 
                 >
+                ["at0.11.1"] = <
+                    text = <"Imaging exam action">
+                    description = <"">
+
+                >
                 ["at0.12"] = <
+                    text = <"Imaging exam report">
+                    description = <"">
+
+                >
+                ["at0.12.1"] = <
                     text = <"Imaging exam report">
                     description = <"">
 
