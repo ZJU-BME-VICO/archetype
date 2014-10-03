@@ -66,7 +66,7 @@ definition
                 addresses matches {
                     allow_archetype ADDRESS[at0030.0.0.1] matches {	--	Mail address
                         include
-                            archetype_id/value matches {/openEHR-DEMOGRAPHIC-ADDRESS\.t-address-zju\.v1/}
+                            archetype_id/value matches {/openEHR-EHR-CLUSTER\.t-address-zju\.v1/}
                     }
                     allow_archetype ADDRESS[at0030.0.0.2] matches {	--	Email
                         include
