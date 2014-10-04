@@ -46,6 +46,10 @@ definition
                 include
                     archetype_id/value matches {/openEHR-EHR-ADMIN_ENTRY\.t-discharge-zju\.v1/}
             }
+            allow_archetype ADMIN_ENTRY[at0.13.1] occurrences matches {0..1} matches {	--	Transfer
+                include
+                    archetype_id/value matches {/openEHR-EHR-ADMIN_ENTRY\.t-transfer-zju\.v1/}
+            }
             SECTION[at0.5] occurrences matches {0..*} matches {	--	Lab test
                 items cardinality matches {0..*; unordered} matches {
                     allow_archetype INSTRUCTION[at0.4.1] occurrences matches {0..1} matches {	--	Lab test request
@@ -235,6 +239,16 @@ ontology
                 >
                 ["at0.12.1"] = <
                     text = <"Imaging exam report">
+                    description = <"">
+
+                >
+                ["at0.13"] = <
+                    text = <"Transfer">
+                    description = <"">
+
+                >
+                ["at0.13.1"] = <
+                    text = <"Transfer">
                     description = <"">
 
                 >
