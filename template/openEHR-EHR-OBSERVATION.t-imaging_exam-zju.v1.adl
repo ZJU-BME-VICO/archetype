@@ -122,7 +122,7 @@ definition
                                     DV_IDENTIFIER matches {*}
                                 }
                             }
-                            ELEMENT[at0033] occurrences matches {0..1} matches {	--	Report identifier
+                            ELEMENT[at0031] occurrences matches {0..1} matches {	--	Receiver order identifier
                                 value matches {
                                     DV_IDENTIFIER matches {*}
                                 }
@@ -262,9 +262,9 @@ ontology
                     description = <"The local identifier assigned to the order by the order requester. Equivalent to the HL7 Placer Order Identifier.">
 
                 >
-                ["at0033"] = <
-                    text = <"Report identifier">
-                    description = <"The local identifier given to the imaging examination report.">
+                ["at0031"] = <
+                    text = <"Receiver order identifier">
+                    description = <"The local identifier assigned to the examination order by the order filler, usually by the Radiology Information System (RIS). Usually equivalent to the HL7 Filler Order Number.">
 
                 >
                 ["at0034"] = <

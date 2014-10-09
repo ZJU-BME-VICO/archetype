@@ -50,9 +50,9 @@ definition
                 description matches {
                     ITEM_TREE[at0009] matches {	--	Tree
                         items cardinality matches {1..*; unordered} matches {
-                            ELEMENT[at0121.1] matches {	--	Examination requested
+                            ELEMENT[at0121.1.1] matches {	--	Examination requested
                                 value matches {
-                                    DV_TEXT matches {*}
+                                    DV_CODED_TEXT matches {*}
                                 }
                             }
                             ELEMENT[at0135.1] occurrences matches {0..1} matches {	--	Description of examination
@@ -286,6 +286,11 @@ ontology
 
                 >
                 ["at0121.1"] = <
+                    text = <"Examination requested">
+                    description = <"Identification of the examination requested. This is often coded with an external terminology.">
+
+                >
+                ["at0121.1.1"] = <
                     text = <"Examination requested">
                     description = <"Identification of the examination requested. This is often coded with an external terminology.">
 

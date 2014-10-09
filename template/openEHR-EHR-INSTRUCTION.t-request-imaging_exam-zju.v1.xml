@@ -1,9 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 
 <hibernate-mapping package="">
 
   <class name="openEHR-EHR-INSTRUCTION.t-request-imaging_exam-zju.v1" table="">
-
+      
+      <queryId name="/protocol[at0008]/items[at0010]/value"></queryId>
+      <queryId name="/protocol[at0008]/items[at0011]/value"></queryId>
+      
   </class>
 
 </hibernate-mapping>

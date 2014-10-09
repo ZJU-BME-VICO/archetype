@@ -4,9 +4,9 @@
 
   <class name="openEHR-EHR-COMPOSITION.t-encounter-zju.v1">
 
-    <id name="/content[at0.2.1]"></id>
-    <id name="/content[at0.5.1]/items[at0.4.1]"></id>
-    <id name="/content[at0.8.1]/items[at0.9.1]"></id>
+    <main name="/content[at0.2.1]"></main>
+    <main name="/content[at0.5.1]/items[at0.4.1]"></main>
+    <main name="/content[at0.8.1]/items[at0.9.1]"></main>
 
   </class>
 
