@@ -1,8 +1,10 @@
 archetype (adl_version=1.4)
+    openEHR-EHR-ACTION.t-imaging_exam-zju.v1
+specialize
     openEHR-EHR-ACTION.imaging_exam-zju.v1
 
 concept
-    [at0000]
+    [at0000.1]
 
 language
     original_language = <[ISO_639-1::en]>
@@ -29,7 +31,7 @@ description
     >
 
 definition
-    ACTION[at0000] matches {	--	Imaging exam
+    ACTION[at0000.1] matches {	--	Imaging exam
         ism_transition matches {
             ISM_TRANSITION[at0003] matches {	--	Imaging exam requested
                 current_state matches {
@@ -130,8 +132,8 @@ definition
             INSTRUCTION_DETAILS[at0016] matches {	--	Request activity
                 activityId matches {"/activities[at0001]"}
                 instructionId matches {
-                    LOCATABLE_REF[at0017] matches {	--	Request instruction
-                        path matches {"openEHR-EHR-INSTRUCTION.request-imaging_exam-zju.v1"}
+                    LOCATABLE_REF[at0017.1] matches {	--	Request instruction
+                        path matches {"openEHR-EHR-INSTRUCTION.t-request-imaging_exam-zju.v1"}
                     }
                 }
             }
@@ -143,6 +145,11 @@ ontology
         ["en"] = <
             items = <
                 ["at0000"] = <
+                    text = <"Imaging exam">
+                    description = <"Clinical activity about performing an imaging exam.">
+
+                >
+                ["at0000.1"] = <
                     text = <"Imaging exam">
                     description = <"Clinical activity about performing an imaging exam.">
 
@@ -193,6 +200,11 @@ ontology
 
                 >
                 ["at0017"] = <
+                    text = <"Request instruction">
+                    description = <"">
+
+                >
+                ["at0017.1"] = <
                     text = <"Request instruction">
                     description = <"">
 
