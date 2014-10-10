@@ -107,6 +107,11 @@ definition
                                     DV_TEXT matches {*}
                                 }
                             }
+                            ELEMENT[at0.1.13] occurrences matches {0..1} matches {	--	Report identifier
+                                value matches {
+                                    DV_IDENTIFIER matches {*}
+                                }
+                            }
                         }
                     }
                 }
@@ -288,6 +293,11 @@ Status is used to denote whether this is the initial request, or a follow-up req
                 ["at0.1.12"] = <
                     text = <"Exam mode">
                     description = <"*">
+
+                >
+                ["at0.1.13"] = <
+                    text = <"Report identifier">
+                    description = <"The local identifier given to the imaging examination report.">
 
                 >
             >
