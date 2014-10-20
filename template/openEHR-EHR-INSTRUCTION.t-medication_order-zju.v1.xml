@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping package="">
+
+  <class name="openEHR-EHR-INSTRUCTION.t-medication_order-zju.v1" table="">
+      
+      <id name="/protocol[at0031]/items[at0032]/value"></id>
+      
+  </class>
+
+</hibernate-mapping>

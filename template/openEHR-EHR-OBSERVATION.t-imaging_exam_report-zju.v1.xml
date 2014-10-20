@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping package="">
+
+  <class name="openEHR-EHR-OBSERVATION.t-imaging_exam_report-zju.v1">
+
+    <id name="/protocol[at0014]/items[at0017]/value"></id>
+
+  </class>
+
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping package="">
+
+  <class name="openEHR-EHR-OBSERVATION.t-imaging_exam_image_series-zju.v1">
+
+    <id name="/protocol[at0014]/items[at0018]/value"></id>
+    <id name="/data[at0001]/events[at0002]/data[at0003]/items[at0019]/items[at0020]/value"></id>
+    <queryid name="/protocol[at0014]/items[at0015]/value/id"></queryid>
+    <queryid name="/protocol[at0014]/items[at0016]/value/id"></queryid>
+
+  </class>
+
+</hibernate-mapping>
